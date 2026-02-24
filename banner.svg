@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="120" fill="none">
+  <rect width="900" height="120" rx="12" fill="#DC2626"/>
+  <rect x="2" y="2" width="896" height="116" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="2"/>
+  <text x="450" y="45" text-anchor="middle" font-family="monospace" font-size="22" font-weight="bold" fill="#DC2626">⚠  PUBLIC REPOSITORY — CUSTOMER FACING  ⚠</text>
+  <text x="450" y="75" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#991B1B">This repository is publicly accessible. Do NOT commit secrets, internal links, or confidential information.</text>
+  <text x="450" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#B91C1C">All content here is visible to customers and the general public.</text>
+</svg>
