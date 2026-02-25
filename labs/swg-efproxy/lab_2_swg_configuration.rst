@@ -16,14 +16,13 @@ Task 1. Review the SWG URL Categories and URL Filtering
 
 #. In the left hand navigation pane select Access > Secure Web Gateway > URL Categories.
 
-A list of URL Categories will appear in the main window, with Custom Categories at the top.
+    A list of URL Categories will appear in the main window, with Custom Categories at the top.
 
 #. Click on the '+' sign next to **Custom Categories** to expand the list. This reveals that there are 3 custom categories already configured here here.
 
-#.  Select "custom-allow-category" and view the URLs already added to this list.
+#. Select "custom-allow-category" and view the URLs already added to this list.
 
-![custom-allow-category](./images/l2-bigip-swg-custallcat.png)
-    .. image:: ./images/l2-bigip-swg-custblkcat.png
+    .. image:: ./images/l2-bigip-swg-custallcat.png
         :align: center
         :alt: custom-allow-category
 
