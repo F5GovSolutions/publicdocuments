@@ -20,6 +20,7 @@ The F5 Explicit Forward proxy has already been configured for the browsers to us
 
 **Step 7.** Go back to your browser and click on the ESPN and or Draftkings bookmark again.
 
+
 ## Task 2. - Test SFTP client - FileZilla
 
 **Step 1.** Open FileZilla
@@ -42,6 +43,7 @@ Open the file view it's contents.
 ![file open](./images/t2-fz-3.png)
 
 **Step 6.** View the SOCKS Proxy settings in the FileZilla client, by selecting the Settings menu under Edit. Then choose General Proxy in the left navigation pain.
+
 ![fileZilla proxy](./images/t2-fz-2.png)
 
 
@@ -55,10 +57,8 @@ Open the file view it's contents.
 
 The connection will fail with a message: "Network error: Permission denied"
 
-**Step 3.** Select test.rebex.net and press Load
+**Step 3.** Select test.rebex.net in the Saved Sessions section and press Open
 
-**Step 4.** Select test.rebex.net in the Saved Sessions section and press Open
-
-**Step 5.** 
+**Step 4.** 
 
 
