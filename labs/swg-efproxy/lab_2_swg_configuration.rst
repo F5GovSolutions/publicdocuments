@@ -1,6 +1,7 @@
 Lab 2 Instructions for SWG Explict Forward Proxy
+================================================
 
-Task 1. Review the SWG URL Categories and URL Filtering
+**Task 1. Review the SWG URL Categories and URL Filtering**
 
 #. Log into the BIG-IP by selecting TMUI under the ACCESS menu for BIG-IP SSLO-1 in Deployment.
 
