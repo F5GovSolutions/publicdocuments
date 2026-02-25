@@ -38,7 +38,7 @@ The Lab underscores the SWG's versatility, showing how it combines secure web tr
 
 <table>
   <tr>
-    <td width="1000">
+    <td width="500">
        <a href="./readme.md">Previous Page</a>
     </td>
     <td align="right">
