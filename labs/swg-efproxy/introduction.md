@@ -27,7 +27,7 @@ This make SWG not just a simple proxy tool, but a **flexible and powerful soluti
 
 The Lab underscores the SWG's versatility, showing how it combines secure web traffic filtering with robust traffic management and user authentication capabilities.
 
-<div style="display: flex; justify-content: space-between; margin-top: 20px;">
-  <a href="./readme.md.md">Previous Page</a>
-  <a href="./lab_1_swg_testin.md">Next Page</a>
+<div style="display: flex; justify-content: space-between; width: 100% margin-top: 20px;">
+  <a href="./readme.md">Previous Page</a>
+  <a href="./lab_1_swg_testing.md">Next Page</a>
 </div>
