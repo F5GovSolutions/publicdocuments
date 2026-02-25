@@ -4,7 +4,7 @@
 
 #. Log into the BIG-IP by selecting TMUI under the ACCESS menu for BIG-IP SSLO-1 in Deployment.
 
-    .. image:: ../images/l2-deploy.png
+    .. image:: ./images/l2-deploy.png
         :align: center
         :alt: deployment
 
