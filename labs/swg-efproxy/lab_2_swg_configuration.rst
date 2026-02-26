@@ -1,5 +1,23 @@
-Lab 2 Instructions for SWG Explict Forward Proxy
-================================================
+Lab 2 - SWG URL Categories and Filtering
+========================================
+
+**URL Categories and URL Filtering in F5 BIG-IP SWG**
+
+URL Categories and URL Filtering are core elements of the Secure Web Gateway (SWG) configuration in the Access Policy Manager (APM).
+
+- **URL Categories** represent predefined or custom classifications of web content based on the nature of websites (e.g., News, Social Media, Gambling, Malware, etc.). These categories enable administrators to group similar types of web traffic for easy management.
+
+- **URL Filtering** defines policies based on these URL Categories to allow, block, or confirm access to specific types of web content. Filtering rules can be configured per request or per user group to enforce corporate browsing policies, extend security, and minimize misuse of network resources.
+
+In the context of an **APM Policy**, URL Filtering is integrated into the access policy flow. The user's web requests are evaluated against the URL Categories and Filters during the enforcement of SWG-based policies. When a user sends a web request, the SWG matches the request against the configured URL Categories and applies the corresponding filtering action.
+
+The SWG uses these categories and filters to provide granular control over web access. For example:
+
+- Preventing access to harmful or non-business-related content.
+- Logging traffic access for auditing purposes.
+- Dynamically adjusting resources based on user entitlements or policies.
+
+By linking URL Categories, URL Filtering rules, and APM policies, the SWG ensures both secure and policy-compliant web access for users in the network.
 
 **Task 1. Review the SWG URL Categories and URL Filtering**
 
