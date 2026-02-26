@@ -15,7 +15,7 @@ Here are the activities you'll perform in this section:
 
 1. **Browser Testing**: 
    - Use a web browser on the Windows 11 client to visit several websites.
-   - You'll observe how traffic flows through the SSLO Explicit Proxy and how the SWG applies filtering rules, including allowing or blocking access based on URL Categories.
+   - You'll observe the SWG applies filtering rules, including allowing or blocking access based on URL Categories.
 
 2. **SFTP Testing with FileZilla**:
    - Configure FileZilla to securely transfer files over SFTP.
@@ -23,7 +23,7 @@ Here are the activities you'll perform in this section:
 
 3. **SSH Testing with PuTTY**:
    - Use PuTTY to test SSH connections through the SOCKS5 proxy.
-   - Configure the proxy settings in PuTTY and verify the secure handling of SSH sessions.
+   - Review the proxy settings in PuTTY and verify the secure handling of SSH sessions.
 
 These activities will give you hands-on experience with the SSLO Explicit Proxy topology and the SWG. You'll see how the system handles both web and non-web traffic securely and complies with policies.
 
@@ -36,13 +36,13 @@ Task 1. Browsing websites through the Explicit Forward Proxy
 
   #. Now open new tabs and select a differen bookmark for each site, [e.g. ESPN, Draftkings, Chatgpt, etc.) bookmark.
 
-  What is the result of browsing to each of these sites?
+      What is the result of browsing to each of these sites?
 
   #. Open Windows Settings.
 
   #. Search for and select Proxy and review the proxy settings by clicking the Edit button.
 
-    The F5 Explicit Forward proxy has already been configured for the browsers to use in the operating system.
+      The F5 Explicit Forward proxy has already been configured for the browsers to use in the operating system.
 
   #. Turn off the 'Use a proxy server' setting. 
 
