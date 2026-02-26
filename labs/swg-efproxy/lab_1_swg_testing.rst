@@ -122,4 +122,4 @@ Task 3 - Test SSH client through the Explicit Proxy
 
     #. Type `exit` to close the SSH connection when you are finished.
 
-  `Next <./lab_2_swg_custom_categories.rst>`__
+`Next <./lab_2_swg_custom_categories.rst>`__

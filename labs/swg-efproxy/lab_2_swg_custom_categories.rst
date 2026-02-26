@@ -54,3 +54,19 @@ By linking URL Categories, URL Filtering rules, and APM policies, the SWG ensure
     .. image:: ./images/l2-bigip-swg-custblkcat.png
         :align: center
         :alt: custom-block-category
+    
+    There is only one URL in this category, currently only as a placeholder. A custom category needs at least one URL to be defined.
+
+    **Glob Setting in URL Categories**
+
+    The Glob setting in URL Categories allows you to define custom URL patterns using wildcards for flexible and precise matching. In this context, "glob" refers to a pattern-matching syntax where you can use special characters like `*` and `?` to specify a range of URLs without listing them individually. For example:
+
+        - `*.example.com` matches all subdomains of `example.com` (e.g., `www.example.com`, `blog.example.com`).
+
+        - `example.com/*` matches all paths under `example.com` (e.g., `example.com/home`, `example.com/about`).
+
+        - `file?.example.com` matches any single-character variation of `file` (e.g., `file1.example.com`, `file2.example.com`).
+
+        This setting is useful when you want to create custom URL categories that group related websites or pages based on specific patterns. It provides greater flexibility for administrators to match complex or dynamic site structures that may not be covered by predefined categories in the Forcepoint database. Once defined, these custom categories can be used with URL Filtering rules to allow, block, or monitor traffic based on your organizational policies.
+
+
