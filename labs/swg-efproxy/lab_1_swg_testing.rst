@@ -1,8 +1,34 @@
 Lab Instructions for SWG Explict Forward Proxy
 ==============================================
 
-Task 1. Test browing websites
------------------------------
+**Testing Web Traffic and Proxy Services with Client Applications**
+
+In this section, you will use a Windows 11 client to test various web and network traffic scenarios configured through the BIG-IP system. These tests will show you how Secure Web Gateway (SWG) and Secure Sockets Layer Orchestrator (SSLO) work together to secure and manage different types of traffic.
+
+The BIG-IP system is set up with the following key components:
+
+- **SSLO with SWG Service**: This configuration integrates Secure Web Gateway with SSLO to inspect and filter outbound traffic. The SWG applies policies such as URL Filtering and Category-based rules to enforce secure and compliant access to web resources.
+
+- **SSLO L3 Outbound Explicit Proxy Topology**: This Layer 3 outbound topology acts as an explicit proxy, routing traffic from the Windows 11 client through the BIG-IP system. It supports web traffic over HTTPS as well as other protocols via a SOCKS5 proxy.
+
+Here are the activities you'll perform in this section:
+
+1. **Browser Testing**: 
+   - Use a web browser on the Windows 11 client to visit several websites.
+   - You'll observe how traffic flows through the SSLO Explicit Proxy and how the SWG applies filtering rules, including allowing or blocking access based on URL Categories.
+
+2. **SFTP Testing with FileZilla**:
+   - Configure FileZilla to securely transfer files over SFTP.
+   - The connection will be routed through the SOCKS5 proxy built on the SSLO L3 Outbound topology. This will help you validate the handling of secure file transfers over the proxy.
+
+3. **SSH Testing with PuTTY**:
+   - Use PuTTY to test SSH connections through the SOCKS5 proxy.
+   - Configure the proxy settings in PuTTY and verify the secure handling of SSH sessions.
+
+These activities will give you hands-on experience with the SSLO Explicit Proxy topology and the SWG. You'll see how the system handles both web and non-web traffic securely and complies with policies.
+
+Task 1. Browsing websites through the Explicit Forward Proxy
+------------------------------------------------------------
 
   #. Open Chrome or Firefox.
 
@@ -58,8 +84,8 @@ Open the file view it's contents.
         :align: center
         :alt: filezilla proxy
 
-Task 3 - Test SSH client through explicit proxy
------------------------------------------------
+Task 3 - Test SSH client through the Explicit Proxy
+---------------------------------------------------
 
   #. Open the PuTTY ssh client.
 
@@ -77,6 +103,20 @@ Task 3 - Test SSH client through explicit proxy
         :align: center
         :alt: putty proxy settings
 
-  #. View the proxy settings. The PuTTY client is configured to use the F5 Explicit Forward Proxy for SSH connections, which is why the connection failed in the previous step.
+  #. View the proxy settings. The PuTTY client is configured to use the F5 Explicit Forward Proxy for SSH connections using the SOCKS protocol on port 8080.
   
+    .. image:: ./images/t3-ssh-3.png
+        :align: center
+        :alt: putty proxy settings view
+  
+  #. Press Open to attempt to connect to the SSH server again.
 
+    When the connection is successful, you will be prompted to log in. Use the following credentials:
+    - Username: demo
+    - Password: password
+
+    After logging in, you should see a command prompt. You can run commands on the remote server to verify that the connection is working properly.
+
+    You can run the `ls` command to list the files in the current directory, or the `pwd` command to print the working directory.
+
+  #. Type `exit` to close the SSH connection when you are finished.
