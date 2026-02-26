@@ -10,8 +10,11 @@ The Lab environment includes several components:
 - An **Active Directory Domain Controller** for user authentication,  
 - A **Windows 11 Client PC** to simulate user interactions,  
 - Two **BIG-IP VE** (Virtual Edition) instances to provide proxy services.
+
   - BIG-IP SSLO-1 fully configured as the SWG Explicit Forward Proxy.
+
   - BIG-IP SSLO-2 with minimally configured.
+
 - Several interconnected networks to simulate real-world environments.
 
 The Lab leverages **Kerberos authentication**, configured on the BIGIP-SSLO-1, to authenticate users via an **Access Policy Manager (APM)** policy. This APM policy enables logging of user activities, including URL requests. By the end of this Lab, you'll have hands-on experience with configuring and monitoring the SWG in a secure, enterprise-grade environment.
