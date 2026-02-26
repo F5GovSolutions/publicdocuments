@@ -52,71 +52,74 @@ Task 1. Browsing websites through the Explicit Forward Proxy
 Task 2. - Test SFTP client - FileZilla
 --------------------------------------
 
-  #. Open FileZilla
+    #. Open FileZilla
 
-    .. image:: ./images/t2-fz-1.png
-        :align: center
-        :alt: filezilla
+        .. image:: ./images/t2-fz-1.png
+            :align: center
+            :alt: filezilla
 
-  #. Before connecting anywhere, select 'Desktop' under 'Local site'. The local folder now is the Desktop of this remote PC.
+    #. Before connecting anywhere, select 'Desktop' under 'Local site'. The local folder now is the Desktop of this remote PC.
 
-  #. Click the 'Site Manager' icon or Select it under File menu.
+    #. Click the 'Site Manager' icon or Select it under File menu.
 
-  #. Click the 'Connect' button
+    #. Click the 'Connect' button
   
-    Watch connection and negotiation in the status pane. It should connect to the site and you should see the list of files on the right site; 'Remote site' pane.
+        Watch connection and negotiation in the status pane. It should connect to the site and you should see the list of files on the right site; 'Remote site' pane.
 
-    .. image:: ./images/t2-fz-2.png
-        :align: center
-        :alt: filezilla connect
+        .. image:: ./images/t2-fz-2.png
+            :align: center
+            :alt: filezilla connect
 
-  #. Copy over the 'Readme.txt file to the PC.  You can either Double click it or drag the file in Remote site folder to the Local site folder or to the Windows Desktop.
+    #. Copy over the 'Readme.txt file to the PC.  You can either Double click it or drag the file in Remote site folder to the Local site folder or to the Windows Desktop.
 
-Open the file view it's contents.
+        Open the file view it's contents.
 
-    .. image:: ./images/t2-fz-3.png
-        :align: center
-        :alt: file open
+        .. image:: ./images/t2-fz-3.png
+            :align: center
+            :alt: file open
 
-  #. View the SOCKS Proxy settings in the FileZilla client, by selecting the Settings menu under Edit. Then choose General Proxy in the left navigation pain.
+    #. View the SOCKS Proxy settings in the FileZilla client, by selecting the Settings menu under Edit. Then choose General Proxy in the left navigation pain.
 
-    .. image:: ./images/t2-fz-4.png
-        :align: center
-        :alt: filezilla proxy
+        .. image:: ./images/t2-fz-4.png
+            :align: center
+            :alt: filezilla proxy
 
 Task 3 - Test SSH client through the Explicit Proxy
 ---------------------------------------------------
 
-  #. Open the PuTTY ssh client.
+    #. Open the PuTTY ssh client.
 
-  #. Type the site **test.rebex.net** into the **Host Name** field and press Open
+    #. Type the site **test.rebex.net** into the **Host Name** field and press Open
 
-    .. image:: ./images/t3-ssh-1a.png
-        :align: center
-        :alt: putty client
+        .. image:: ./images/t3-ssh-1a.png
+            :align: center
+            :alt: putty client
 
-    The connection will fail with a message: "Network error: Permission denied"
+        The connection will fail with a message: "Network error: Permission denied"
 
-  #. Select test.rebex.net in the Saved Sessions section and press Load. Then select the Connection > Proxy category in the left navigation pane.
+    #. Select test.rebex.net in the Saved Sessions section and press Load. Then select the Connection > Proxy category in the left navigation pane.
 
-    .. image:: ./images/t3-ssh-2.png
-        :align: center
-        :alt: putty proxy settings
+        .. image:: ./images/t3-ssh-2.png
+            :align: center
+            :alt: putty proxy settings
 
-  #. View the proxy settings. The PuTTY client is configured to use the F5 Explicit Forward Proxy for SSH connections using the SOCKS protocol on port 8080.
+    #. View the proxy settings. The PuTTY client is configured to use the F5 Explicit Forward Proxy for SSH connections using the SOCKS protocol on port 8080.
   
-    .. image:: ./images/t3-ssh-3.png
-        :align: center
-        :alt: putty proxy settings view
-  
-  #. Press Open to attempt to connect to the SSH server again.
+        .. image:: ./images/t3-ssh-3.png
+            :align: center
+            :alt: putty proxy settings view
 
-    When the connection is successful, you will be prompted to log in. Use the following credentials:
-    - Username: demo
-    - Password: password
+    #. Press Open to attempt to connect to the SSH server again.
 
-    After logging in, you should see a command prompt. You can run commands on the remote server to verify that the connection is working properly.
+        When the connection is successful, you will be prompted to log in. Use the following credentials:
+        - Username: demo
 
-    You can run the `ls` command to list the files in the current directory, or the `pwd` command to print the working directory.
+        - Password: password
 
-  #. Type `exit` to close the SSH connection when you are finished.
+        After logging in, you should see a command prompt. You can run commands on the remote server to verify that the connection is working properly.
+
+        You can run the `ls` command to list the files in the current directory, or the `pwd` command to print the working directory.
+
+    #. Type `exit` to close the SSH connection when you are finished.
+
+  `Next <./lab_2_swg_custom_categories.rst>`__
