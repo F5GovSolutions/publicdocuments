@@ -21,7 +21,7 @@ The SWG uses these categories and filters to provide granular control over web a
 
 By linking URL Categories, URL Filtering rules, and APM policies, the SWG ensures both secure and policy-compliant web access for users in the network.
 
-**Task 1. Review the SWG URL Categories and URL Filtering**
+**Task 1. Working with SWG URL Categories**
 
 #. Log into the BIG-IP by selecting TMUI under the ACCESS menu for BIG-IP SSLO-1 in Deployment.
 
@@ -67,6 +67,60 @@ By linking URL Categories, URL Filtering rules, and APM policies, the SWG ensure
 
         - `file?.example.com` matches any single-character variation of `file` (e.g., `file1.example.com`, `file2.example.com`).
 
-        This setting is useful when you want to create custom URL categories that group related websites or pages based on specific patterns. It provides greater flexibility for administrators to match complex or dynamic site structures that may not be covered by predefined categories in the Forcepoint database. Once defined, these custom categories can be used with URL Filtering rules to allow, block, or monitor traffic based on your organizational policies.
+        This setting is useful when you want to create custom URL categories that group related websites or pages based on specific patterns. It provides greater flexibility for administrators to match complex or dynamic site structures that may not be covered by predefined categories.
 
+        Unchecking the Glob setting would require you to specify exact URLs without the use of wildcards.
 
+#. Return to the list of URL Categories and select "custom-allow-category" again.
+
+    Take note of the chatgpt entry;  **https://*chatgpt.com/**
+
+#.  Select the chatgpt entry and click the Delete button. Then press the Update button to save the change.
+
+    This will remove the chatgpt entry from the custom-allow-category list. 
+
+    **.. warning:: There are 2 Delete buttons on this configuration page. Press the one under the Associated URLs list box to delete the chosen URL.
+    
+    **Note**: Removing this entry will cause any requests to chatgpt.com to be categorized according to other URL Categories and Filters configured in the SWG. Depending on the filtering rules, this may result in blocked access or different handling of requests to chatgpt.com.
+
+    .. image:: ./images/l2-bigip-swg-chatgpt-deleted.png
+        :align: center
+        :alt: chatgpt-deleted
+
+#. Return to the list of URL Categories and select "custom-block-category" again.
+
+#. In the custom-block-category, enter the same chatgpt entry that was just deleted from the custom-allow-category list, **https://*chatgpt.com/**, ensure the Glob Pattern Match box is checked.
+
+#. Now click the Add button. Note the entry has been added, then click the Update button to save the change.
+
+    This will add the chatgpt entry to the custom-block-category list. 
+
+    .. image:: ./images/l2-bigip-swg-chatgpt-added.png
+        :align: center
+        :alt: chatgpt-added
+
+    By adding this entry to the custom-block-category, any requests to chatgpt.com will now be categorized under this block category.
+
+#. Return to the Windows 11 client and open a web browser Chrome or Firefox. Click on the Chatgpt bookmark in the Favorites Bar.
+
+    The request to chatgpt.com should now be blocked by the SWG, and you should see a block page indicating that access to the site has been denied.
+
+    The block page will show you several pieces of information, including the reason for the block (Access Per Request Policy), the session id or reference number, and the category it was categorized under (custom-block-category).
+
+    Even if Chatgpt is categorized under other categories as well, any custom category and filter will take precedence and the request will be blocked.
+
+    .. image:: ./images/l2-bigip-swg-chatgpt-add-blocked.png
+        :align: center
+        :alt: chatgpt-page-blocked
+
+**Task 2. Working with URL Filtering**
+
+    **Understanding Custom URL Categories and URL Filters**
+
+In the previous steps, you worked with two custom URL Categories: `custom-allow-category` and `custom-block-category`. While it might seem that placing URLs in these categories directly specifies whether they are allowed or blocked, this is not entirely the case. 
+
+The actual allow or block decisions are determined by **URL Filters**, not by the URL Categories alone. The custom categories, despite their names and default actions (e.g., Allow or Block), are just groupings of URLs. These categories are referenced in URL Filters, which define the precise actions to take—whether to allow, block, or confirm access. 
+
+For example, when you added a URL to the `custom-block-category`, a URL Filter configured to block that category enforced the action and blocked access. Similarly, when a URL was removed from the `custom-allow-category`, the filter no longer allowed access, defaulting to another policy.
+
+Next, we will take a closer look at **URL Filters**, where the actual policies are applied. This is where you will define how traffic should be treated based on the categories and the rules you configure.
