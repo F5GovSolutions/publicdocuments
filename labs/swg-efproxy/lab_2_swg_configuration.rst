@@ -9,6 +9,8 @@ URL Categories and URL Filtering are core elements of the Secure Web Gateway (SW
 
 - **URL Filtering** defines policies based on these URL Categories to allow, block, or confirm access to specific types of web content. Filtering rules can be configured per request or per user group to enforce corporate browsing policies, extend security, and minimize misuse of network resources.
 
+The SWG relies on the **URL Categories Database** provided by **Forcepoint**, which contains up-to-date information on known websites and their associated categories. This database is downloaded and updated regularly, ensuring that the SWG can effectively classify and filter web traffic. These updates require an active subscription.
+
 In the context of an **APM Policy**, URL Filtering is integrated into the access policy flow. The user's web requests are evaluated against the URL Categories and Filters during the enforcement of SWG-based policies. When a user sends a web request, the SWG matches the request against the configured URL Categories and applies the corresponding filtering action.
 
 The SWG uses these categories and filters to provide granular control over web access. For example:
