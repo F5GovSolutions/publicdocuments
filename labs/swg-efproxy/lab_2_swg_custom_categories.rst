@@ -1,17 +1,17 @@
-Lab 2 - SWG URL Categories and Filtering
+Lab 2 - SWG URL Categories and Filters
 ========================================
 
-**URL Categories and URL Filtering in F5 BIG-IP SWG**
+**URL Categories and URL Filters in F5 BIG-IP SWG**
 
-URL Categories and URL Filtering are core elements of the Secure Web Gateway (SWG) configuration in the Access Policy Manager (APM).
+URL Categories and URL Filters are core elements of the Secure Web Gateway (SWG) configuration in the Access Policy Manager (APM).
 
 - **URL Categories** represent predefined or custom classifications of web content based on the nature of websites (e.g., News, Social Media, Gambling, Malware, etc.). These categories enable administrators to group similar types of web traffic for easy management.
 
-- **URL Filtering** defines policies based on these URL Categories to allow, block, or confirm access to specific types of web content. Filtering rules can be configured per request or per user group to enforce corporate browsing policies, extend security, and minimize misuse of network resources.
+- **URL Filters** defines policies based on these URL Categories to allow, block, or confirm access to specific types of web content. Filters rules can be configured per request or per user group to enforce corporate browsing policies, extend security, and minimize misuse of network resources.
 
 The SWG relies on the **URL Categories Database** provided by **Forcepoint**, which contains up-to-date information on known websites and their associated categories. This database is downloaded and updated regularly, ensuring that the SWG can effectively classify and filter web traffic. These updates require an active subscription.
 
-In the context of an **APM Policy**, URL Filtering is integrated into the access policy flow. The user's web requests are evaluated against the URL Categories and Filters during the enforcement of SWG-based policies. When a user sends a web request, the SWG matches the request against the configured URL Categories and applies the corresponding filtering action.
+In the context of an **APM Policy**, URL Filtering is integrated into the access policy flow. The user's web requests are evaluated against the URL Categories and Filters during the enforcement of SWG-based policies. When a user sends a web request, the SWG matches the request against the configured URL Categories and applies the corresponding Filters action.
 
 The SWG uses these categories and filters to provide granular control over web access. For example:
 
@@ -19,7 +19,7 @@ The SWG uses these categories and filters to provide granular control over web a
 - Logging traffic access for auditing purposes.
 - Dynamically adjusting resources based on user entitlements or policies.
 
-By linking URL Categories, URL Filtering rules, and APM policies, the SWG ensures both secure and policy-compliant web access for users in the network.
+By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures both secure and policy-compliant web access for users in the network.
 
 **Task 1. Working with SWG URL Categories**
 
@@ -95,7 +95,7 @@ By linking URL Categories, URL Filtering rules, and APM policies, the SWG ensure
 
     This will add the chatgpt entry to the custom-block-category list. 
 
-    .. image:: ./images/l2-bigip-swg-chatgpt-added.png
+    .. image:: ./images/l2-bigip-swg-chatgpt-add-blocked.png
         :align: center
         :alt: chatgpt-added
 
@@ -109,7 +109,7 @@ By linking URL Categories, URL Filtering rules, and APM policies, the SWG ensure
 
     Even if Chatgpt is categorized under other categories as well, any custom category and filter will take precedence and the request will be blocked.
 
-    .. image:: ./images/l2-bigip-swg-chatgpt-add-blocked.png
+    .. image:: ./images/l2-bigip-swg-chatgpt-blocked.png
         :align: center
         :alt: chatgpt-page-blocked
 
@@ -117,10 +117,29 @@ By linking URL Categories, URL Filtering rules, and APM policies, the SWG ensure
 
     **Understanding Custom URL Categories and URL Filters**
 
-In the previous steps, you worked with two custom URL Categories: `custom-allow-category` and `custom-block-category`. While it might seem that placing URLs in these categories directly specifies whether they are allowed or blocked, this is not entirely the case. 
+    In the previous steps, you worked with two custom URL Categories: `custom-allow-category` and `custom-block-category`. While it might seem that placing URLs in these categories directly specifies whether they are allowed or blocked, this is not entirely the case. 
 
-The actual allow or block decisions are determined by **URL Filters**, not by the URL Categories alone. The custom categories, despite their names and default actions (e.g., Allow or Block), are just groupings of URLs. These categories are referenced in URL Filters, which define the precise actions to take—whether to allow, block, or confirm access. 
+    The actual allow or block decisions are determined by **URL Filters**, not by the URL Categories alone. The custom categories, despite their names and default actions (e.g., Allow or Block), are just groupings of URLs. These categories are referenced in URL Filters, which define the precise actions to take—whether to allow, block, or confirm access. 
 
-For example, when you added a URL to the `custom-block-category`, a URL Filter configured to block that category enforced the action and blocked access. Similarly, when a URL was removed from the `custom-allow-category`, the filter no longer allowed access, defaulting to another policy.
+    For example, when you added the URL to the `custom-block-category`, a URL Filter configured to block that category enforced the action and blocked access. Similarly, when the URL was removed from the `custom-allow-category`, the filter no longer allowed access, defaulting to another policy.
 
-Next, we will take a closer look at **URL Filters**, where the actual policies are applied. This is where you will define how traffic should be treated based on the categories and the rules you configure.
+    Next, we will take a closer look at **URL Filters**, where the actual policies are applied. This is where you will define how traffic should be treated based on the categories and the rules you configure.
+
+#. Return to the TMUI and in the left hand navigation pane select Access > Secure Web Gateway > URL Filters.
+
+    .. image:: ./images/l2-bigip-swg-urlfilters.png
+        :align: center
+        :alt: url-filters
+
+#. Click on "swg-poc-custom" in list of URL Filters to view the filter rules. Then click the + next to Custom Categories to expand the list of categories used in this filter.
+
+    The "swg-poc-custom" URL Filter is configured to reference the custom categories you have been working with.
+    
+    This URL Filter is configured to block any URLs categorized under `custom-block-category` and allow any URLs categorized under `custom-allow-category`. 
+
+    The URL Filter is where the actual allow or block actions are defined based on the categories.
+
+    .. image:: ./images/l2-bigip-swg-urlfilter-rules.png
+        :align: center
+        :alt: url-filter-rules
+
