@@ -40,11 +40,17 @@ By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures 
 
 #.  On the TMUI Select Access > Overview > Active Sessions to view all active sessions.
 
+    .. image:: ./images/l2-bigip-apm-activesess.png
+        :align: center
+        :alt: active-sessions
+
+#.  Set the Auto Refresh to 10 seconds to make it easier to see new sessions as they are created.
+
     .. image:: ./images/l2-bigip-apm-killsession.png
         :align: center
         :alt: kill-session
 
-#.  Select the session(s) associated with the client machine and click the "Kill Selected Session" button.
+#.  Select the session(s) associated with the client machine; there should only be one session associated with the client machine, and then click the "Kill Selected Session" button.
 
 #.  On the Confirm Delete page, click the "Delete" button to confirm the session termination.
 
@@ -56,7 +62,7 @@ By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures 
         :align: center
         :alt: kill-session
 
-#.  After making changes described in the following tasks, you must follow these steps to start a new session to reflect the updated URL Categories or URL Filters.
+#.  After making changes described in the following tasks, you must follow these steps to start a new session to reflect any changes or updates to the URL Categories or URL Filters.
 
 **Task 1. Working with SWG URL Categories**
 
