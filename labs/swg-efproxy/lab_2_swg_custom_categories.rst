@@ -21,6 +21,43 @@ The SWG uses these categories and filters to provide granular control over web a
 
 By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures both secure and policy-compliant web access for users in the network.
 
+**Task 0. Managing Client Sessions and Browser Behavior in the Lab**
+
+    When working in this lab environment, there will be times when you need to "kill" client sessions. This is especially important when making changes to URL Categories or URL Filters, as active sessions still use cached policy information. By clearing the session, any updates to the policy configurations are applied on the next request.
+
+    In this lab, the per-session timeout is set to the default of 5 minutes. However, waiting for the session to age out naturally can slow down your testing workflow. To avoid delays:
+
+    - You will manually 'kill' sessions from the BIG-IP.
+    - After clearing the session, the client will establish a new session with the updated settings.
+
+    **Important: Close All Browsers on the Client**
+
+    It's critical to close all web browsers running on the client, as browsers and websites often maintain constant background communication with the internet. This chatter can unintentionally create new sessions or interfere with the changes you are testing.
+
+    **Steps to Ensure Clean Testing:**
+
+#.  Fully close all web browsers on the client machine to stop background traffic.
+
+#.  On the TMUI Select Access > Overview > Active Sessions to view all active sessions.
+
+    .. image:: ./images/l2-bigip-apm-killsession.png
+        :align: center
+        :alt: kill-session
+
+#.  Select the session(s) associated with the client machine and click the "Kill Selected Session" button.
+
+#.  On the Confirm Delete page, click the "Delete" button to confirm the session termination.
+
+     This will immediately terminate the selected session(s).
+
+     **Note**: After killing the session, any new web requests from the client will establish a new session that reflects the latest policy configurations. This ensures that your testing of URL Categories and Filters is accurate.
+
+    .. image:: ./images/l2-bigip-apm-killsession-confirm.png
+        :align: center
+        :alt: kill-session
+
+#.  After making changes described in the following tasks, you must follow these steps to start a new session to reflect the updated URL Categories or URL Filters.
+
 **Task 1. Working with SWG URL Categories**
 
 #. Log into the BIG-IP by selecting TMUI under the ACCESS menu for BIG-IP SSLO-1 in Deployment.
@@ -113,7 +150,12 @@ By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures 
         :align: center
         :alt: chatgpt-page-blocked
 
-**Task 2. Working with URL Filtering**
+**Task 2. Clearing Sessions**
+
+
+
+
+**Task 2. Working with URL Filters**
 
     **Understanding Custom URL Categories and URL Filters**
 
@@ -134,10 +176,10 @@ By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures 
 #. Click on "swg-poc-custom" in list of URL Filters to view the filter rules. Then click the + next to Custom Categories to expand the list of categories used in this filter.
 
     The "swg-poc-custom" URL Filter is configured to reference the custom categories you have been working with.
-    
-    This URL Filter is configured to block any URLs categorized under `custom-block-category` and allow any URLs categorized under `custom-allow-category`. 
 
-    The URL Filter is where the actual allow or block actions are defined based on the categories.
+    This URL Filter is configured to block any URLs categorized under `custom-block-category` and allow any URLs categorized under `custom-allow-category`. This is ind by the Red X for Block and Green Arrow for Allow in the Filtering Action column.
+
+    You can change the filtering action for each category or subcategory by selecting the items on the left column and then scrolling all the way to the bottom and selecting the desired action.
 
     .. image:: ./images/l2-bigip-swg-urlfilter-rules.png
         :align: center
