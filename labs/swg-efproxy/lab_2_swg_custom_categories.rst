@@ -36,6 +36,8 @@ By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures 
 
     **Steps to Ensure Clean Testing:**
 
+    Perform the following steps.
+
 #.  Fully close all web browsers on the client machine to stop background traffic.
 
 #.  On the TMUI Select Access > Overview > Active Sessions to view all active sessions.
@@ -62,7 +64,7 @@ By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures 
         :align: center
         :alt: kill-session
 
-    You'll be returned to the Active Sessions page, where you can see that the session has been removed. Let the Auto Refresh cycle through the 10 second Refresh interval to see if any new sessions are created. If a new session does appear, double-check the client for any missed open browser windows and close it.
+    **Important**: You'll be returned to the Active Sessions page, where you can see that the session has been removed. Let the Auto Refresh cycle through the 10 second Refresh interval to see if any new sessions are created. If a new session does appear, double-check the client for any missed open browser windows and close it.
 
 #.  After making changes described in the following tasks, you must follow these steps to start a new session to reflect any changes or updates to the URL Categories or URL Filters.
 
