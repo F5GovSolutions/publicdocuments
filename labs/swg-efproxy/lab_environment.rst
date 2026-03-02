@@ -51,9 +51,9 @@ Starting up the Lab in the Course:
 
 #. Press the Access button for the Windows 11 Client to start it up. Press the "Start" button in the pop-up window to start the client. Allow the client to fully start up before proceeding to the next step.
 
-    .. image:: ./images/win11-start.png
+    .. image:: ./images/udf-win11-start.png
         :align: center
-        :alt: udf-access
+        :alt: udf-win11-start
 
 #. Test
 
