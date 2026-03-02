@@ -1,7 +1,7 @@
 Lab 2 - SWG URL Categories and Filters
 ========================================
 
-**URL Categories and URL Filters in F5 BIG-IP SWG**
+**F5 BIG-IP SWG URL Categories and URL Filters**
 
 URL Categories and URL Filters are core elements of the Secure Web Gateway (SWG) configuration in the Access Policy Manager (APM).
 
@@ -21,177 +21,168 @@ The SWG uses these categories and filters to provide granular control over web a
 
 By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures both secure and policy-compliant web access for users in the network.
 
-**Task 0. Managing Client Sessions and Browser Behavior in the Lab**
+Task 0. Managing Client Sessions and Browser Behavior in the Lab
+----------------------------------------------------------------
 
     When working in this lab environment, there will be times when you need to "kill" client sessions. This is especially important when making changes to URL Categories or URL Filters, as active sessions still use cached policy information. By clearing the session, any updates to the policy configurations are applied on the next request.
 
-    In this lab, the per-session timeout is set to the default of 5 minutes. However, waiting for the session to age out naturally can slow down your testing workflow. To avoid delays:
+    In this lab, the per-session timeout is set to the default of 5 minutes (300 Seconds). Waiting for the session to age out naturally can slow down your testing workflow. To avoid delays:
 
     - You will manually 'kill' sessions from the BIG-IP.
     - After clearing the session, the client will establish a new session with the updated settings.
 
     **Important: Close All Browsers on the Client**
 
-    It's critical to close all web browsers running on the client, as browsers and websites often maintain constant background communication with the internet. This chatter can unintentionally create new sessions or interfere with the changes you are testing.
+    It's critical to close all web browsers running on the client, as browsers and websites often maintain constant background communication with the internet. This chatter can unintentionally keep sessions alive or create new sessions and interfere with the changes you are testing.
 
     **Steps to Ensure Clean Testing:**
 
-    Perform the following steps.
+    Perform the following steps whenever making changes to URL Categories, URL Filters or APM Policies.
 
-#.  Fully close all web browsers on the client machine to stop background traffic.
+    #.  Fully close all web browsers on the client machine to stop background traffic.
 
-#.  On the TMUI Select Access > Overview > Active Sessions to view all active sessions.
+    #.  On the TMUI Select **Access > Overview > Active Sessions** to view all active sessions.
 
-    .. image:: ./images/l2-bigip-apm-activesess.png
-        :align: center
-        :alt: active-sessions
+        .. image:: ./images/l2-bigip-apm-activesess.png
+            :align: center
+            :alt: active-sessions
 
-#.  Set the Auto Refresh to 10 seconds to make it easier to see new sessions as they are created.
+    #.  Set the **Auto Refresh** to 10 seconds to make it easier to see new sessions as they are created.
 
-    .. image:: ./images/l2-bigip-apm-killsession.png
-        :align: center
-        :alt: kill-session
+        .. image:: ./images/l2-bigip-apm-killsession.png
+            :align: center
+            :alt: kill-session
 
-#.  Select the session(s) associated with the client machine; there should only be one session associated with the client machine, and then click the "Kill Selected Session" button.
+    #.  Select the session(s) associated with the client machine. There should only be one session associated with the client machine. After selecting the session, click the **Kill Selected Session** button.
 
-#.  On the Confirm Delete page, click the "Delete" button to confirm the session termination.
+    #.  On the **Confirm Delete** page, click the **Delete** button to confirm the session termination.
 
-     This will immediately terminate the selected session(s).
+        This will immediately terminate the selected session(s).
 
-     **Note**: After killing the session, any new web requests from the client will establish a new session that reflects the latest policy configurations. This ensures that your testing of URL Categories and Filters is accurate.
+        **Note**: After killing the session, any new web requests from the client will establish a new session that reflects the latest policy configurations. This ensures that your testing of the URL Categories and Filters are accurate.
 
-    .. image:: ./images/l2-bigip-apm-killsession-confirm.png
-        :align: center
-        :alt: kill-session
+        .. image:: ./images/l2-bigip-apm-killsession-confirm.png
+            :align: center
+            :alt: kill-session
 
-    **Important**: You'll be returned to the Active Sessions page, where you can see that the session has been removed. Let the Auto Refresh cycle through the 10 second Refresh interval to see if any new sessions are created. If a new session does appear, double-check the client for any missed open browser windows and close it.
+        **TIP**: You'll be returned to the Active Sessions page, where you can see that the session has been removed. Let the Auto Refresh cycle through the 10 second Refresh interval to see if any new sessions are created. If a new session does appear, double-check the client for any missed open browser windows and close it.
 
-#.  After making changes described in the following tasks, you must follow these steps to start a new session to reflect any changes or updates to the URL Categories or URL Filters.
+        **REMINDER**  After making changes described in the rest of this Lab, you must alway establish new sessions to reflect any changes or updates to the BIG-IP configuration.
 
-**Task 1. Working with SWG URL Categories**
+Task 1. Working with SWG URL Categories
+---------------------------------------
 
-#. Log into the BIG-IP by selecting TMUI under the ACCESS menu for BIG-IP SSLO-1 in Deployment.
+    #. Login to the BIG-IP (refer to the `Lab Environment <./lab_environment.rst>`)
 
-    .. image:: ./images/l2-bigip-tmui.png
-        :align: center
-        :alt: tmui
+    #. In the left hand navigation pane select Access > Secure Web Gateway > URL Categories.
 
-#. Enter the admin username and password.
+        A list of URL Categories will appear in the main window, with Custom Categories at the top.
 
-    .. image:: ./images/l2-bigip-login.png
-        :align: center
-        :alt: bigip-login
+    #. Click on the '**\'+\'** sign next to **Custom Categories** to expand the list. This reveals that there are 3 custom categories already configured here here.
 
-#. In the left hand navigation pane select Access > Secure Web Gateway > URL Categories.
+    #. Select "custom-allow-category" and view the URLs already added to this list.
 
-    A list of URL Categories will appear in the main window, with Custom Categories at the top.
+        .. image:: ./images/l2-bigip-swg-custallcat.png
+            :align: center
+            :alt: custom-allow-category
 
-#. Click on the '+' sign next to **Custom Categories** to expand the list. This reveals that there are 3 custom categories already configured here here.
+    #.  Return to the list of URL Categories by clicking **Secure Web Gateway : URL Categories** link right above **Properties** in the navigation bar.
 
-#. Select "custom-allow-category" and view the URLs already added to this list.
+    #.  Expand the Custom Categories again and select "custom-block-category" and view the URLs already added to this list.
 
-    .. image:: ./images/l2-bigip-swg-custallcat.png
-        :align: center
-        :alt: custom-allow-category
+        .. image:: ./images/l2-bigip-swg-custblkcat.png
+            :align: center
+            :alt: custom-block-category
+        
+        There is only one URL in this category, currently only as a placeholder. A custom category needs at least one URL to be defined.
 
-#.  Return to the list of URL Categories by clicking **Secure Web Gateway : URL Categories** link right above **Properties** in the navigation bar.
+        **Glob Setting in URL Categories**
 
-#.  Expand the Custom Categories again and select "custom-block-category" and view the URLs already added to this list.
+        The Glob setting in URL Categories allows you to define custom URL patterns using wildcards for flexible and precise matching. In this context, "glob" refers to a pattern-matching syntax where you can use special characters like `*` and `?` to specify a range of URLs without listing them individually. For example:
 
-    .. image:: ./images/l2-bigip-swg-custblkcat.png
-        :align: center
-        :alt: custom-block-category
-    
-    There is only one URL in this category, currently only as a placeholder. A custom category needs at least one URL to be defined.
+            - `*.example.com` matches all subdomains of `example.com` (e.g., `www.example.com`, `blog.example.com`).
 
-    **Glob Setting in URL Categories**
+            - `example.com/*` matches all paths under `example.com` (e.g., `example.com/home`, `example.com/about`).
 
-    The Glob setting in URL Categories allows you to define custom URL patterns using wildcards for flexible and precise matching. In this context, "glob" refers to a pattern-matching syntax where you can use special characters like `*` and `?` to specify a range of URLs without listing them individually. For example:
+            - `file?.example.com` matches any single-character variation of `file` (e.g., `file1.example.com`, `file2.example.com`).
 
-        - `*.example.com` matches all subdomains of `example.com` (e.g., `www.example.com`, `blog.example.com`).
+            This setting is useful when you want to create custom URL categories that group related websites or pages based on specific patterns. It provides greater flexibility for administrators to match complex or dynamic site structures that may not be covered by predefined categories.
 
-        - `example.com/*` matches all paths under `example.com` (e.g., `example.com/home`, `example.com/about`).
+            Unchecking the Glob setting would require you to specify exact URLs without the use of wildcards.
 
-        - `file?.example.com` matches any single-character variation of `file` (e.g., `file1.example.com`, `file2.example.com`).
+    #. Return to the list of URL Categories and select "custom-allow-category" again.
 
-        This setting is useful when you want to create custom URL categories that group related websites or pages based on specific patterns. It provides greater flexibility for administrators to match complex or dynamic site structures that may not be covered by predefined categories.
+        Take note of the chatgpt entry;  **https://*chatgpt.com/**
 
-        Unchecking the Glob setting would require you to specify exact URLs without the use of wildcards.
+    #.  Select the chatgpt entry and click the Delete button. Then press the Update button to save the change.
 
-#. Return to the list of URL Categories and select "custom-allow-category" again.
+        This will remove the chatgpt entry from the custom-allow-category list. 
 
-    Take note of the chatgpt entry;  **https://*chatgpt.com/**
+        **.. warning:: There are 2 Delete buttons on this configuration page. Press the one under the Associated URLs list box to delete the chosen URL.
+        
+        **Note**: Removing this entry will cause any requests to chatgpt.com to be categorized according to other URL Categories and Filters configured in the SWG. Depending on the filtering rules, this may result in blocked access or different handling of requests to chatgpt.com.
 
-#.  Select the chatgpt entry and click the Delete button. Then press the Update button to save the change.
+        .. image:: ./images/l2-bigip-swg-chatgpt-deleted.png
+            :align: center
+            :alt: chatgpt-deleted
 
-    This will remove the chatgpt entry from the custom-allow-category list. 
+    #. Return to the list of URL Categories and select "custom-block-category" again.
 
-    **.. warning:: There are 2 Delete buttons on this configuration page. Press the one under the Associated URLs list box to delete the chosen URL.
-    
-    **Note**: Removing this entry will cause any requests to chatgpt.com to be categorized according to other URL Categories and Filters configured in the SWG. Depending on the filtering rules, this may result in blocked access or different handling of requests to chatgpt.com.
+    #. In the custom-block-category, enter the same chatgpt entry that was just deleted from the custom-allow-category list, **https://*chatgpt.com/**, ensure the Glob Pattern Match box is checked.
 
-    .. image:: ./images/l2-bigip-swg-chatgpt-deleted.png
-        :align: center
-        :alt: chatgpt-deleted
+    #. Now click the Add button. Note the entry has been added, then click the Update button to save the change.
 
-#. Return to the list of URL Categories and select "custom-block-category" again.
+        This will add the chatgpt entry to the custom-block-category list. 
 
-#. In the custom-block-category, enter the same chatgpt entry that was just deleted from the custom-allow-category list, **https://*chatgpt.com/**, ensure the Glob Pattern Match box is checked.
+        .. image:: ./images/l2-bigip-swg-chatgpt-add-blocked.png
+            :align: center
+            :alt: chatgpt-added
 
-#. Now click the Add button. Note the entry has been added, then click the Update button to save the change.
+        By adding this entry to the custom-block-category, any requests to chatgpt.com will now be categorized under this block category.
 
-    This will add the chatgpt entry to the custom-block-category list. 
+    #. Return to the Windows 11 client and open a web browser Chrome or Firefox. Click on the Chatgpt bookmark in the Favorites Bar.
 
-    .. image:: ./images/l2-bigip-swg-chatgpt-add-blocked.png
-        :align: center
-        :alt: chatgpt-added
+        The request to chatgpt.com should now be blocked by the SWG, and you should see a block page indicating that access to the site has been denied.
 
-    By adding this entry to the custom-block-category, any requests to chatgpt.com will now be categorized under this block category.
+        The block page will show you several pieces of information, including the reason for the block (Access Per Request Policy), the session id or reference number, and the category it was categorized under (custom-block-category).
 
-#. Return to the Windows 11 client and open a web browser Chrome or Firefox. Click on the Chatgpt bookmark in the Favorites Bar.
+        Even if Chatgpt is categorized under other categories as well, any custom category and filter will take precedence and the request will be blocked.
 
-    The request to chatgpt.com should now be blocked by the SWG, and you should see a block page indicating that access to the site has been denied.
+        .. image:: ./images/l2-bigip-swg-chatgpt-blocked.png
+            :align: center
+            :alt: chatgpt-page-blocked
 
-    The block page will show you several pieces of information, including the reason for the block (Access Per Request Policy), the session id or reference number, and the category it was categorized under (custom-block-category).
+Task 3. Working with SWG URL Filters
+------------------------------------
 
-    Even if Chatgpt is categorized under other categories as well, any custom category and filter will take precedence and the request will be blocked.
+    **Understanding URL Filters**
 
-    .. image:: ./images/l2-bigip-swg-chatgpt-blocked.png
-        :align: center
-        :alt: chatgpt-page-blocked
-
-**Task 2. Clearing Sessions**
-
-
-
-
-**Task 2. Working with URL Filters**
-
-    **Understanding Custom URL Categories and URL Filters**
-
-    In the previous steps, you worked with two custom URL Categories: `custom-allow-category` and `custom-block-category`. While it might seem that placing URLs in these categories directly specifies whether they are allowed or blocked, this is not entirely the case. 
+    In the previous steps, you worked with two custom URL Categories: **`custom-allow-category`** and **`custom-block-category`**. While it might seem that placing URLs in these categories directly specifies whether they are allowed or blocked, this is not entirely the case. 
 
     The actual allow or block decisions are determined by **URL Filters**, not by the URL Categories alone. The custom categories, despite their names and default actions (e.g., Allow or Block), are just groupings of URLs. These categories are referenced in URL Filters, which define the precise actions to take—whether to allow, block, or confirm access. 
 
-    For example, when you added the URL to the `custom-block-category`, a URL Filter configured to block that category enforced the action and blocked access. Similarly, when the URL was removed from the `custom-allow-category`, the filter no longer allowed access, defaulting to another policy.
+    For example, when you added the URL to the **`custom-block-category`**, a URL Filter configured to block that category enforced the action and blocked access. Similarly, when the URL was removed from the **`custom-allow-category`**, the filter no longer allowed access, defaulting to another policy.
 
     Next, we will take a closer look at **URL Filters**, where the actual policies are applied. This is where you will define how traffic should be treated based on the categories and the rules you configure.
 
-#. Return to the TMUI and in the left hand navigation pane select Access > Secure Web Gateway > URL Filters.
+    #. Return to the TMUI and in the left hand navigation pane select **Access > Secure Web Gateway > URL Filters**.
 
-    .. image:: ./images/l2-bigip-swg-urlfilters.png
-        :align: center
-        :alt: url-filters
+        .. image:: ./images/l2-bigip-swg-urlfilters.png
+            :align: center
+            :alt: url-filters
 
-#. Click on "swg-poc-custom" in list of URL Filters to view the filter rules. Then click the + next to Custom Categories to expand the list of categories used in this filter.
+    #. Click on **swg-poc-custom** in list of URL Filters to view the filter rules. Then click the **+** next to Custom Categories to expand the list of categories used in this filter.
 
-    The "swg-poc-custom" URL Filter is configured to reference the custom categories you have been working with.
+        The **swg-poc-custom** URL Filter is configured to reference the custom categories you have been working with.
 
-    This URL Filter is configured to block any URLs categorized under `custom-block-category` and allow any URLs categorized under `custom-allow-category`. This is ind by the Red X for Block and Green Arrow for Allow in the Filtering Action column.
+        This URL Filter is configured to block any URLs categorized under `custom-block-category` and allow any URLs categorized under `custom-allow-category`. This is ind by the Red X for Block and Green Arrow for Allow in the Filtering Action column.
 
-    You can change the filtering action for each category or subcategory by selecting the items on the left column and then scrolling all the way to the bottom and selecting the desired action.
+        You can change the filtering action for each category or subcategory by selecting the items on the left column and then scrolling all the way to the bottom and selecting the desired action.
 
-    .. image:: ./images/l2-bigip-swg-urlfilter-rules.png
-        :align: center
-        :alt: url-filter-rules
+        .. image:: ./images/l2-bigip-swg-urlfilter-rules.png
+            :align: center
+            :alt: url-filter-rules
 
+`Next Lab 3 - SWG Explict Forward Proxy Configuration <./lab_3_swg_configuration.rst>`__
+
+`Main Page <./readme.md>`__

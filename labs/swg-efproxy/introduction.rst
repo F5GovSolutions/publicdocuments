@@ -38,3 +38,5 @@ This make SWG not just a simple proxy tool, but a **flexible and powerful soluti
 The Lab underscores the SWG's versatility, showing how it combines secure web traffic filtering with robust traffic management and user authentication capabilities.
 
 `Next Lab Environment <./lab_environment.rst>`__
+
+`Main Page <./readme.md>`__

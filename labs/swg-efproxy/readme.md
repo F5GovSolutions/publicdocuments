@@ -1,4 +1,4 @@
-# SWG Explicit Forward Proxy Lab
+# F5 BIG-IP Secure Web Gateway Explicit Forward Proxy with Kerberos Authentication Lab
 
 ## Table of Contents
 

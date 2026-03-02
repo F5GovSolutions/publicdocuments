@@ -125,3 +125,5 @@ Task 3 - Test SSH client through the Explicit Proxy
 In this Lab we looked at how to test the SWG Explicit Forward Proxy configuration using a Windows 11 client. We tested web browsing through the proxy, as well as SFTP and SSH connections using FileZilla and PuTTY, respectively. The next lab will focus on the BIG-IP configuration, specifically working with SWG URL Categories and URL Filters to enforce policies and manage web traffic more effectively.
 
 `Next <./lab_2_swg_custom_categories.rst>`__
+
+`Main Page <./readme.md>`__
