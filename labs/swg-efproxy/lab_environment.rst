@@ -68,22 +68,63 @@ Starting up the Lab in the Course:
 Logging into the Windows 11 Client using the RDP method:
 --------------------------------------------------------
 
-    #. Press the "Access" button for the Windows 11 Client, and 
+    #. From the **Access** menu of the Windows 11 Client, and select an RDP resolution. This will download an RDP file to your local machine. Open this file to launch the Remote Desktop Connection application and connect to the Windows 11 client.
 
+    **TIP** Pick a resolution equal to or smaller than your local machine's screen resolution to ensure the best experience. The RDP app will allow you to into full screen mode or windowed mode once you are connected.
 
+        .. image:: ./images/udf-win11-resolution.png
+            :align: center
+            :alt: rdp resolution
+
+    #. Enter username and password to log in found on the **Details** page.. 
+
+        **IMPORTANT** If you are on a Windows machine, you'll have to enter the Domain\\username (for example: f5labs\\f5guy). If using a Mac, you will only need to enter the username.   
+
+        .. image:: ./images/udf-win11-win-logon.png
+            :align: center
+            :alt: win11 logon
+
+        .. image:: ./images/udf-win11-mac-logon1.png
+            :align: center
+            :alt: MacOS logon
+
+    **Note** A security warning about trusting the Certificate will pops up
+    
+    - From a Windows machine, click **Yes** to proceed.
+    - From a Mac, click **Continue** to proceed.
+
+    #. Once logged in, you will see the Windows 11 desktop with browsers, FileZilla, and PuTTY pre-installed.
+
+        .. image:: ./images/udf-win11-rdp-desktop.png
+            :align: center
+            :alt: win11 desktop
 
 Logging into the Windows 11 Client using the SuperJump Host method:
 -------------------------------------------------------------------
 
+    #. From the **Access** menu of the SuperJump Host, select **Guacamole**. This will open a new browser tab with the Guacamole login page.
 
-
-    #. Press the "Access" button on the SuperJump Host.
-
-    #. Enter the admin username and password.
-
-        .. image:: ./images/udf-bigip-login.png
+        .. image:: ./images/udf-sjh-guac.png
             :align: center
-            :alt: bigip-login
+            :alt: guacomole
+
+    #. Enter the username and password found on the Details page of the SuperJump Host.
+
+        .. image:: ./images/udf-sjh-guac-login.png
+            :align: center
+            :alt: guacamole-login
+
+    #. Once logged in, under **All Connections** select the **Win11 Domain Joined..._RDP** link.
+    
+        .. image:: ./images/udf-sjh_connections.png
+            :align: center
+            :alt: superjump connections
+
+    #. This will open a new tab in your browser with a Remote Desktop session to the Windows 11 client. Use the credentials found on the Details page of the Windows 11 instance to log in.
+
+        .. image:: ./images/udf-win11-login2.png
+            :align: center
+            :alt: win11-login
 
 Logging into the BIG-IP TMUI:
 -----------------------------
@@ -94,6 +135,12 @@ Logging into the BIG-IP TMUI:
             :align: center
             :alt: tmui 
 
+    #. Enter the username and password provided in the **Details** page.
+
+        .. image:: ./images/udf-bigip-login.png
+            :align: center
+            :alt: tmui login
+
 Logging into the BIG-IP WebShell:
 ---------------------------------
 
@@ -102,6 +149,10 @@ Logging into the BIG-IP WebShell:
         .. image:: ./images/udf-bigip-webshell.png
             :align: center
             :alt: webshell 
+
+    This will open a new browser tab with a command-line interface to the BIG-IP.
+
+Now you are ready to start working through the labs. The next section will cover testing the SWG Explicit Forward Proxy configuration from the Windows 11 client.
 
 `Next Lab 1 - Testing the SWG Explict Forward Proxy <./lab_1_swg_testing.rst>`__
 
