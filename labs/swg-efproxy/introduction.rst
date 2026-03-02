@@ -13,7 +13,7 @@ The Lab environment includes several components:
 
   - BIG-IP SSLO-1 fully configured as the SWG Explicit Forward Proxy.
 
-  - BIG-IP SSLO-2 with minimally configured.
+  - BIG-IP SSLO-2 minimally configured.
 
 - Several interconnected networks to simulate real-world environments.
 
@@ -37,4 +37,4 @@ This make SWG not just a simple proxy tool, but a **flexible and powerful soluti
 
 The Lab underscores the SWG's versatility, showing how it combines secure web traffic filtering with robust traffic management and user authentication capabilities.
 
-`Next <./lab_1_swg_testing.rst>`__
+`Next <./lab_environment.rst>`__
