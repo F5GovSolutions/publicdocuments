@@ -45,13 +45,13 @@ Starting up the Lab in the Course:
 
     **Important** Specifically for this lab, the Windows 11 Client is not automatically started. You will manually start it once the AD Server is completely up.
 
-    .. image:: ./images/udf-deployment.png
+    .. image:: ./images/udf-comp-up.png
         :align: center
         :alt: udf-deployment
 
 #. Log into the BIG-IP by selecting TMUI under the ACCESS menu for BIG-IP SSLO-1 in Deployment.
 
-    .. image:: ./images/l2-bigip-tmui.png
+    .. image:: ./images/udf-bigip-tmui.png
         :align: center
         :alt: tmui
 
