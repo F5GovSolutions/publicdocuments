@@ -1,5 +1,5 @@
-Lab 1. Using the SWG Explict Forward Proxy
-====================================
+Lab 1. Testing the SWG Explict Forward Proxy
+============================================
 
 **Testing Web Traffic and Proxy Services with Client Applications**
 

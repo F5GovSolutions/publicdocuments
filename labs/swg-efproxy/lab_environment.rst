@@ -3,7 +3,7 @@ Lab Environment
 
 If you are familiar with the UDF lab environment, you can skip to the next section. 
 
-`Lab 1 <./lab_1_swg_testing.rst>`__
+`Lab 1 Testing the SWG Explict Forward Proxy <./lab_1_swg_testing.rst>`__
 
 If you are new to the UDF lab environment, this section will provide an overview of the lab environment and how to access it.
 
@@ -103,4 +103,4 @@ Logging into the BIG-IP WebShell:
         :align: center
         :alt: webshell 
 
-`Next <./lab_1_swg_testing.rst>`__
+`Next Lab 1 Testing the SWG Explict Forward Proxy <./lab_1_swg_testing.rst>`__
