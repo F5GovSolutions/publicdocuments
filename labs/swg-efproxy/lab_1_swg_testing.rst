@@ -1,9 +1,9 @@
-Lab Instructions for SWG Explict Forward Proxy
-==============================================
+Lab 1. Using the SWG Explict Forward Proxy
+====================================
 
 **Testing Web Traffic and Proxy Services with Client Applications**
 
-In this section, you will use a Windows 11 client to test various web and network traffic scenarios configured through the BIG-IP system. These tests will show you how Secure Web Gateway (SWG) and Secure Sockets Layer Orchestrator (SSLO) work together to secure and manage different types of traffic.
+In this Lab, you will use a Windows 11 client to test various web and network traffic scenarios configured through the BIG-IP system. These tests will show you how Secure Web Gateway (SWG) and Secure Sockets Layer Orchestrator (SSLO) work together to secure and manage different types of traffic.
 
 The BIG-IP system is set up with the following key components:
 
@@ -30,7 +30,7 @@ These activities will give you hands-on experience with the SSLO Explicit Proxy 
 Task 1. Browsing websites through the Explicit Forward Proxy
 ------------------------------------------------------------
 
-  #. Open Chrome or Firefox.
+  #. Log in to the Windows 11 client using the RDP or SuperJump Host access methods and open Chrome or Firefox.
 
   #. Select Wikipedia bookmark in the Favorites Bar.
 
@@ -97,19 +97,19 @@ Task 3 - Test SSH client through the Explicit Proxy
 
         The connection will fail with a message: "Network error: Permission denied"
 
-    #. Select test.rebex.net in the Saved Sessions section and press Load. Then select the Connection > Proxy category in the left navigation pane.
+    #. Select test.rebex.net in the **Saved Sessions** section and press Load. Then select the Connection > Proxy category in the left navigation pane.
+
+        View the proxy settings. The PuTTY client is configured to use the F5 Explicit Forward Proxy for SSH connections using the SOCKS protocol on port 8080.
 
         .. image:: ./images/t3-ssh-2.png
             :align: center
             :alt: putty proxy settings
 
-    #. View the proxy settings. The PuTTY client is configured to use the F5 Explicit Forward Proxy for SSH connections using the SOCKS protocol on port 8080.
-  
         .. image:: ./images/t3-ssh-3.png
             :align: center
             :alt: putty proxy settings view
 
-    #. Press Open to attempt to connect to the SSH server again.
+    #. Press Open to initiate the connection to the SSH server again.
 
         When the connection is successful, you will be prompted to log in. Use the following credentials:
         - Username: demo
@@ -121,5 +121,7 @@ Task 3 - Test SSH client through the Explicit Proxy
         You can run the `ls` command to list the files in the current directory, or the `pwd` command to print the working directory.
 
     #. Type `exit` to close the SSH connection when you are finished.
+
+In this Lab we looked at how to test the SWG Explicit Forward Proxy configuration using a Windows 11 client. We tested web browsing through the proxy, as well as SFTP and SSH connections using FileZilla and PuTTY, respectively. The next lab will focus on the BIG-IP configuration, specifically working with SWG URL Categories and URL Filters to enforce policies and manage web traffic more effectively.
 
 `Next <./lab_2_swg_custom_categories.rst>`__

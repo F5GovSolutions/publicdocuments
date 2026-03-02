@@ -25,15 +25,17 @@ Starting up the Lab in the Course:
     
     If you new to the UDF experience, follow the instructions to create an account with f5.com.
 
-    **Note** There are 2 links in the e-mail. One will take you to the general course landing page and the other link will take you directly to the course page.
+    **Note** There are 2 links in the e-mail. One will take you to the general course landing page and the other will take you directly to the course page.
 
+    **.. important:: Select "Invited Users" at the UDF page.
+    
     .. image:: ./images/udf-coursepage.png
         :align: center
         :alt: udf-coursepage
 
 #. Once on the course page, click the "Join" button to access the lab environment.
 
-#. In the Lab environment you see a Documentation tab and a Deployment tab.
+#. In the Lab environment you see a **Documentation** tab and a **Deployment** tab.
 
     View the Documentation tab for specific instructions.
 
@@ -43,30 +45,30 @@ Starting up the Lab in the Course:
 
 #. Click the Deployment tab and view the components of the lab. Each of the components will be in the process of starting up. This is indicated by the yellow gear spinning.
 
+    **Important** Specifically for this lab, the Windows 11 does not start automatically with the rest of the systems; indicated by a red square. You will manually start it after all the other systems are completely up.
+
     .. image:: ./images/udf-deployment.png
         :align: center
         :alt: udf-deployment
 
     Allow the environment to fully start up before proceeding to the next step. As the components are staring you can view details about them.
 
-    **Important** Specifically for this lab, the Windows 11 does not start automatically with the rest of the systems. You will manually start it once the AD Server is completely up.
-
     .. image:: ./images/udf-comp-up.png
         :align: center
         :alt: udf-deployment
 
-#. Press the "Details" button for the Windows 11 instance, then press the "Start" button in the pop-up window to start the instance. Allow the instance to fully start up before proceeding to the next step.
+#. Press the **Details** button for the Windows 11 instance, then press the **Start** button in the pop-up window to start the instance. Allow the instance to fully start up before proceeding to the next step.
 
-    **Note** Notice the user accounts listed on this page. These are the credentials you will use to log into the Windows 11 client instance.
+    **Note** Notice the user accounts listed on the Details page. These are the credentials you will use to log into the Windows 11 client instance.
 
     .. image:: ./images/udf-win11-start.png
         :align: center
         :alt: udf-win11-start
 
-Logging into the Windows 11 Client:
------------------------------------
+Logging into the Windows 11 Client using the RDP method:
+--------------------------------------------------------
 
-#. Press the "Access" button for the Windows 11 Client to start it up.
+#. Press the "Access" button for the Windows 11 Client, and 
 
 #. Log into the BIG-IP by selecting TMUI under the ACCESS menu for BIG-IP SSLO-1 in Deployment.
 
@@ -80,6 +82,10 @@ Logging into the Windows 11 Client:
         :align: center
         :alt: bigip-login
 
+Logging into the Windows 11 Client using the SuperJump Host method:
+-------------------------------------------------------------------
+
+#. Press the "Access" button on the SuperJump Host, and 
 
 
 `Next <./lab_1_swg_testing.rst>`__
