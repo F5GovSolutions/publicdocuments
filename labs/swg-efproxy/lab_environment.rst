@@ -49,6 +49,14 @@ Starting up the Lab in the Course:
         :align: center
         :alt: udf-deployment
 
+#. Press the Access button for the Windows 11 Client to start it up. Press the "Start" button in the pop-up window to start the client. Allow the client to fully start up before proceeding to the next step.
+
+    .. image:: ./images/win11-start.png
+        :align: center
+        :alt: udf-access
+
+#. Test
+
 #. Log into the BIG-IP by selecting TMUI under the ACCESS menu for BIG-IP SSLO-1 in Deployment.
 
     .. image:: ./images/udf-bigip-tmui.png
