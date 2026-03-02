@@ -27,7 +27,7 @@ Starting up the Lab in the Course:
 
     **Note** There are 2 links in the e-mail. One will take you to the general course landing page and the other will take you directly to the course page.
 
-    **.. important:: Select "Invited Users" at the UDF page.
+    .. important:: Select "Invited Users" at the UDF page.
     
     .. image:: ./images/udf-coursepage.png
         :align: center
