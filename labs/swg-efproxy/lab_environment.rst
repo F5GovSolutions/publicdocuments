@@ -7,15 +7,15 @@ If you are familiar with the UDF lab environment, you can skip to the next secti
 
 If you are new to the UDF lab environment, this section will provide an overview of the lab environment and how to access it.
 
-The UDF lab environment for the F5 Secure Web Gateway Explicit Forward Proxy with Kerberos Lab consists of several components designed to simulate a real-world enterprise environment. The key components include:
+The UDF lab environment for the **F5 Secure Web Gateway Explicit Forward Proxy with Kerberos Lab** consists of several components designed to simulate a real-world enterprise environment. The key components include:
 
     - **BIG-IP SSLO-1**
     - **BIG-IP SSLO-2**
     - **Windows 2019 Server Active Directory Domain Controller**  
     - **Windows 11 Domain Joined Client**  
   
-Accessing the Windows instances can be done through the Remote Desktop Protocol (RDP) or the SuperJump Host using the credentials provided in the lab documentation.
-Accessing the BIG-IPs will primarily be done through the web-based Traffic Management User Interface (TMUI) and the WebShell for command-line access. Again, the credentials for accessing these components are provided.
+Accessing the Windows instances can be done through the **Remote Desktop Protocol (RDP)** or the **SuperJump Host** using the credentials provided in the lab documentation.
+Accessing the BIG-IPs will primarily be done through the web-based **Traffic Management User Interface (TMUI)** and the **WebShell** for command-line access. Again, the credentials for accessing these components are provided.
 
 Starting up the Lab in the Course:
 ----------------------------------
@@ -25,9 +25,9 @@ Starting up the Lab in the Course:
     
     If you new to the UDF experience, follow the instructions to create an account with f5.com.
 
-    **Note** There are 2 links in the e-mail. One will take you to the general course landing page and the other will take you directly to the course page.
+    **Note** There are 2 links in the e-mail. One will take you to the general course landing page and the other will take you directly to the course.
 
-    **Important** Select "Invited Users" at the UDF page.
+    **Important** Select "Invited Users" at the UDF portal landing page.
     
     .. image:: ./images/udf-coursepage.png
         :align: center
@@ -70,22 +70,37 @@ Logging into the Windows 11 Client using the RDP method:
 
 #. Press the "Access" button for the Windows 11 Client, and 
 
-#. Log into the BIG-IP by selecting TMUI under the ACCESS menu for BIG-IP SSLO-1 in Deployment.
 
-    .. image:: ./images/udf-bigip-tmui.png
-        :align: center
-        :alt: tmui
-
-#. Enter the admin username and password.
-
-    .. image:: ./images/l2-bigip-login.png
-        :align: center
-        :alt: bigip-login
 
 Logging into the Windows 11 Client using the SuperJump Host method:
 -------------------------------------------------------------------
 
-#. Press the "Access" button on the SuperJump Host, and 
 
+
+#. Press the "Access" button on the SuperJump Host.
+
+#. Enter the admin username and password.
+
+    .. image:: ./images/udf-bigip-login.png
+        :align: center
+        :alt: bigip-login
+
+Logging into the BIG-IP TMUI:
+-----------------------------
+
+#. From the ACCESS menu of the BIG-IP select TMUI.
+
+    .. image:: ./images/udf-bigip-tmui.png
+        :align: center
+        :alt: tmui 
+
+Logging into the BIG-IP WebShell:
+---------------------------------
+
+#. From the ACCESS menu of the BIG-IP select WebShell.
+
+    .. image:: ./images/udf-bigip-webshell.png
+        :align: center
+        :alt: webshell 
 
 `Next <./lab_1_swg_testing.rst>`__
