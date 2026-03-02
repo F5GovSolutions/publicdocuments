@@ -30,6 +30,6 @@ Task 2 - SWG Configuration
 
 
 
-`NextLab 4 - Manage Custom Categories using the CLI <./lab_4_swg_manage_cli.rst>`__
+`Next Lab 4 - Manage Custom Categories using the CLI <./lab_4_swg_manage_cli.rst>`__
 
 `Main Page <./readme.md>`__
