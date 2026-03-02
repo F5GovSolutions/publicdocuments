@@ -29,6 +29,7 @@ Starting up the Lab in the Course:
 
     .. important:: 
         Select "Invited Users" at the UDF page.
+
     
     .. image:: ./images/udf-coursepage.png
         :align: center
