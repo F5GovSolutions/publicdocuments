@@ -28,28 +28,36 @@ Task 1. Listing URL Categories
 
     #. Access the BIG-IP SSLO-1 instance using the WebShell. A new Shell tab will open.
 
-    #. Issue the CLI command to list the URL categories::
+    #. Issue the CLI command to list one of the custom URL categories.
+    
+        CLI command::
 
-        list sys url-db url-category custom-allow-category
+            list sys url-db url-category custom-allow-category
 
         You should see the output::
 
-            sys url-db url-category custom-block-category {
+            sys url-db url-category custom-allow-category {
                 cat-id 0
-                cat-number 1905
-                description htt
-                display-name custom-block-category
-                f5-id 17005
+                cat-number 1904
+                default-action allow
+                display-name custom-allow-category
+                f5-id 17004
                 is-custom true
                 urls {
-                    https://blockme.com\* {
+                    https://\*chatgpt.com/ {
                         type glob-match
                     }
+                    https://\*claude.com/ {
+                        type glob-match
+                    }
+                    https://example.com/ { }
                 }
             }
 
+        Try listing the other custom category; `custom-block-category`.
 
-    #. 
+
+    #. next
 
 
 
