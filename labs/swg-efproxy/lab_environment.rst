@@ -32,7 +32,6 @@ Starting up the Lab in the Course:
         .. image:: ./images/udf-coursepage.png
             :align: center
             :alt: udf-coursepage
-            :class: with-border with-shadow
 
     #. Once on the course page, click the "Join" button to access the lab environment.
 
