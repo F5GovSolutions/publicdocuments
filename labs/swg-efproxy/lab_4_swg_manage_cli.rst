@@ -30,7 +30,7 @@ In this task, you will use the TMSH CLI. This will help you understand the curre
 
 #. Issue the CLI command to list the URL categories:
 
-  ''list sys url-db url-category custom-block-category 
+  ( list sys url-db url-category custom-block-category )
 
 
 Task 2. Creating new Custom Categories
