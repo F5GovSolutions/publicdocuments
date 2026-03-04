@@ -28,9 +28,15 @@ In this task, you will use the TMSH CLI. This will help you understand the curre
 
 #. Access the BIG-IP SSLO-1 instance using the WebShell. A new Shell tab will open.
 
-#. Issue the CLI command to list the URL categories:
+#. Issue the CLI command to list the URL categories::
 
-  ( list sys url-db url-category custom-block-category )
+    list sys url-db url-category custom-block-category
+
+    Or
+    
+    `list sys url-db url-category custom-block-category`
+
+
 
 
 Task 2. Creating new Custom Categories
