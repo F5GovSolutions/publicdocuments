@@ -26,15 +26,52 @@ Task 1. Listing URL Categories
 
     In this task, you will use the TMSH CLI. This will help you understand the current categorization of URLs and how they are organized within the system.
 
-    #. Access the BIG-IP SSLO-1 instance using the WebShell. A new Shell tab will open.
+    #. Access the BIG-IP SSLO-1 instance using the WebShell. A new browser tab will open with the BIG-IP Shell with Root logged in.
 
-    #. Issue the CLI command to list one of the custom URL categories.
+    #. Issue the CLI command to list one of the URL categories.
+    
+        CLI command::
+
+            tmsh (Press ENTER)
+            list sys url-db url-category (Press Tab)
+
+    #. When you press Tab at this point in the command, the auto-complete will ask you if you want "Display all 221 items? (y/n)". Press "y" to see the full list of **Options, Properties and Configuration Items** 
+    
+        The list will most likely be too long for the shell window, so pressing the **SPACE BAR** will page through to the end of the list. When you come to the END of the list, press **'q'** to exit the listing and return to the partial command.
+
+        The **Configuration Items** is the list of URL categories that are currently configured on the system. This includes both built-in categories that come with the system and any custom categories that have been created.
+
+        Notice our custom categories; **custom-allow-category** and **custom-block-category** are listed at the end of the built-in categories. These are at the end of the list because of their names starting with lower case letters.
+
+    #. Now complete the command to list one of the built-in URL categories; `Sports`.
+
+        CLI command::
+
+            list sys url-db url-category Sports
+
+        The output will look similar to the below::
+
+            sys url-db url-category Sports {
+                cat-id 24617
+                cat-number 18
+                default-action allow
+                description "Sites that provide information about or promote sports, active games, and recreation."
+                display-name Sports
+                f5-id 16525
+
+        There are no URLs listed under this category since it is a built-in category that is maintained by F5 and updated through URL Category Database updates.
+
+        **REPEAT** the command to list the other built-in category; `Gambling`. (Optional try other built-in categories as well).
+
+    #. Now Issue the CLI command to list one of the custom URL categories.
     
         CLI command::
 
             list sys url-db url-category custom-allow-category
 
-        You should see the output::
+        **NOTE** Since we are already in the TMSH context, we don't need to issue the **tmsh** command again.
+
+        The output will look similar to the below::
 
             sys url-db url-category custom-allow-category {
                 cat-id 0
@@ -54,20 +91,42 @@ Task 1. Listing URL Categories
                 }
             }
 
+        Notice the ca
+
         Try listing the other custom category; `custom-block-category`.
 
-
     #. next
-
-
-
 
 Task 2. Creating new Custom Categories
 --------------------------------------
 
+    #. Now you will create a new custom category using the TMSH CLI. This will allow you to understand how to define and manage custom categories within the system.
+
+        CLI command::
+
+            create sys url-db url-category my-category default-action allow urls add { https://www.example.com/ { type exact-match } } display-name my-category
+            
+        This command creates a new custom category named **my-category** with a default action of **allow**. You can verify that the category was created by listing it using the command from Task 1.
 
 
-Changing Custom Categories.
+
+Task 3. Modifying Custom Categories
+--------------------------------------
+
+    #. Now you will modify an existing custom category using the TMSH CLI. This will help you understand how to update and manage custom categories as needed.
+
+        CLI command::
+
+            modify sys url-db url-category my-category urls add { https://www.newsite.com/ { type exact-match } }
+
+        This command adds a new URL to the existing **my-category**. You can verify that the URL was added by listing the category again.
+
+        **NOTE** The **{ type exact-match }** configuration option can be omitted as it is the default. The  must be specified when adding URLs that should match a pattern with a wildcard.
+
+
+        **IMPORTANT** When adding URLs of the **type glob-match** using the **'*'** as a wildcard must be preceded by a backslash **'\'** to escape the wildcard character. This is required in the TMSH CLI to prevent the wildcard from being expanded by the shell before it is added to the category. For example, to add a glob match URL pattern for all subdomains of **newsite1.com**, you would use the following command::
+
+             modify sys url-db url-category my-category urls add { https://\*.newsite1.com/ { type glob-match } }
 
 
 `Next Lab 5 - SWG Explict Forward Proxy Configuration <./lab_3_swg_configuration.rst>`__
