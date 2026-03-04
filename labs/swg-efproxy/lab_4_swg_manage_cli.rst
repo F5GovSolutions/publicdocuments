@@ -29,21 +29,21 @@ Task 1. Listing URL Categories
     #. Access the BIG-IP SSLO-1 instance using the WebShell. A new browser tab will open with the BIG-IP Shell with Root logged in.
 
     #. Issue the CLI command to list one of the URL categories.
-    
+
         CLI command::
 
-            tmsh (Press ENTER)
-            list sys url-db url-category (Press Tab)
+            tmsh (Press ENTER to enter TMSH context from bash)
+            list sys url-db url-category (Press TAB for auto-complete)
 
-    #. When you press Tab at this point in the command, the auto-complete will ask you if you want "Display all 221 items? (y/n)". Press "y" to see the full list of **Options, Properties and Configuration Items** 
+    #. When you press Tab at this point in the command, the auto-complete will ask you if you want **"Display all 221 items? (y/n)"**. Press **"y"** to see the full list of **Options, Properties and Configuration Items** 
     
-        The list will most likely be too long for the shell window, so pressing the **SPACE BAR** will page through to the end of the list. When you come to the END of the list, press **'q'** to exit the listing and return to the partial command.
+        The list will be too long for the shell window, so pressing the **SPACE BAR** will page through to the end of the list. When you come to the **END** of the list, press **'q'** to exit the listing and return to the partial command.
 
-        The **Configuration Items** is the list of URL categories that are currently configured on the system. This includes both built-in categories that come with the system and any custom categories that have been created.
+    #. Scroll through the output and you'll see that the **Configuration Items** section is the list of URL categories that are currently configured on the system. This includes both built-in categories that come with the system and any custom categories that have been created.
 
-        Notice our custom categories; **custom-allow-category** and **custom-block-category** are listed at the end of the built-in categories. These are at the end of the list because of their names starting with lower case letters.
+        Notice our custom categories; **custom-allow-category** and **custom-block-category** are listed at the end of the listing. These are at the end because their names start with lower case letters. All built-in categories start with upper case letters and are listed at the beginning.
 
-    #. Now complete the command to list one of the built-in URL categories; `Sports`.
+    #. Complete the command by typing **Sports**, which is one of the built-in URL categories. Remember the category names are case-sensitive.
 
         CLI command::
 
@@ -61,15 +61,15 @@ Task 1. Listing URL Categories
 
         There are no URLs listed under this category since it is a built-in category that is maintained by F5 and updated through URL Category Database updates.
 
-        **REPEAT** the command to list the other built-in category; `Gambling`. (Optional try other built-in categories as well).
+    #. Press the **UP ARROW** to recall the previous command and change the category name to list another built-in category; `Gambling` and review the output.
+
+        **Optional** Try other built-in categories as well.
 
     #. Now Issue the CLI command to list one of the custom URL categories.
     
         CLI command::
 
             list sys url-db url-category custom-allow-category
-
-        **NOTE** Since we are already in the TMSH context, we don't need to issue the **tmsh** command again.
 
         The output will look similar to the below::
 
@@ -104,14 +104,16 @@ Task 2. Creating new Custom Categories
 
         CLI command::
 
-            create sys url-db url-category my-category default-action allow urls add { https://www.example.com/ { type exact-match } } display-name my-category
+            create sys url-db url-category my-category default-action allow
             
         This command creates a new custom category named **my-category** with a default action of **allow**. You can verify that the category was created by listing it using the command from Task 1.
 
+        CLI command::
 
+            create sys url-db url-category my-category default-action allow urls add { https://www.example.com/ { type exact-match } } display-name my-category
 
 Task 3. Modifying Custom Categories
---------------------------------------
+-----------------------------------
 
     #. Now you will modify an existing custom category using the TMSH CLI. This will help you understand how to update and manage custom categories as needed.
 
@@ -128,6 +130,20 @@ Task 3. Modifying Custom Categories
 
              modify sys url-db url-category my-category urls add { https://\*.newsite1.com/ { type glob-match } }
 
+Task 3. Deleting Custom Categories
+-----------------------------------
+
+    Using the TMSH CLI, you can also delete custom categories that are no longer needed.
+
+    #. List the existing custom categories to identify the one you want to delete.
+    
+    #. Now you will delete an existing custom category using the TMSH CLI.
+
+        CLI command::
+
+            delete sys url-db url-category my-category
+
+        This command deletes the custom category named **my-category**. You can verify that the category was deleted by trying to list it again, which should result in an error indicating that the category does not exist.
 
 `Next Lab 5 - SWG Explict Forward Proxy Configuration <./lab_3_swg_configuration.rst>`__
 
