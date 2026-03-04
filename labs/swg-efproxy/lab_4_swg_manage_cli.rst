@@ -32,21 +32,21 @@ Task 1. Listing URL Categories
 
         list sys url-db url-category custom-allow-category
 
-    You should see the output::
+        You should see the output::
 
-        sys url-db url-category custom-block-category {
-            cat-id 0
-            cat-number 1905
-            description htt
-            display-name custom-block-category
-            f5-id 17005
-            is-custom true
-            urls {
-                https://blockme.com\* {
-                    type glob-match
+            sys url-db url-category custom-block-category {
+                cat-id 0
+                cat-number 1905
+                description htt
+                display-name custom-block-category
+                f5-id 17005
+                is-custom true
+                urls {
+                    https://blockme.com\* {
+                        type glob-match
+                    }
                 }
             }
-        }
 
 
     #. 
