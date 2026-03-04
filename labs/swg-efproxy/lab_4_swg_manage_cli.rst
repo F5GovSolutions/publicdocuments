@@ -24,17 +24,32 @@ Understanding when and how to use these contexts correctly will give you greater
 Task 1. Listing URL Categories 
 ------------------------------
 
-In this task, you will use the TMSH CLI. This will help you understand the current categorization of URLs and how they are organized within the system.
+    In this task, you will use the TMSH CLI. This will help you understand the current categorization of URLs and how they are organized within the system.
 
-#. Access the BIG-IP SSLO-1 instance using the WebShell. A new Shell tab will open.
+    #. Access the BIG-IP SSLO-1 instance using the WebShell. A new Shell tab will open.
 
-#. Issue the CLI command to list the URL categories::
+    #. Issue the CLI command to list the URL categories::
 
-    list sys url-db url-category custom-block-category
+        list sys url-db url-category custom-allow-category
 
-    Or
-    
-    `list sys url-db url-category custom-block-category`
+    You should see the output::
+
+        sys url-db url-category custom-block-category {
+            cat-id 0
+            cat-number 1905
+            description htt
+            display-name custom-block-category
+            f5-id 17005
+            is-custom true
+            urls {
+                https://blockme.com\* {
+                    type glob-match
+                }
+            }
+        }
+
+
+    #. 
 
 
 
