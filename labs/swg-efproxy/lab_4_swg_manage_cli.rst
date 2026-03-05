@@ -2,6 +2,7 @@ Lab 4 - Manage Custom Categories and Filters using the CLI
 ==========================================================
 
 Task 0. TMSH and bash Contexts
+------------------------------
 
 **Understanding TMSH and Bash CLI Contexts**
 
@@ -11,9 +12,19 @@ In this lab, you will be working directly with the BIG-IP system using both **TM
   - TMSH is the primary administrative interface for managing and configuring BIG-IP systems. It provides a structured and intuitive way to interact with system objects, configuration settings, and operational data.
   - Using TMSH allows you to make changes to BIG-IP configurations, retrieve statistical data, and interact with the system in a controlled manner. It is directly tied to the BIG-IP management framework and ensures safety and consistent behavior within the system.
 
+    When you are in the TMSH context the prompt will look like this::
+
+        root@(bigip1)(cfg-sync Standalone)(TimeLimitedModules::Active)(/Common)(tmos)# 
+
+    **NOTE** The **(tmos)** at the end of the prompt is simplist indication that you are in the TMSH context.
+
 - **Bash CLI**:
   - Bash CLI provides direct access to the underlying operating system of the BIG-IP system. It is more low-level and powerful, enabling you to manage files, troubleshoot issues, and run advanced administrative commands.
   - While Bash CLI offers flexibility, it also requires caution as improper commands can impact the system’s functionality or stability.
+
+    The prompt in the Bash CLI context will look like this::
+
+        root@bigip1:TimeLimitedModules::Active:Standalone] config #
 
 **Important: Be Careful with Commands**
 
@@ -65,7 +76,7 @@ Task 1. Listing URL Categories
 
         **Optional** Try other built-in categories as well.
 
-    #. Now Issue the CLI command to list one of the custom URL categories.
+    #. Now issue the CLI command to list one of the custom URL categories.
     
         CLI command::
 
@@ -91,7 +102,7 @@ Task 1. Listing URL Categories
                 }
             }
 
-        Notice the ca
+        Notice the various properties of the category including the **is-custom true** which indicates that this is a custom category. The URLs listed under the category include the two glob match patterns for any subdomains of chatgpt.com and claude.com, as well as an exact match for https://example.com/.
 
         Try listing the other custom category; `custom-block-category`.
 
@@ -102,15 +113,43 @@ Task 2. Creating new Custom Categories
 
     #. Now you will create a new custom category using the TMSH CLI. This will allow you to understand how to define and manage custom categories within the system.
 
-        CLI command::
+        TMSH command::
 
-            create sys url-db url-category my-category default-action allow
+            create sys url-db url-category my-category display-name my-category default-action allow
             
-        This command creates a new custom category named **my-category** with a default action of **allow**. You can verify that the category was created by listing it using the command from Task 1.
+        This command creates a new custom category named **my-category** with a default action of **allow**. This custom category also is empty; meaning no URLs are associated with it. You can verify that the category was created by listing it using the command from Task 1.
 
-        CLI command::
+    #. Let's create a new custom category with URLs associated with it. 
 
-            create sys url-db url-category my-category default-action allow urls add { https://www.example.com/ { type exact-match } } display-name my-category
+        TMSH command::
+
+            create sys url-db url-category my-category-1 display-name my-category-1 default-action allow urls add { https://www.example.com/ { type exact-match } } 
+
+    #. List the category to verify that it was created with the URL.
+
+        TMSH command::
+
+            list sys url-db url-category my-category-1
+
+        The output will look similar to the below::
+
+            sys url-db url-category my-category-1 {
+                cat-id 0
+                cat-number 1905
+                default-action allow
+                display-name my-category-1
+                f5-id 17005
+                is-custom true
+                urls {
+                    https://www.example.com/ 
+                }
+            }
+
+    #. Press the **UP ARROW** to recall the previous command add the option for **all-properties** to see the full details of the category including the URL properties.
+
+        TMSH command::
+
+            list sys url-db url-category my-category-1 all-properties
 
 Task 3. Modifying Custom Categories
 -----------------------------------
@@ -130,7 +169,7 @@ Task 3. Modifying Custom Categories
 
              modify sys url-db url-category my-category urls add { https://\*.newsite1.com/ { type glob-match } }
 
-Task 3. Deleting Custom Categories
+Task 4. Deleting Custom Categories
 -----------------------------------
 
     Using the TMSH CLI, you can also delete custom categories that are no longer needed.
