@@ -22,13 +22,13 @@ Task 1 - Per Request Policy Configuration
 
     #. Click the **Create** button to create a new URL Filter.
 
-    #. On the **General Properties** page give a name to the URL Filter; for example **"swg_poc_custom"**. Then click **Finished** to create the URL Filter. This filter will inherit the default filter settings which we will modify in the next steps.
+    #. On the **General Properties** page give a name to the URL    Filter; for example **"swg_poc_custom"**. Then click **Finished** to create the URL Filter and display the **Properties** page, which shows that the filter has inherited the default filter settings which we will modify in the next steps.
 
         .. image:: ./images/l-swg-conf-urlfilter-custom.png    
             :align: center
             :alt: Create URL Filter
 
-    #. In the **Associated Categories** list, scroll down to **Sports** and click the box to the left of it to select it. Then click **Block** at the bottom of the page. We will modify the default URL filter to block all URLs categorized under the built-in category of Sports. This is just an example to show how to modify the URL filter settings. In a production environment you would likely want to block categories that are more risky such as Gambling or Malicious Sites.
+    #. In the **Associated Categories** list, scroll down to **Sports** and click the box to the left of it to select it. Then click **Block** at the bottom of the page. We will modify the default URL filter to block all URLs categorized under the built-in category of Sports. This is just an example to show how to modify the URL filter settings. Note the Green Arrow turns into a Red X to indicate that this category is now blocked.
 
         .. image:: ./images/l-swg-conf-urlfilter-sports.png    
             :align: center
@@ -38,17 +38,18 @@ Task 1 - Per Request Policy Configuration
 
     #. Access > Profiles / Policies > Per Reqeust Policies.
 
-        .. image:: ./images/l-swg-conf-prp.png
+        .. image:: ./images/l-swg-conf-prp-create.png
             :align: center
-            :alt: Per Request Policy
+            :alt: Create Per Request Policy
 
     #. Click the **Create** button to create a new Per Request Policy.
 
     #. Name the policy; for example **"swg_poc"**, select **All** for the **Policy Type**, and then click **English (en)** and click the **<<** to move it into the **Accepted Languages**. Click the **Finished** button to create the policy with these settings.
 
-        .. image:: ./images/l-swg-conf-prp-create.png
+        .. image:: ./images/l-swg-conf-prp.png
             :align: center
-            :alt: Create Per Request Policy
+            :alt: Per Request Policy
+
 
     #. Back on the Per Request Policies listing page, click on the **Edit** link for the policy you just created to open the policy editor.
 
