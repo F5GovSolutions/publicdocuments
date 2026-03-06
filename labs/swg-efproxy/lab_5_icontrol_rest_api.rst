@@ -1,14 +1,19 @@
-Lab 4 - Manage Custom Categories using iControl Rest API
+Lab 5 - Manage Custom Categories using iControl Rest API
 ========================================================
 
-Task 1. 
-------------------------------
+In this lab, you will use the iControl REST API to manage custom URL categories on the BIG-IP. This will allow you to interact with the system programmatically, which is useful for automation and integration with other systems.
 
-In this task, you will use the iControl REST API to list the custom categories that you have been working with in the previous labs. This will allow you to understand how to interact with the system programmatically and manage custom categories through the API.
+You can use a tool like Postman or curl to send REST API requests to the BIG-IP. The base URL for the API is `https://<BIG-IP-IP-ADDRESS>/mgmt/tm/`. You will need to authenticate using the credentials provided in the Details page of the BIG-IP instance.
 
-        You can use a tool like Postman or curl to send REST API requests to the BIG-IP. The base URL for the API is `https://<BIG-IP-IP-ADDRESS>/mgmt/tm/`. You will need to authenticate using the credentials provided in the Details page of the BIG-IP instance.
+Task 0. Using Token Authentication
+----------------------------------
 
-        To list the custom categories, you can send a GET request to the following endpoint:
+
+        curl command::
+
+            curl -sku 'admin:f5Twister!' -H 'Content-Type: application/json' -X GET 'https://10.1.1.6/mgmt/tm/sys/url-db/url-category/custom-block-category' | jq
+
+        This command uses basic authentication with the username and password to send a GET request to the endpoint for the `custom-block-category` URL category. The response is then piped to `jq` for formatting.
 
     #. Retrieve an authentication token using the following command. Replace `username` and `password` with the appropriate credentials for your BIG-IP instance.
     

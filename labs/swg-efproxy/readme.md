@@ -12,4 +12,8 @@
 
 [Lab 3 - SWG Configuration](./lab_3_swg_configuration.rst)
 
-[Lab 4 - Manage Custom Categories and Filters using the CLI](./lab_4_swg_manage_cli.rst)
+[Lab 4 - Use the CLI to Manage Custom Categories and Filters](./lab_4_swg_manage_cli.rst)
+
+[Lab 5 - Use iControl API to manage Custom Categories](lab_5_icontrol_rest_api.rst)
+
+[Lab 6 - Customizing the URL Filtering Block Pages](lab_6_customizing_block_page.rst)

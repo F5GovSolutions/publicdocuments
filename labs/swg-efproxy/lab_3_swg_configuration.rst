@@ -185,12 +185,10 @@ Task 3 - SWG / SSLO Configuration
             :alt: SSLO Summary
 
     #. When the deployment is complete, you will see a message that says **Deployment was successfully completed**.
-    
-     
 
-
-**URL Categories and URL Filters in F5 BIG-IP SWG**
-
+        .. image:: ./images/l-sslo-deploy.png
+            :align: center
+            :alt: SSLO Deploy
 
 
 `Next Lab 4 - Manage Custom Categories using the CLI <./lab_4_swg_manage_cli.rst>`__
