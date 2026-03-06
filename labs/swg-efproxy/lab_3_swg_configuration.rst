@@ -166,10 +166,29 @@ Task 3 - SWG / SSLO Configuration
             :align: center
             :alt: SSLO Service Chain
 
-    #. In
+    #. In the **Security Policy** page, click the **Save & Next** button to continue.
+
+    #. In the **Interception Rule** page, specify the IPV4 address, we will use 10.1.10.30 for this lab. Select **f5-aws-dns** the DNS Resolver. Then under VLANs, select Client-vlan and the out-vlan, and click the **>** button to move them into the **Selected** list. Leave everything else default and scroll down and click the **Save & Next** button to continue.
+
+        .. image:: ./images/l-sslo-interception-rule.png
+            :align: center
+            :alt: SSLO Interception Rule
+
+    #. In the **Egress Settings** page, select **Auto Map** for Manage SNAT Settings.  Then click the **Save & Next** button to continue.
+
+    #. In the **Log Settings** page, accept the defaults and click the **Save & Next** button to continue.
+
+    #. In the **Summary** page, there will be a list of all the settings configured for this topology. You have the opportunity to review the settings and if everything looks good, click the **Deploy** button to deploy the configuration.
+
+        .. image:: ./images/l-sslo-summary.png
+            :align: center
+            :alt: SSLO Summary
+
+    #. When the deployment is complete, you will see a message that says **Deployment was successfully completed**.
+    
+     
 
 
-l-sslo-service-add-f5
 **URL Categories and URL Filters in F5 BIG-IP SWG**
 
 

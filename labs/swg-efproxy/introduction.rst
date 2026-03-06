@@ -30,10 +30,11 @@ Additionally, the SWG operates as a part of the **SSL Orchestrator topologies**,
 This make SWG not just a simple proxy tool, but a **flexible and powerful solution**—scalable to fit the needs of various environments, from basic URL filtering to advanced user and application-level inspection. Its flexibility allows administrators to create custom categories, leverage existing category databases, and enforce compliance at many levels of the network.
 
 **General Tasks**
-- Test the SWG's functionality from a client workstation, and view its proxy configuration from the client perspective.
-- Manage SWG's **custom category configurations**, including modification of default categories and creation of custom ones.
-- Configure and manage **URL filtering policies** to enforce compliance and block specific content types or categories.
-- Monitor and analyze **SWG logging outputs** to track, troubleshoot, and audit user behaviors and URL requests.
+
+    - Test the SWG's functionality from a client workstation, and view its proxy configuration from the client perspective.
+    - Manage SWG's **custom category configurations**, including modification of default categories and creation of custom ones.
+    - Configure and manage **URL filtering policies** to enforce compliance and block specific content types or categories.
+    - Monitor and analyze **SWG logging outputs** to track, troubleshoot, and audit user behaviors and URL requests.
 
 The Lab underscores the SWG's versatility, showing how it combines secure web traffic filtering with robust traffic management and user authentication capabilities.
 

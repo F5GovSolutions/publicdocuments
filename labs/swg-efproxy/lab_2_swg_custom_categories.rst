@@ -175,7 +175,7 @@ Task 3. Working with SWG URL Filters
 
         The **swg-poc-custom** URL Filter is configured to reference the custom categories you have been working with.
 
-        This URL Filter is configured to block any URLs categorized under `custom-block-category` and allow any URLs categorized under `custom-allow-category`. This is ind by the Red X for Block and Green Arrow for Allow in the Filtering Action column.
+        This URL Filter is configured to block any URLs categorized under `custom-block-category` and allow any URLs categorized under `custom-allow-category`. This is indicated by the Red X for Block and Green Arrow for Allow in the Filtering Action column.
 
         You can change the filtering action for each category or subcategory by selecting the items on the left column and then scrolling all the way to the bottom and selecting the desired action.
 
