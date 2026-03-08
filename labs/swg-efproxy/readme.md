@@ -14,6 +14,6 @@
 
 [Lab 4 - Use the CLI to Manage Custom Categories and Filters](./lab_4_swg_manage_cli.rst)
 
-[Lab 5 - Use iControl API to manage Custom Categories](lab_5_icontrol_rest_api.rst)
+[Lab 5 - Use iControl API to Manage Custom Categories](lab_5_icontrol_rest_api.rst)
 
 [Lab 6 - Customizing the URL Filtering Block Pages](lab_6_customizing_block_page.rst)

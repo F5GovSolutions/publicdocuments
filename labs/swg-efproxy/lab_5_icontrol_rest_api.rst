@@ -33,3 +33,6 @@ Task 0. Using Token Authentication
         
         This command will return an authentication token that you can use in subsequent API requests to access the system. You can then use this token to send a GET request to the following endpoint to list the custom categories:
         
+`Next Lab 6 - Customizing the URL Filtering Block Page <./lab_6_customizing_block_page.rst>`__
+
+`Main Page <./readme.md>`__
