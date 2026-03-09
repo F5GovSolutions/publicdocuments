@@ -183,6 +183,6 @@ Task 3. Working with SWG URL Filters
             :align: center
             :alt: url-filter-rules
 
-`Next Lab 3 - SWG Managing Custom Categories via CLI <./lab_3_swg_manage_cli.rst>`__
+`Next Lab 3 - SWG Monitoring and Logs <./lab_3_swg_monitoring_and_logs.rst>`__
 
 `Main Page <./readme.md>`__
