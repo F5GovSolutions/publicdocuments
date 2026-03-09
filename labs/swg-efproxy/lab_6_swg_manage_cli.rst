@@ -1,4 +1,4 @@
-Lab 3 - Manage Custom Categories and Filters using the CLI
+Lab 6 - Manage Custom Categories and Filters using the CLI
 ==========================================================
 
 Task 0. TMSH and bash Contexts

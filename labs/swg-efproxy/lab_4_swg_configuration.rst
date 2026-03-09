@@ -1,4 +1,4 @@
-Lab 5 - SWG Configurations
+Lab 4 - SWG Configurations
 ==========================
 
 There are several components that are already configured like networking, DNS, NTP.  

@@ -1,4 +1,4 @@
-Lab 4 - Manage Custom Categories using iControl Rest API
+Lab 5 - Manage Custom Categories using iControl Rest API
 ========================================================
 
 In this lab, you will use the iControl REST API to manage custom URL categories on the BIG-IP. This will allow you to interact with the system programmatically, which is useful for automation and integration with other systems.
