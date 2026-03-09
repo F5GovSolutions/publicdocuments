@@ -30,23 +30,53 @@ These activities will give you hands-on experience with the SSLO Explicit Proxy 
 Task 1. Browsing websites through the Explicit Forward Proxy
 ------------------------------------------------------------
 
-  #. Log in to the Windows 11 client using the RDP or SuperJump Host access methods and open Chrome or Firefox.
+    #. Log in to the Windows 11 client using the RDP or SuperJump Host access methods and open Chrome or Firefox.
 
-  #. Select Wikipedia bookmark in the Favorites Bar.
+    #. Select Wikipedia bookmark in the Favorites Bar.
 
-  #. Now open new tabs and select a differen bookmark for each site, [e.g. ESPN, Draftkings, Chatgpt, etc.) bookmark.
+    #. Now open new tabs and select a different bookmark for each tab, [e.g. ESPN, Draftkings, Chatgpt, etc.) bookmark.
 
       What is the result of browsing to each of these sites?
 
-  #. Open Windows Settings.
+    #. Now open Windows Settings.
 
-  #. Search for and select Proxy and review the proxy settings by clicking the Edit button.
+    #. Search for and select Proxy and review the proxy settings by clicking the Edit button.
 
-      The F5 Explicit Forward proxy has already been configured for the browsers to use in the operating system.
+        .. image:: ./images/l1-win-proxy-set.png
+            :align: center
+            :alt: win proxy settings
+    
+    #. Click the **Set up** button to open the **Edit proxy server** page.
 
-  #. Turn off the 'Use a proxy server' setting. 
+        .. image:: ./images/l1-win-proxy-on.png
+            :align: center
+            :alt: win proxy turn on
 
-  #. Go back to your browser and click on the ESPN and or Draftkings bookmark again.
+        Notice here the FQDN of the proxy server and the port.
+
+    #. Turn **On** the 'Use a proxy server' setting, and click **Save* 
+
+    #. Go back to your browser and on the tab with ESPN or Draftkings click the browser Refresh button or CTRL + F5 shortcut to fully reload the webpage.
+
+        What is the result of browsing to these sites now?
+
+        .. image:: ./images/l1-win-proxy-block.png
+            :align: center
+            :alt: win proxy block
+
+    #. Open a **Windows Command Prompt** and issue a ping to **proxy.f5labs.local**
+
+        .. image:: ./images/l1-win-proxy-ip.png
+            :align: center
+            :alt: win proxy ip address
+
+        Take note of the IP Address -- Also, remember the port used by the Proxy settings? -- 3128
+
+    #. Now log into the **BIG-IP SSLO-1 TMUI** (refer back to Lab Environment) and navigate to **Local Traffic > Virtual Servers**
+
+        .. image:: ./images/l1-win-proxy-ip.png
+            :align: center
+            :alt: win proxy ip address
 
 
 Task 2. - Test SFTP client - FileZilla
