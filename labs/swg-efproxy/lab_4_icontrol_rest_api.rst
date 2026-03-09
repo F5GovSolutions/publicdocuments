@@ -1,4 +1,4 @@
-Lab 5 - Manage Custom Categories using iControl Rest API
+Lab 4 - Manage Custom Categories using iControl Rest API
 ========================================================
 
 In this lab, you will use the iControl REST API to manage custom URL categories on the BIG-IP. This will allow you to interact with the system programmatically, which is useful for automation and integration with other systems.
@@ -29,11 +29,14 @@ Task 0. Using Token Authentication
      
      
         OUTPUT::
-        "SOME-STRING-OF-CODE-XXXXXX"
+        "<SOME-STRING-OF-CHARACTERS>"
+
         This command will return an authentication token that you can use in subsequent API requests to access the system. You can then use this token to send a GET request to the following endpoint to list the custom categories:
         
     #. Next 
 
-`Next Lab 6 - Customizing the URL Filtering Block Page <./lab_6_customizing_block_page.rst>`__
+
+
+`Next Lab 5 - SWG Configuration <./lab_5_swg_configuration.rst>`__
 
 `Main Page <./readme.md>`__

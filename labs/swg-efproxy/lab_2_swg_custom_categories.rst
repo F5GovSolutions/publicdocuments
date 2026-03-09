@@ -183,6 +183,6 @@ Task 3. Working with SWG URL Filters
             :align: center
             :alt: url-filter-rules
 
-`Next Lab 3 - SWG Explict Forward Proxy Configuration <./lab_3_swg_configuration.rst>`__
+`Next Lab 3 - SWG Managing Custom Categories via CLI <./lab_3_swg_manage_cli.rst>`__
 
 `Main Page <./readme.md>`__

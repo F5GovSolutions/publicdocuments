@@ -35,4 +35,6 @@ Task 1. Accessing the Block Page Customization Settings
 
     #. In the left nav pane let's select **Text** first. 
 
-    #. 
+    #. On the WebShell of BIG-IP SSLO-1 issue the command:: 
+
+        

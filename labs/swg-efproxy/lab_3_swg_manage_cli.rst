@@ -1,4 +1,4 @@
-Lab 4 - Manage Custom Categories and Filters using the CLI
+Lab 3 - Manage Custom Categories and Filters using the CLI
 ==========================================================
 
 Task 0. TMSH and bash Contexts
@@ -184,6 +184,6 @@ Task 4. Deleting Custom Categories
 
         This command deletes the custom category named **my-category**. You can verify that the category was deleted by trying to list it again, which should result in an error indicating that the category does not exist.
 
-`Next Lab 5 - SWG Explict Forward Proxy Configuration <./lab_5_icontrol_rest_api.rst>`__
+`Next Lab 4 - SWG Use iControl REST API <./lab_4_icontrol_rest_api.rst>`__
 
 `Main Page <./readme.md>`__

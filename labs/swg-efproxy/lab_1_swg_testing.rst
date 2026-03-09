@@ -36,7 +36,7 @@ Task 1. Browsing websites through the Explicit Forward Proxy
 
     #. Now open new tabs and select a different bookmark for each tab, [e.g. ESPN, Draftkings, Chatgpt, etc.) bookmark.
 
-      What is the result of browsing to each of these sites?
+        What is the result of browsing to each of these sites?
 
     #. Now open Windows Settings.
 
@@ -70,7 +70,7 @@ Task 1. Browsing websites through the Explicit Forward Proxy
             :align: center
             :alt: win proxy ip address
 
-        Take note of the IP Address -- Also, recall the port used by the Proxy settings? -- 3128
+        Take note of the IP Address -- Also, recall the port used by the Proxy settings -- **3128**
 
     #. Now log into the **BIG-IP SSLO-1 TMUI** (refer back to `Lab Environment <./lab_environment.rst>`__ on how to log on) and navigate to **Local Traffic > Virtual Servers**
 
@@ -154,6 +154,12 @@ Task 3 - Test SSH client through the Explicit Proxy
     #. Type `exit` to close the SSH connection when you are finished.
 
     #. Return to the BIG-IP TMUI and navigate to **Local Traffic > Virtual Servers** to and note the Virtual Server configured to service the SFTP and SSH traffic from the Windows 11 client.
+
+        .. image:: ./images/l1-ltm-vs-ssh.png
+            :align: center
+            :alt: vs proxy ssh
+
+        We can see that that the IP and the port match the virtual server. This means that the traffic from the SFTP and SSH clients are being sent to the BIG-IP system through the SOCKS Proxy virtual server.
 
 In this Lab we looked at how to test the SWG Explicit Forward Proxy configuration using a Windows 11 client. We tested web browsing through the proxy, as well as SFTP and SSH connections using FileZilla and PuTTY, respectively. The next lab will focus on the BIG-IP configuration, specifically working with SWG URL Categories and URL Filters to enforce policies and manage web traffic more effectively.
 
