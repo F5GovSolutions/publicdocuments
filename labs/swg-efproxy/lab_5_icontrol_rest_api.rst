@@ -37,6 +37,6 @@ Task 0. Using Token Authentication
 
 
 
-`Next Lab 5 - SWG Configuration <./lab_5_swg_configuration.rst>`__
+`Next Lab 6 - Manage Custom Categories using the CLI <./lab_6_swg_manage_cli.rst>`__
 
 `Main Page <./readme.md>`__

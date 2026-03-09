@@ -12,9 +12,9 @@
 
 [Lab 3 - SWG Monitoring and Logs](./lab_3_swg_monitoring_and_logs.rst)
 
-[Lab 4 - SWG Configuration](./llab_4_swg_configuration.rst)
+[Lab 4 - SWG Configuration](./lab_4_swg_configuration.rst)
 
-[Lab 5 - Use iControl API to Manage Custom Categories](lab_5_icontrol_rest_api.rst)
+[Lab 5 - Use iControl API to Manage Custom Categories](./lab_5_icontrol_rest_api.rst)
 
 [Lab 6 - Use the CLI to Manage Custom Categories and Filters](./lab_6_swg_manage_cli.rst)
 
