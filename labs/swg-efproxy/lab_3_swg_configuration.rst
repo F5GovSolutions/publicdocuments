@@ -28,7 +28,7 @@ Task 1 - Create a Custom URL Filter
             :align: center
             :alt: Create URL Filter
 
-    #. In the **Associated Categories** list, scroll down to **Sports** and click the box to the left of it to select it. Then click **Block** at the bottom of the page. We will modify the default URL filter to block all URLs categorized under the built-in category of Sports. This is just an example to show how to modify the URL filter settings. Note the Green Arrow turns into a Red X to indicate that this category is now blocked.
+    #. In the **Associated Categories** list, scroll down to **Sports** and click the box to the left of it to select it. Then click **Block** at the bottom of the page. We will modify the default URL filter to block all URLs categorized under the built-in category of Sports. This is just an example to show how to modify the URL filter settings in our Custom URL Filter. Note the Green Arrow turns into a Red X to indicate that this category is now blocked.
 
         .. image:: ./images/l-swg-conf-urlfilter-sports.png    
             :align: center
@@ -107,16 +107,20 @@ Task 2 - Per Request Policy Configuration
     
 Now that we have the URL filter and Per Request Policy configured, we will need to apply this policy to a SWG Service delivered through the SSLO.
 
-Task 3 - SWG / SSLO Configuration
+Task 3 - SSLO / SWG Configuration
 ---------------------------------
 
-    #. Navigate to **SSL Orchestrator > Configuration** to launch the Guided Configuration utility. This utility provides several pre-defined configuration templates for different use cases. For this lab, we will select the **L3 Outbound Explicit Proxy** template to enable Explicit Forward Proxy functionality.
+    #. Navigate to **SSL Orchestrator > Configuration** to launch the Guided Configuration utility. This utility provides several pre-defined configuration templates for different use cases. 
+    
+    #. Since this is the first configuration for the SSLO it will present you with a Guided configuration page, For this lab, we will select the **L3 Outbound Explicit Proxy** template to enable Explicit Forward Proxy functionality. 
 
         .. image:: ./images/l-sslo-gc.png
             :align: center
             :alt: SSLO Configuration
 
     #. Scroll down to the bottom of the page and click **Next**.
+
+        **NOTE** The SSLO Configuration page may complain about "SSL Orchestrator is not initialized."  Wait about 30 seconds and click **SSL Orchestrator > Configuration** again to refresh the page, go to the bottom click **Next**
 
     #. On the **Topology Properties** page, give the topology a name; for example, **"swg_poc"**. In the SSL Orchestrator Topology section, select **L3 Explicit Proxy** and then scroll down and click **Save & Next**.
 

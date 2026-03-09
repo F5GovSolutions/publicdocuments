@@ -184,6 +184,6 @@ Task 4. Deleting Custom Categories
 
         This command deletes the custom category named **my-category**. You can verify that the category was deleted by trying to list it again, which should result in an error indicating that the category does not exist.
 
-`Next Lab 5 - SWG Explict Forward Proxy Configuration <./lab_3_swg_configuration.rst>`__
+`Next Lab 5 - SWG Explict Forward Proxy Configuration <./lab_5_icontrol_rest_api.rst>`__
 
 `Main Page <./readme.md>`__
