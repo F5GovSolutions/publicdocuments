@@ -40,7 +40,7 @@ Task 1. Browsing websites through the Explicit Forward Proxy
 
     #. Now open Windows Settings.
 
-    #. Search for and select Proxy and review the proxy settings by clicking the Edit button.
+    #. Search for and open **Proxy Settings**
 
         .. image:: ./images/l1-win-proxy-set.png
             :align: center
@@ -52,9 +52,9 @@ Task 1. Browsing websites through the Explicit Forward Proxy
             :align: center
             :alt: win proxy turn on
 
-        Notice here the FQDN of the proxy server and the port.
+        Take note here the FQDN of the proxy server and the port.
 
-    #. Turn **On** the 'Use a proxy server' setting, and click **Save* 
+    #. Turn **On** the 'Use a proxy server' setting, and click **Save**
 
     #. Go back to your browser and on the tab with ESPN or Draftkings click the browser Refresh button or CTRL + F5 shortcut to fully reload the webpage.
 
@@ -70,14 +70,15 @@ Task 1. Browsing websites through the Explicit Forward Proxy
             :align: center
             :alt: win proxy ip address
 
-        Take note of the IP Address -- Also, remember the port used by the Proxy settings? -- 3128
+        Take note of the IP Address -- Also, recall the port used by the Proxy settings? -- 3128
 
-    #. Now log into the **BIG-IP SSLO-1 TMUI** (refer back to Lab Environment) and navigate to **Local Traffic > Virtual Servers**
+    #. Now log into the **BIG-IP SSLO-1 TMUI** (refer back to `Lab Environment <./lab_environment.rst>`__ on how to log on) and navigate to **Local Traffic > Virtual Servers**
 
-        .. image:: ./images/l1-win-proxy-ip.png
+        .. image:: ./images/l1-ltm-vs.png
             :align: center
-            :alt: win proxy ip address
+            :alt: vs proxy ip
 
+        We can see that that the IP and the port match the virtual server. This means that the traffic from the Windows 11 client is being sent to the BIG-IP system through the Explicit Proxy virtual server. The SWG service will then apply its policies to this traffic, allowing or blocking access based on the URL categories and other rules configured in the system.
 
 Task 2. - Test SFTP client - FileZilla
 --------------------------------------
@@ -108,7 +109,7 @@ Task 2. - Test SFTP client - FileZilla
             :align: center
             :alt: file open
 
-    #. View the SOCKS Proxy settings in the FileZilla client, by selecting the Settings menu under Edit. Then choose General Proxy in the left navigation pain.
+    #. View the SOCKS Proxy settings in the FileZilla client, by selecting the **Settings** menu under **Edit** main menu. Then choose **General Proxy** in the left navigation pane.
 
         .. image:: ./images/t2-fz-4.png
             :align: center
@@ -151,6 +152,8 @@ Task 3 - Test SSH client through the Explicit Proxy
         You can run the `ls` command to list the files in the current directory, or the `pwd` command to print the working directory.
 
     #. Type `exit` to close the SSH connection when you are finished.
+
+    #. Return to the BIG-IP TMUI and navigate to **Local Traffic > Virtual Servers** to and note the Virtual Server configured to service the SFTP and SSH traffic from the Windows 11 client.
 
 In this Lab we looked at how to test the SWG Explicit Forward Proxy configuration using a Windows 11 client. We tested web browsing through the proxy, as well as SFTP and SSH connections using FileZilla and PuTTY, respectively. The next lab will focus on the BIG-IP configuration, specifically working with SWG URL Categories and URL Filters to enforce policies and manage web traffic more effectively.
 
