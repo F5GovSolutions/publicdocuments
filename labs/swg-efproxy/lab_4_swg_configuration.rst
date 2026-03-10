@@ -5,12 +5,12 @@ There are several components that are already configured like networking, DNS, N
 Licensing. Outside the scope of these instructions.
 SSL Certificates Root Certificates and subordinate certificates that allow the BIG-IP to re-create certificates to establish the connections. These instructions assume that the student has experience with the basics of PKI certificate and key management.
 
-Kerberos Authentication was configured for BIG-IP SSLO-1 to show that authentication is working and to show the authenticated user in the logs, but we will not be going into the details of how to configure Kerberos authentication for BIG-IP SSLO-2 as a part of this configuration lab.
+**NOTE:** Kerberos Authentication was configured for BIG-IP SSLO-1 to show that authentication is working and to show the authenticated user in the logs, but we will not be going into the details of how to configure Kerberos authentication for BIG-IP SSLO-2 as a part of this configuration lab.
 
-SSLO Deployment
-+++++++++++++++
+SSLO SWG Deployment
++++++++++++++++++++
 
-In this section, we will configure the SSL Orchestrator (SSLO) with the Secure Web Gateway (SWG) service in an Explicit Forward Proxy topology. There are several components that need to be created and configured in order to have a working SWG service, including the URL Filter, Per Request Policy, and the SSLO configuration itself. We will go through each of these components step by step to build out the configuration for the SWG Explicit Forward Proxy.
+In this section, we will configure the SSL Orchestrator (SSLO) with the Secure Web Gateway (SWG) service in an Explicit Forward Proxy topology. There are some components that need to be created and configured in order to have a working SWG service, including the URL Filter, Per Request Policy, and the SSLO configuration itself. We will go through each of these components step by step to build out the configuration for the SWG Explicit Forward Proxy.
 
 Task 1 - Create a Custom URL Filter
 -----------------------------------
@@ -29,11 +29,13 @@ Task 1 - Create a Custom URL Filter
             :align: center
             :alt: Create URL Filter
 
-    #. In the **Associated Categories** list, scroll down to **Sports** and click the box to the left of it to select it. Then click **Block** at the bottom of the page. We will modify the default URL filter to block all URLs categorized under the built-in category of Sports. This is just an example to show how to modify the URL filter settings in our Custom URL Filter. Note the Green Arrow turns into a Red X to indicate that this category is now blocked.
+    #. In the **Associated Categories** list, scroll down to **Sports** and click the box to the left of it to select it. Then click **Block** at the bottom of the page. We will modify our custom URL filter to block all URLs categorized under the built-in category of Sports. This is just an example to show how to modify the URL filter settings in our Custom URL Filter. Note the Green Arrow turns into a Red X to indicate that this category is now blocked.
 
         .. image:: ./images/l-swg-conf-urlfilter-sports.png    
             :align: center
             :alt: Modify URL Filter 
+
+        **OPTIONAL:** Feel free to select other categories and block or allow them as you see fit. You can then test with those categories from the Windows 11 client later in the lab.
 
     #. Click the **Update** button in the **General Properties** section to save the changes to our custom URL filter.
 
@@ -218,7 +220,7 @@ Task 4 - Configure the Win 11 Client to use the Explicit Proxy on the BIG-IP SSL
             :align: center
             :alt: Active Session
 
-    #. When you're finished with this lab reconfigure the Proxy Settings on the Windows 11 client to use BIG-IP SSLO-1 Explicit Proxy fqdn of **proxy.f5labs.local**.
+    #. **IMPORTANT:** When finished with this lab, reconfigure the Proxy Settings on the Windows 11 client to use BIG-IP SSLO-1 Explicit Proxy; the fqdn - **proxy.f5labs.local**. This will ensure when we perform the customizations of the block page in Lab 7, the traffic goes through the correct proxy.
 
         .. image:: ./images/l-sslo-proxy-settings2.png
             :align: center

@@ -78,7 +78,7 @@ Task 1. Browsing websites through the Explicit Forward Proxy
             :align: center
             :alt: vs proxy ip
 
-        We can see that that the IP and the port match the virtual server. This means that the traffic from the Windows 11 client is being sent to the BIG-IP system through the Explicit Proxy virtual server. The SWG service will then apply its policies to this traffic, allowing or blocking access based on the URL categories and other rules configured in the system.
+        We can see that there is a Virtual Server that matches the IP and port used by the Windows 11 proxy settings. This means that the web traffic from the Windows 11 client is being sent to the BIG-IP system through the Explicit Proxy virtual server. The SSLO / SWG service will then apply its policies to this traffic, allowing or blocking access based on the URL categories and other rules configured in the system.
 
 Task 2. - Test SFTP client - FileZilla
 --------------------------------------
@@ -159,7 +159,7 @@ Task 3 - Test SSH client through the Explicit Proxy
             :align: center
             :alt: vs proxy ssh
 
-        We can see that that the IP and the port match the virtual server. This means that the traffic from the SFTP and SSH clients are being sent to the BIG-IP system through the SOCKS Proxy virtual server.
+        We can see that there is a Virtual Server that matches the IP and port used by the SFTP and SSH clients. This means that the traffic from the SFTP and SSH clients are being sent to the BIG-IP system through the SOCKS Proxy virtual server.
 
 In this Lab we looked at how to test the SWG Explicit Forward Proxy configuration using a Windows 11 client. We tested web browsing through the proxy, as well as SFTP and SSH connections using FileZilla and PuTTY, respectively. The next lab will focus on the BIG-IP configuration, specifically working with SWG URL Categories and URL Filters to enforce policies and manage web traffic more effectively.
 

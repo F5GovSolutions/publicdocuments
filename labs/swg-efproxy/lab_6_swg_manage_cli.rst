@@ -26,7 +26,7 @@ In this lab, you will be working directly with the BIG-IP system using both **TM
 
         root@bigip1:TimeLimitedModules::Active:Standalone] config #
 
-**Important: Be Careful with Commands**
+**IMPORTANT:** **Be Careful with Commands**
 
 When working in **either TMSH or Bash contexts**, it’s essential to be mindful of the commands you issue. Incorrect or careless actions can negatively impact system operations, disrupt services, or even cause outages. Always double-check commands and ensure that they align with the intended task before executing them.
 
@@ -74,7 +74,7 @@ Task 1. Listing URL Categories
 
     #. Press the **UP ARROW** to recall the previous command and change the category name to list another built-in category; `Gambling` and review the output.
 
-        **Optional** Try other built-in categories as well.
+        **OPTIONAL:** Try other built-in categories as well.
 
     #. Now issue the CLI command to list one of the custom URL categories.
     
@@ -162,10 +162,10 @@ Task 3. Modifying Custom Categories
 
         This command adds a new URL to the existing **my-category**. You can verify that the URL was added by listing the category again.
 
-        **NOTE** The **{ type exact-match }** configuration option can be omitted as it is the default. The  must be specified when adding URLs that should match a pattern with a wildcard.
+        **NOTE:** The **{ type exact-match }** configuration option can be omitted as it is the default. The  must be specified when adding URLs that should match a pattern with a wildcard.
 
 
-        **IMPORTANT** When adding URLs of the **type glob-match** using the **'*'** as a wildcard must be preceded by a backslash **'\'** to escape the wildcard character. This is required in the TMSH CLI to prevent the wildcard from being expanded by the shell before it is added to the category. For example, to add a glob match URL pattern for all subdomains of **newsite1.com**, you would use the following command::
+        **IMPORTANT:** When adding URLs of the **type glob-match** using the **'*'** as a wildcard must be preceded by a backslash **'\'** to escape the wildcard character. This is required in the TMSH CLI to prevent the wildcard from being expanded by the shell before it is added to the category. For example, to add a glob match URL pattern for all subdomains of **newsite1.com**, you would use the following command::
 
              modify sys url-db url-category my-category urls add { https://\*.newsite1.com/ { type glob-match } }
 

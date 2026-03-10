@@ -28,6 +28,10 @@ Task 2. Viewing SWG Event Logs
 
     #. Go to the Log configuration and select default log, and enable Allow Logs.
 
+        .. image:: ./images/l3-access-logs-allow.png
+             :align: center
+             :alt: allow logs
+
     #. Close the browsers and kill the sessions again to generate logs for the allowed traffic.
 
     **TIP:** In production you will want to leave the Allow logs turned off,as it will generate many more logs, which will fill up the log storage more quickly. You can enable Allow logs temporarily when you need to generate logs for allowed traffic for troubleshooting or monitoring purposes.

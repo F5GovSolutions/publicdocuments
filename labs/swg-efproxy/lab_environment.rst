@@ -14,8 +14,8 @@ The UDF lab environment for the **F5 Secure Web Gateway Explicit Forward Proxy w
     - **Windows 2019 Server Active Directory Domain Controller**  
     - **Windows 11 Domain Joined Client**  
   
-Accessing the Windows instances can be done through the **Remote Desktop Protocol (RDP)** or the **SuperJump Host** using the credentials provided in the lab documentation here and in the deployment.
-Accessing the BIG-IPs will primarily be done through the web-based **Traffic Management User Interface (TMUI)** and the **WebShell** for command-line access. Again, the credentials for accessing these components are provided.
+Accessing the Windows instances can be done through the **Remote Desktop Protocol (RDP)** or the **SuperJump Host** using the credentials provided in the details tab of each component in the deployment.
+Accessing the BIG-IPs will primarily be done through the web-based **Traffic Management User Interface (TMUI)** and the **WebShell** for command-line access.
 
 Credentials:
 ------------
@@ -39,7 +39,7 @@ Starting up the Lab in the Course:
         
         If you new to the UDF experience, follow the instructions to create an account with f5.com.
 
-        **Note** There are 2 links in the e-mail. One will take you to the general course landing page and the other will take you directly to the course.
+        **NOTE:** There are 2 links in the e-mail. One will take you to the general course landing page and the other will take you directly to the course.
 
         **Important** Select "Invited Users" at the UDF portal landing page.
         
@@ -59,8 +59,6 @@ Starting up the Lab in the Course:
 
     #. Click the Deployment tab and view the components of the lab. Each of the components will be in the process of starting up. This is indicated by the yellow gear spinning.
 
-        **Important** Specifically for this lab, the Windows 11 does not start automatically with the rest of the systems; indicated by a red square. You will manually start it after all the other systems are completely up.
-
         .. image:: ./images/udf-deployment.png
             :align: center
             :alt: udf-deployment
@@ -71,20 +69,12 @@ Starting up the Lab in the Course:
             :align: center
             :alt: udf-deployment
 
-    #. Press the **Details** button for the Windows 11 instance, then press the **Start** button in the pop-up window to start the instance. Allow the instance to fully start up before proceeding to the next step.
-
-        **Note** Notice the user accounts listed on the Details page. These are the credentials you will use to log into the Windows 11 client instance.
-
-        .. image:: ./images/udf-win11-start.png
-            :align: center
-            :alt: udf-win11-start
-
 Logging into the Windows 11 Client using the RDP method:
 --------------------------------------------------------
 
-    #. From the **Access** menu of the Windows 11 Client, and select an RDP resolution. This will download an RDP file to your local machine. Open this file to launch the Remote Desktop Connection application and connect to the Windows 11 client.
+    #. From the **Access** menu of the **Windows 11 Client**, and select an RDP resolution. This will download an RDP file to your local machine. Open this file to launch the Remote Desktop Connection application and connect to the Windows 11 client.
 
-    **TIP** Pick a resolution equal to or smaller than your local machine's screen resolution to ensure the best experience. The RDP app will allow you to into full screen mode or windowed mode once you are connected.
+    **TIP:** Pick a resolution equal to or smaller than your local machine's screen resolution to ensure the best experience. The RDP app will allow you to into full screen mode or windowed mode once you are connected.
 
         .. image:: ./images/udf-win11-resolution.png
             :align: center
@@ -92,7 +82,7 @@ Logging into the Windows 11 Client using the RDP method:
 
     #. Enter username and password to log in found on the **Details** page.. 
 
-        **IMPORTANT** If you are on a Windows machine, you'll have to enter the Domain\\username (for example: f5labs\\f5guy). If using a Mac, you will only need to enter the username.   
+        **IMPORTANT:** If you are on a Windows machine, you'll have to enter the Domain\\username (for example: f5labs\\f5guy). If using a Mac, you will only need to enter the username.   
 
         .. image:: ./images/udf-win11-win-logon.png
             :align: center
@@ -102,10 +92,10 @@ Logging into the Windows 11 Client using the RDP method:
             :align: center
             :alt: MacOS logon
 
-    **Note** A security warning about trusting the Certificate will pops up
+    **NOTE:** A security warning about trusting the Certificate will pops up,
     
-    - From a Windows machine, click **Yes** to proceed.
-    - From a Mac, click **Continue** to proceed.
+    - If on a Windows machine, click **Yes** to proceed.
+    - If on a Mac, click **Continue** to proceed.
 
     #. Once logged in, you will see the Windows 11 desktop with browsers, FileZilla, and PuTTY pre-installed.
 
