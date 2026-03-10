@@ -7,8 +7,8 @@ SSL Certificates Root Certificates and subordinate certificates that allow the B
 
 Kerberos Authentication was configured for BIG-IP SSLO-1 to show that authentication is working and to show the authenticated user in the logs, but we will not be going into the details of how to configure Kerberos authentication for BIG-IP SSLO-2 as a part of this configuration lab.
 
-SSLO Configuration
-++++++++++++++++++
+SSLO Deployment
++++++++++++++++
 
 In this section, we will configure the SSL Orchestrator (SSLO) with the Secure Web Gateway (SWG) service in an Explicit Forward Proxy topology. There are several components that need to be created and configured in order to have a working SWG service, including the URL Filter, Per Request Policy, and the SSLO configuration itself. We will go through each of these components step by step to build out the configuration for the SWG Explicit Forward Proxy.
 
