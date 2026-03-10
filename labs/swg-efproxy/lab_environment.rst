@@ -14,8 +14,21 @@ The UDF lab environment for the **F5 Secure Web Gateway Explicit Forward Proxy w
     - **Windows 2019 Server Active Directory Domain Controller**  
     - **Windows 11 Domain Joined Client**  
   
-Accessing the Windows instances can be done through the **Remote Desktop Protocol (RDP)** or the **SuperJump Host** using the credentials provided in the lab documentation.
+Accessing the Windows instances can be done through the **Remote Desktop Protocol (RDP)** or the **SuperJump Host** using the credentials provided in the lab documentation here and in the deployment.
 Accessing the BIG-IPs will primarily be done through the web-based **Traffic Management User Interface (TMUI)** and the **WebShell** for command-line access. Again, the credentials for accessing these components are provided.
+
+Credentials:
+------------
+    
+    +---------------+------------+-----------------+
+    | Component     | Username   | Password        |
+    +---------------+------------+-----------------+
+    | BIG-IP TMUI   | admin     | f5Twister!      |
+    | Windows 11 Client | f5guy | f5Twister!      |
+    | Windows 2019 Server | administrator | f5Twister! |
+    | SuperJump Host | rdpuser  | f5Twister!      |
+    +---------------+------------+-----------------+
+    
 
 Starting up the Lab in the Course:
 ----------------------------------
