@@ -11,14 +11,12 @@ URL Categories and URL Filters are core elements of the Secure Web Gateway (SWG)
 
 The SWG relies on the **URL Categories Database** provided by **Forcepoint**, which contains up-to-date information on known websites and their associated categories. This database is downloaded and updated regularly, ensuring that the SWG can effectively classify and filter web traffic. These updates require an active subscription.
 
-In the context of an **APM Policy**, URL Filtering is integrated into the access policy flow. The user's web requests are evaluated against the URL Categories and Filters during the enforcement of SWG-based policies. When a user sends a web request, the SWG matches the request against the configured URL Categories and applies the corresponding Filters action.
+In the context of BIG-IP's **Access Policy Manager (APM)**, URL Filtering is integrated into the access policy flow. The user's web requests are evaluated against the URL Categories and Filters during the enforcement of SWG-based policies. When a user sends a web request, the SWG matches the request against the configured URL Categories and applies the corresponding Filters action.
 
 The SWG uses these categories and filters to provide granular control over web access. For example:
 
 - Preventing access to harmful or non-business-related content.
 - Logging traffic access for auditing purposes.
-
-By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures both secure and policy-compliant web access for users in the network.
 
 Task 1. Working with SWG URL Categories
 ---------------------------------------
@@ -37,7 +35,7 @@ Task 1. Working with SWG URL Categories
             :align: center
             :alt: custom-allow-category
 
-    #.  Return to the list of URL Categories by clicking **Secure Web Gateway : URL Categories** link right above **Properties** in the horizontal navigation bar.
+    #.  In order to return to the list of URL Categories, click the **Secure Web Gateway : URL Categories** link right above **Properties** in the horizontal navigation bar.
 
     #.  Expand the Custom Categories again and select **custom-block-category** and view the URLs already added to this list.
 
@@ -45,7 +43,7 @@ Task 1. Working with SWG URL Categories
             :align: center
             :alt: custom-block-category
         
-        There is only one URL in this category, currently only as a placeholder. A custom category needs at least one URL to be defined.
+        There is only one URL in this category, currently only as a placeholder.
 
         **Glob Pattern Match**
 
@@ -61,17 +59,15 @@ Task 1. Working with SWG URL Categories
 
             Unchecking the Glob setting would require you to specify exact URLs without the use of wildcards.
 
-    #. Return to the list of URL Categories and select "custom-allow-category" again.
+    #. Return to the list of URL Categories and select **custom-allow-category** again.
 
-        Take note of the chatgpt entry;  **https://*chatgpt.com/**
+        **WARNING:** For this next step there are 2 Delete buttons on this configuration page. Press the one under the Associated URLs list box to delete the chosen URL.
 
-    #.  Select the **chatgpt** entry and click the **Delete** button. Then press the **Update** button to save the change.
+    #. Select the **chatgpt** entry and click the **Delete** button. Then press the **Update** button to save the change.
 
         This will remove the chatgpt entry from the custom-allow-category list. 
-
-        **WARNING:** There are 2 Delete buttons on this configuration page. Press the one under the Associated URLs list box to delete the chosen URL.
         
-        **NOTE:** Removing this entry will cause any requests to chatgpt.com to be categorized according to other URL Categories and Filters configured in the SWG. Depending on the filtering rules, this may result in blocked access or different handling of requests to chatgpt.com.
+        **NOTE:** Removing this entry will cause any requests to chatgpt.com to be categorized according to other URL Categories and Filters configured in the SWG. Depending on the filtering rules, this may result in different handling of requests to chatgpt.com.
 
         .. image:: ./images/l2-bigip-swg-chatgpt-deleted.png
             :align: center
