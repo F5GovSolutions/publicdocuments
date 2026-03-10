@@ -134,15 +134,13 @@ Task 3 - Test SSH client through the Explicit Proxy
     
         PuTTY allows you to save connection profiles with the proxy settings already configured. 
 
-    #. Then select the Connection > Proxy category in the left navigation pane.
-
-        View the proxy settings. The PuTTY client is configured to use the F5 Explicit Forward Proxy for SSH connections using the SOCKS protocol on port 8080.
-
         .. image:: ./images/t3-ssh-load.png
             :align: center
             :alt: putty proxy settings
 
+    #. Then select the Connection > Proxy category in the left navigation pane.
 
+        View the proxy settings. The PuTTY client is configured to use the F5 Explicit Forward Proxy for SSH connections using the SOCKS protocol on port 8080.
 
         .. image:: ./images/t3-ssh-proxy.png
             :align: center
