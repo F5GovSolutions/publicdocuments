@@ -83,7 +83,9 @@ Task 1. Browsing websites through the Explicit Forward Proxy
 Task 2. - Test SFTP client - FileZilla
 --------------------------------------
 
-    #. Open FileZilla
+    In these next Tasks, we will now test proxying SSH traffic through the BIG-IP. We will test the SFTP using FileZilla and SSH using PuTTY. Both of these clients support the use of a SOCKS5 proxy, which is how the SSLO L3 Outbound Proxy topology is configured to receive and handle this traffic.
+
+    #. Open **FileZilla**
 
         .. image:: ./images/t2-fz-1.png
             :align: center
@@ -91,9 +93,9 @@ Task 2. - Test SFTP client - FileZilla
 
     #. Before connecting anywhere, select 'Desktop' under 'Local site'. The local folder now is the Desktop of this remote PC.
 
-    #. Click the 'Site Manager' icon or Select it under File menu.
+    #. Click the **Site Manager** icon or Select it under File menu.
 
-    #. Click the 'Connect' button
+    #. Click the **Connect** button
   
         Watch connection and negotiation in the status pane. It should connect to the site and you should see the list of files on the right site; 'Remote site' pane.
 
@@ -118,7 +120,7 @@ Task 2. - Test SFTP client - FileZilla
 Task 3 - Test SSH client through the Explicit Proxy
 ---------------------------------------------------
 
-    #. Open the PuTTY ssh client.
+    #. Open the **PuTTY** ssh client.
 
     #. Type the site **test.rebex.net** into the **Host Name** field and press Open
 
@@ -140,6 +142,8 @@ Task 3 - Test SSH client through the Explicit Proxy
             :align: center
             :alt: putty proxy settings
 
+
+
         .. image:: ./images/t3-ssh-proxy.png
             :align: center
             :alt: putty proxy settings view
@@ -147,6 +151,7 @@ Task 3 - Test SSH client through the Explicit Proxy
     #. Press **Open** to initiate the connection to the SSH server again.
 
         When the connection is successful, you will be prompted to log in. Use the following credentials:
+
         - Username: demo
 
         - Password: password
