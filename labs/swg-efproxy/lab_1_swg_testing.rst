@@ -40,13 +40,13 @@ Task 1. Browsing websites through the Explicit Forward Proxy
 
     #. Now open Windows Settings.
 
-    #. Search for and open **Proxy Settings**
+    #. Search for and open **Proxy settings**
 
         .. image:: ./images/l1-win-proxy-set.png
             :align: center
             :alt: win proxy settings
     
-    #. Click the **Set up** button to open the **Edit proxy server** page.
+    #. Click the **Set up** button for the **Manual proxy setup** section to open the **Edit proxy server** page.
 
         .. image:: ./images/l1-win-proxy-on.png
             :align: center
@@ -54,9 +54,9 @@ Task 1. Browsing websites through the Explicit Forward Proxy
 
         Take note here the FQDN of the proxy server and the port.
 
-    #. Turn **On** the 'Use a proxy server' setting, and click **Save**
+    #. Turn **On** the 'Use a proxy server' setting and click **Save**.
 
-    #. Go back to your browser and on the tab with ESPN or Draftkings click the browser Refresh button or CTRL + F5 shortcut to fully reload the webpage.
+    #. Go back to your browser and Refresh each of the tabs.  This can be done by clicking the browser Refresh button or using the CTRL + F5 shortcut to fully reload the webpage.
 
         What is the result of browsing to these sites now?
 
@@ -122,36 +122,38 @@ Task 3 - Test SSH client through the Explicit Proxy
 
     #. Type the site **test.rebex.net** into the **Host Name** field and press Open
 
-        .. image:: ./images/t3-ssh-1a.png
+        .. image:: ./images/t3-ssh-1.png
             :align: center
             :alt: putty client
 
-        The connection will fail with a message: "Network error: Permission denied"
+        The connection will fail with a message: "Network error: Permission denied". This is expected because SSH is being blocked going out of the Windows 11 client.
 
-    #. Select test.rebex.net in the **Saved Sessions** section and press Load. Then select the Connection > Proxy category in the left navigation pane.
+    #. Reopen PuTTY again, and now select **test.rebex.net** in the **Saved Sessions** section and press **Load**. 
+    
+        PuTTY allows you to save connection profiles with the proxy settings already configured. 
+
+    #. Then select the Connection > Proxy category in the left navigation pane.
 
         View the proxy settings. The PuTTY client is configured to use the F5 Explicit Forward Proxy for SSH connections using the SOCKS protocol on port 8080.
 
-        .. image:: ./images/t3-ssh-2.png
+        .. image:: ./images/t3-ssh-load.png
             :align: center
             :alt: putty proxy settings
 
-        .. image:: ./images/t3-ssh-3.png
+        .. image:: ./images/t3-ssh-proxy.png
             :align: center
             :alt: putty proxy settings view
 
-    #. Press Open to initiate the connection to the SSH server again.
+    #. Press **Open** to initiate the connection to the SSH server again.
 
         When the connection is successful, you will be prompted to log in. Use the following credentials:
         - Username: demo
 
         - Password: password
 
-        After logging in, you should see a command prompt. You can run commands on the remote server to verify that the connection is working properly.
+        After logging in, you should see a command prompt. Type 'dir' or 'ls' command to list the files in the current directory; the same file is present in the directory we copied earlier.
 
-        You can run the `ls` command to list the files in the current directory, or the `pwd` command to print the working directory.
-
-    #. Type `exit` to close the SSH connection when you are finished.
+    #. Type 'exit' to close the SSH connection when you are finished.
 
     #. Return to the BIG-IP TMUI and navigate to **Local Traffic > Virtual Servers** to and note the Virtual Server configured to service the SFTP and SSH traffic from the Windows 11 client.
 

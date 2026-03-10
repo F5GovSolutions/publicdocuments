@@ -20,6 +20,8 @@ Accessing the BIG-IPs will primarily be done through the web-based **Traffic Man
 Credentials:
 ------------
     
+    Credentials are provide here and in the **Details** tab of each component in the deployment.
+
     +-----------------+------------+-----------------+
     | Component       | Username   | Password        |
     +=================+============+=================+
@@ -131,7 +133,7 @@ Logging into the Windows 11 Client using the SuperJump Host method:
             :align: center
             :alt: superjump connections
 
-    #. This will open a new tab in your browser with a Remote Desktop session to the Windows 11 client. Use the credentials found on the Details page of the Windows 11 instance to log in.
+    #. This will open a new tab in your browser with a Remote Desktop session to the Windows 11 client.
 
         .. image:: ./images/udf-sjh-win11-logon.png
             :align: center
@@ -146,7 +148,7 @@ Logging into the Windows 11 Client using the SuperJump Host method:
 Logging into the BIG-IP TMUI:
 -----------------------------
 
-    #. From the ACCESS menu of the BIG-IP select TMUI.
+    #. From the **ACCESS** menu of the BIG-IP select TMUI.
 
         .. image:: ./images/udf-bigip-tmui.png
             :align: center
@@ -161,13 +163,13 @@ Logging into the BIG-IP TMUI:
 Logging into the BIG-IP WebShell:
 ---------------------------------
 
-    #. From the ACCESS menu of the BIG-IP select WebShell.
+    #. From the **ACCESS** menu of the BIG-IP select WebShell.
 
         .. image:: ./images/udf-bigip-webshell.png
             :align: center
             :alt: webshell 
 
-    This will open a new browser tab with a command-line interface to the BIG-IP.
+        This will open a new browser tab with a command-line interface to the BIG-IP.
 
         .. image:: ./images/udf-bigip-webshell-page.png
             :align: center
