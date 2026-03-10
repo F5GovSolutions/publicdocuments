@@ -58,7 +58,7 @@ Starting up the Lab in the Course:
             :align: center
             :alt: udf-course-documentation
 
-    #. Click the Deployment tab and view the components of the lab. Each of the components will be in the process of starting up. This is indicated by the yellow gear spinning.
+    #. Click the **Deployment** tab and view the components of the lab. Each of the components will be in the process of starting up. This is indicated by the yellow gear spinning.
 
         .. image:: ./images/udf-comp-start.png
             :align: center
@@ -83,11 +83,15 @@ Logging into the Windows 11 Client using the RDP method:
 
     #. Enter username and password to log in found on the **Details** page.. 
 
-        **IMPORTANT:** If you are on a Windows machine, you'll have to enter the Domain\\username (for example: f5labs\\f5guy). If using a Mac, you will only need to enter the username.   
+        **IMPORTANT:** If you are on a Windows machine, you'll have to enter the Domain\\username (for this lab: **f5labs\\f5guy**). 
+        
+         
 
         .. image:: ./images/udf-win11-rdp-win-logon.png
             :align: center
             :alt: win11 logon
+
+        If using a Mac, you will only need to enter the username.  
 
         .. image:: ./images/udf-win11-rdp-mac-logon1.png
             :align: center
@@ -107,13 +111,15 @@ Logging into the Windows 11 Client using the RDP method:
 Logging into the Windows 11 Client using the SuperJump Host method:
 -------------------------------------------------------------------
 
+    Some corporate or government provided laptops per security policies may not allow the use of RDP or have the RDP client installed. In this case, you can access the Windows 11 client through the SuperJump Host. 
+
     #. From the **Access** menu of the SuperJump Host, select **Guacamole**. This will open a new browser tab with the Guacamole login page.
 
         .. image:: ./images/udf-sjh-guac.png
             :align: center
             :alt: guacamole
 
-    #. Enter the username and password found on the Details page of the SuperJump Host.
+    #. Enter the username and password found on the **Details** page of the SuperJump Host.
 
         .. image:: ./images/udf-sjh-guac-login.png
             :align: center
@@ -162,6 +168,10 @@ Logging into the BIG-IP WebShell:
             :alt: webshell 
 
     This will open a new browser tab with a command-line interface to the BIG-IP.
+
+        .. image:: ./images/udf-bigip-webshell-page.png
+            :align: center
+            :alt: webshell page
 
 Now you are ready to start working through the labs. The next section will cover testing the SWG Explicit Forward Proxy configuration from the Windows 11 client.
 
