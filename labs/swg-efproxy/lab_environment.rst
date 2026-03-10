@@ -33,6 +33,7 @@ Credentials:
 
 Starting up the Lab in the Course:
 ----------------------------------
+
     #. Lab participants will receive an UDF course invitation email with details about the course date and time as well as login and account instructions.
 
         Clicking the links will prompt you to login, 
@@ -59,7 +60,7 @@ Starting up the Lab in the Course:
 
     #. Click the Deployment tab and view the components of the lab. Each of the components will be in the process of starting up. This is indicated by the yellow gear spinning.
 
-        .. image:: ./images/udf-deployment.png
+        .. image:: ./images/udf-comp-start.png
             :align: center
             :alt: udf-deployment
 
@@ -76,7 +77,7 @@ Logging into the Windows 11 Client using the RDP method:
 
     **TIP:** Pick a resolution equal to or smaller than your local machine's screen resolution to ensure the best experience. The RDP app will allow you to into full screen mode or windowed mode once you are connected.
 
-        .. image:: ./images/udf-win11-resolution.png
+        .. image:: ./images/udf-win11-rdp-resolution.png
             :align: center
             :alt: rdp resolution
 
@@ -84,18 +85,18 @@ Logging into the Windows 11 Client using the RDP method:
 
         **IMPORTANT:** If you are on a Windows machine, you'll have to enter the Domain\\username (for example: f5labs\\f5guy). If using a Mac, you will only need to enter the username.   
 
-        .. image:: ./images/udf-win11-win-logon.png
+        .. image:: ./images/udf-win11-rdp-win-logon.png
             :align: center
             :alt: win11 logon
 
-        .. image:: ./images/udf-win11-mac-logon1.png
+        .. image:: ./images/udf-win11-rdp-mac-logon1.png
             :align: center
             :alt: MacOS logon
 
-    **NOTE:** A security warning about trusting the Certificate will pops up,
+        **NOTE:** A security warning about trusting the Certificate will pops up,
     
-    - If on a Windows machine, click **Yes** to proceed.
-    - If on a Mac, click **Continue** to proceed.
+            - If on a Windows machine, click **Yes** to proceed.
+            - If on a Mac, click **Continue** to proceed.
 
     #. Once logged in, you will see the Windows 11 desktop with browsers, FileZilla, and PuTTY pre-installed.
 
@@ -110,7 +111,7 @@ Logging into the Windows 11 Client using the SuperJump Host method:
 
         .. image:: ./images/udf-sjh-guac.png
             :align: center
-            :alt: guacomole
+            :alt: guacamole
 
     #. Enter the username and password found on the Details page of the SuperJump Host.
 
@@ -120,15 +121,21 @@ Logging into the Windows 11 Client using the SuperJump Host method:
 
     #. Once logged in, under **All Connections** select the **Win11 Domain Joined..._RDP** link.
     
-        .. image:: ./images/udf-sjh_connections.png
+        .. image:: ./images/udf-sjh-connections.png
             :align: center
             :alt: superjump connections
 
     #. This will open a new tab in your browser with a Remote Desktop session to the Windows 11 client. Use the credentials found on the Details page of the Windows 11 instance to log in.
 
-        .. image:: ./images/udf-win11-login2.png
+        .. image:: ./images/udf-sjh-win11-logon.png
             :align: center
             :alt: win11-login
+
+        Once logged in, you will see the Windows 11 desktop with browsers, FileZilla, and PuTTY pre-installed.
+
+        .. image:: ./images/udf-sjh-win11-desktop.png
+            :align: center
+            :alt: win11 desktop
 
 Logging into the BIG-IP TMUI:
 -----------------------------
