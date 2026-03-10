@@ -23,13 +23,11 @@ Credentials:
     +-----------------+------------+-----------------+
     | Component       | Username   | Password        |
     +=================+============+=================+
-    | BIG-IP TMUI   | admin     | f5Twister!      |
+    | BIG-IP TMUI     | admin      | f5Twister!      |
     +-----------------+------------+-----------------+
-    | Windows 11 Client | f5guy | f5Twister!      |
+    | Windows 11      | f5guy      | f5Twister!      |
     +-----------------+------------+-----------------+
-    | Windows 2019 Server | administrator | f5Twister! |
-    +-----------------+------------+-----------------+
-    | SuperJump Host | rdpuser  | f5Twister!      |
+    | SuperJump Host  | rdpuser    | f5Twister!      |
     +-----------------+------------+-----------------+
 
 
