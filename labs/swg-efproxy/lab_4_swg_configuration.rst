@@ -5,11 +5,12 @@ There are several components that are already configured like networking, DNS, N
 Licensing. Outside the scope of these instructions.
 SSL Certificates Root Certificates and subordinate certificates that allow the BIG-IP to re-create certificates to establish the connections. These instructions assume that the student has experience with the basics of PKI certificate and key management.
 
-Kerberos is already setup from the Active Directory server with a KeyTab file loaded on to the BIG-IP.
+Kerberos Authentication was configured for BIG-IP SSLO-1 to show that authentication is working and to show the authenticated user in the logs, but we will not be going into the details of how to configure Kerberos authentication for BIG-IP SSLO-2 as a part of this configuration lab.
 
-You see some of these elements referred.
+SSLO Configuration
+++++++++++++++++++
 
-(SSLO Configuration)
+In this section, we will configure the SSL Orchestrator (SSLO) with the Secure Web Gateway (SWG) service in an Explicit Forward Proxy topology. There are several components that need to be created and configured in order to have a working SWG service, including the URL Filter, Per Request Policy, and the SSLO configuration itself. We will go through each of these components step by step to build out the configuration for the SWG Explicit Forward Proxy.
 
 Task 1 - Create a Custom URL Filter
 -----------------------------------
@@ -194,6 +195,34 @@ Task 3 - SSLO / SWG Configuration
             :align: center
             :alt: SSLO Deploy
 
+Task 4 - Configure the Win 11 Client to use the Explicit Proxy on the BIG-IP SSLO-2
+-----------------------------------------------------------------------------------
+
+    #. On the Windows 11 client, open the **Proxy Settings** again by searching for it in the Start Menu.
+
+    #. In the Proxy Settings, turn on the **Use a proxy server** setting. For the Address, enter the IP address specified in the Interception Rule of the SSLO configuration; in this case, 10.1.10.30. Ensure that the Port is **3128**, Then click **Save** to save the proxy settings.
+
+        .. image:: ./images/l-sslo-proxy-settings.png
+            :align: center
+            :alt: Proxy Settings
+
+    #. Now open Chrome or Firefox and try to browse to the website that is categorized under the Sports category, such as **espn.com**. You should see that the website is blocked by the SWG with the default block page since we configured the URL filter to block the Sports category and applied that URL filter in our Per Request Policy which is being used by the SWG service in our SSLO configuration.
+
+        .. image:: ./images/l-sslo-proxy-block.png
+            :align: center
+            :alt: Proxy Block
+
+    #. Return to the TMUI of BIG-IP SSLO-2 and look for an Active Session for the Windows 11 client. 
+
+        .. image:: ./images/l-sslo-active-session.png
+            :align: center
+            :alt: Active Session
+
+    #. When you're finished with this lab reconfigure the Proxy Settings on the Windows 11 client to use BIG-IP SSLO-1 Explicit Proxy fqdn of **proxy.f5labs.local**.
+
+        .. image:: ./images/l-sslo-proxy-settings2.png
+            :align: center
+            :alt: Proxy Settings
 
 `Next Lab 5 - Manage Custom Categories using the iControl Rest API <./lab_5_icontrol_rest_api.rst>`__
 

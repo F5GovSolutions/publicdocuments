@@ -46,7 +46,7 @@ Task 1. Listing URL Categories
             tmsh (Press ENTER to enter TMSH context from bash)
             list sys url-db url-category (Press TAB for auto-complete)
 
-    #. When you press Tab at this point in the command, the auto-complete will ask you if you want **"Display all 221 items? (y/n)"**. Press **"y"** to see the full list of **Options, Properties and Configuration Items** 
+    #. When you press **Tab** at this point in the command, the auto-complete will ask you if you want **"Display all 221 items? (y/n)"**. Press **"y"** to see the full list of **Options, Properties and Configuration Items** 
     
         The list will be too long for the shell window, so pressing the **SPACE BAR** will page through to the end of the list. When you come to the **END** of the list, press **'q'** to exit the listing and return to the partial command.
 
