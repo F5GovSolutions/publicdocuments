@@ -20,15 +20,18 @@ Accessing the BIG-IPs will primarily be done through the web-based **Traffic Man
 Credentials:
 ------------
     
-    +---------------+------------+-----------------+
-    | Component     | Username   | Password        |
-    +---------------+------------+-----------------+
+    +-----------------+------------+-----------------+
+    | Component       | Username   | Password        |
+    +=================+============+=================+
     | BIG-IP TMUI   | admin     | f5Twister!      |
+    +-----------------+------------+-----------------+
     | Windows 11 Client | f5guy | f5Twister!      |
+    +-----------------+------------+-----------------+
     | Windows 2019 Server | administrator | f5Twister! |
+    +-----------------+------------+-----------------+
     | SuperJump Host | rdpuser  | f5Twister!      |
-    +---------------+------------+-----------------+
-    
+    +-----------------+------------+-----------------+
+
 
 Starting up the Lab in the Course:
 ----------------------------------
