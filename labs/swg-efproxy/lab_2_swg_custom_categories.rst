@@ -85,11 +85,9 @@ Task 1. Working with SWG URL Categories
             :align: center
             :alt: chatgpt-added
 
-        By adding this entry to the custom-block-category, any requests to chatgpt.com will now be categorized under this block category.
+        By adding this entry to the custom-block-category, any requests to chatgpt.com will now be categorized under this custom block category.
 
-    #. 
-
-    #. Return to the Windows 11 client and open a web browser Chrome or Firefox. Click on the Chatgpt bookmark in the Favorites Bar.
+    #. Return to the Windows 11 client and open a web browser Chrome or Firefox. Click on the **Chatgpt** bookmark in the Favorites Bar.
 
         The request to chatgpt.com should now be blocked by the SWG, and you should see a block page indicating that access to the site has been denied.
 
