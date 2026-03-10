@@ -77,17 +77,17 @@ Task 1. Working with SWG URL Categories
 
         A list of URL Categories will appear in the main window, with Custom Categories at the top.
 
-    #. Click on the '**\'+\'** sign next to **Custom Categories** to expand the list. This reveals that there are 3 custom categories already configured here here.
+    #. Click on the **\'+\'** sign next to **Custom Categories** to expand the list. This reveals that there are 3 custom categories already configured here here.
 
-    #. Select "custom-allow-category" and view the URLs already added to this list.
+    #. Select **custom-allow-category** and view the URLs already added to this list.
 
         .. image:: ./images/l2-bigip-swg-custallcat.png
             :align: center
             :alt: custom-allow-category
 
-    #.  Return to the list of URL Categories by clicking **Secure Web Gateway : URL Categories** link right above **Properties** in the navigation bar.
+    #.  Return to the list of URL Categories by clicking **Secure Web Gateway : URL Categories** link right above **Properties** in the horizontal navigation bar.
 
-    #.  Expand the Custom Categories again and select "custom-block-category" and view the URLs already added to this list.
+    #.  Expand the Custom Categories again and select **custom-block-category** and view the URLs already added to this list.
 
         .. image:: ./images/l2-bigip-swg-custblkcat.png
             :align: center
@@ -95,15 +95,15 @@ Task 1. Working with SWG URL Categories
         
         There is only one URL in this category, currently only as a placeholder. A custom category needs at least one URL to be defined.
 
-        **Glob Setting in URL Categories**
+        **Glob Pattern Match**
 
-        The Glob setting in URL Categories allows you to define custom URL patterns using wildcards for flexible and precise matching. In this context, "glob" refers to a pattern-matching syntax where you can use special characters like `*` and `?` to specify a range of URLs without listing them individually. For example:
+        The **Glob Pattern Match** setting in URL Categories allows you to define custom URL patterns using wildcards for flexible and precise matching. In this context, "glob" refers to a pattern-matching syntax where you can use special characters like `*` and `?` to specify a range of URLs without listing them individually. For example:
 
-            - `*.example.com` matches all subdomains of `example.com` (e.g., `www.example.com`, `blog.example.com`).
+            - '*.example.com' matches all subdomains of 'example.com' (e.g., 'www.example.com', 'blog.example.com').
 
-            - `example.com/*` matches all paths under `example.com` (e.g., `example.com/home`, `example.com/about`).
+            - 'example.com/*' matches all paths under 'example.com' (e.g., 'example.com/home', 'example.com/about').
 
-            - `file?.example.com` matches any single-character variation of `file` (e.g., `file1.example.com`, `file2.example.com`).
+            - 'file?.example.com' matches any single-character variation of 'file' (e.g., 'file1.example.com', 'file2.example.com').
 
             This setting is useful when you want to create custom URL categories that group related websites or pages based on specific patterns. It provides greater flexibility for administrators to match complex or dynamic site structures that may not be covered by predefined categories.
 

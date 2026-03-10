@@ -158,13 +158,13 @@ Task 3 - Test SSH client through the Explicit Proxy
 
     #. Type 'exit' to close the SSH connection when you are finished.
 
-    #. Return to the BIG-IP TMUI and navigate to **Local Traffic > Virtual Servers** to and note the Virtual Server configured to service the SFTP and SSH traffic from the Windows 11 client.
+    #. Return to the BIG-IP TMUI and navigate to **Local Traffic > Virtual Servers** to and look for a Virtual Server configured with the IP and port used by the SFTP and SSH clients.
 
         .. image:: ./images/l1-ltm-vs-ssh.png
             :align: center
             :alt: vs proxy ssh
 
-        We can see that there is a Virtual Server that matches the IP and port used by the SFTP and SSH clients. This means that the traffic from the SFTP and SSH clients are being sent to the BIG-IP system through the SOCKS Proxy virtual server.
+        We can see that Virtual Server, vs_ssh_sftp_forward-2 matches the IP and port used by the clients. This means that the traffic from the SFTP and SSH clients are being sent through the SOCKS Proxy on the BIG-IP.
 
 In this Lab we looked at how to test the SWG Explicit Forward Proxy configuration using a Windows 11 client. We tested web browsing through the proxy, as well as SFTP and SSH connections using FileZilla and PuTTY, respectively. The next lab will focus on the BIG-IP configuration, specifically working with SWG URL Categories and URL Filters to enforce policies and manage web traffic more effectively.
 
