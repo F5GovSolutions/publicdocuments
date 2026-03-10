@@ -20,62 +20,14 @@ The SWG uses these categories and filters to provide granular control over web a
 
 By linking URL Categories, URL Filters rules, and APM policies, the SWG ensures both secure and policy-compliant web access for users in the network.
 
-Task 0. Managing Client Sessions and Browser Behavior in the Lab
-----------------------------------------------------------------
-
-    When working in this lab environment, there will be times when you need to "kill" client sessions. This is especially important when making changes to URL Categories or URL Filters, as active sessions still use cached policy rules and information. By clearing the session, any updates to the policy configurations are applied on the next request.
-
-    In this lab, the per-session timeout is set to the default of 5 minutes (300 Seconds). Waiting for the session to age out naturally can slow down your testing and lab workflow. To avoid delays:
-
-    - You will manually 'kill' sessions from the BIG-IP.
-    - After clearing the session, the client will establish a new session with the updated settings.
-
-    **Important: Close All Browsers on the Client**
-
-    It's critical to close all web browsers running on the client, as browsers and websites often maintain constant background communication to the internet. This chatter can unintentionally keep sessions alive or create new sessions and interfere with the changes you are testing.
-
-    **Steps to Ensure Clean Testing:**
-
-    Perform the following steps whenever making changes to URL Categories, URL Filters or APM Policies. You'll need to do this in subsequent labs as well.
-
-    #.  Fully close all web browsers on the Windows 11 machine to stop background traffic.
-
-    #.  On the TMUI Select **Access > Overview > Active Sessions** to view all active sessions.
-
-        .. image:: ./images/l2-bigip-apm-activesess.png
-            :align: center
-            :alt: active-sessions
-
-    #.  Set the **Auto Refresh** to 10 seconds to make it easier to see any new sessions if they are created.
-
-        .. image:: ./images/l2-bigip-apm-killsession.png
-            :align: center
-            :alt: kill-session
-
-    #.  Select the session associated with the Windows 11 client machine. There should only be one session since it is the only client browsing the web. After selecting the session, click the **Kill Selected Session** button.
-
-    #.  On the **Confirm Delete** page, click the **Delete** button to confirm the session termination.
-
-        This will immediately terminate the selected session(s).
-
-        **NOTE:** After killing the session, any new web requests from the client will establish a new session that reflects the latest policy configurations. This ensures that your testing of the URL Categories and Filters are accurate.
-
-        .. image:: ./images/l2-bigip-apm-killsession-confirm.png
-            :align: center
-            :alt: kill-session
-
-        **TIP:** You'll be returned to the Active Sessions page, where you can see that the session has been removed. Let the Auto Refresh cycle through the 10 second Refresh interval to see if any new sessions are created. If a new session does appear, double-check the client for any missed open browser windows and close it.
-
-        **REMINDER:**  After making changes described in the rest of this Lab, you must alway establish new sessions to reflect any changes or updates to the BIG-IP configuration.
-
 Task 1. Working with SWG URL Categories
 ---------------------------------------
 
-    #. Login to the BIG-IP (refer to the `Lab Environment <./lab_environment.rst>`)
+    #. Login to the **BIG-IP SSLO-1 TMUI** (refer to the `Lab Environment <./lab_environment.rst>`)
 
-    #. In the left hand navigation pane select Access > Secure Web Gateway > URL Categories.
+    #. In the left hand navigation pane select **Access > Secure Web Gateway > URL Categories**.
 
-        A list of URL Categories will appear in the main window, with Custom Categories at the top.
+        A list of URL Categories will appear in the main window, with **Custom Categories** at the top.
 
     #. Click on the **\'+\'** sign next to **Custom Categories** to expand the list. This reveals that there are 3 custom categories already configured here here.
 
@@ -113,31 +65,33 @@ Task 1. Working with SWG URL Categories
 
         Take note of the chatgpt entry;  **https://*chatgpt.com/**
 
-    #.  Select the chatgpt entry and click the Delete button. Then press the Update button to save the change.
+    #.  Select the **chatgpt** entry and click the **Delete** button. Then press the **Update** button to save the change.
 
         This will remove the chatgpt entry from the custom-allow-category list. 
 
-        **.. warning:: There are 2 Delete buttons on this configuration page. Press the one under the Associated URLs list box to delete the chosen URL.
+        **WARNING:** There are 2 Delete buttons on this configuration page. Press the one under the Associated URLs list box to delete the chosen URL.
         
-        **NOTE:**: Removing this entry will cause any requests to chatgpt.com to be categorized according to other URL Categories and Filters configured in the SWG. Depending on the filtering rules, this may result in blocked access or different handling of requests to chatgpt.com.
+        **NOTE:** Removing this entry will cause any requests to chatgpt.com to be categorized according to other URL Categories and Filters configured in the SWG. Depending on the filtering rules, this may result in blocked access or different handling of requests to chatgpt.com.
 
         .. image:: ./images/l2-bigip-swg-chatgpt-deleted.png
             :align: center
             :alt: chatgpt-deleted
 
-    #. Return to the list of URL Categories and select "custom-block-category" again.
+    #. Return to the list of URL Categories and select **custom-block-category** again.
 
-    #. In the custom-block-category, enter the same chatgpt entry that was just deleted from the custom-allow-category list, **https://*chatgpt.com/**, ensure the Glob Pattern Match box is checked.
+    #. In the custom-block-category, enter the same chatgpt entry that was just deleted from the custom-allow-category list, **https://*chatgpt.com/**, ensure the **Glob Pattern Match** box is checked.
 
-    #. Now click the Add button. Note the entry has been added, then click the Update button to save the change.
+    #. Now click the **Add** button. Note the entry has been added, then click the **Update** button to save the change.
 
-        This will add the chatgpt entry to the custom-block-category list. 
+        This will add the chatgpt entry to the list. 
 
         .. image:: ./images/l2-bigip-swg-chatgpt-add-blocked.png
             :align: center
             :alt: chatgpt-added
 
         By adding this entry to the custom-block-category, any requests to chatgpt.com will now be categorized under this block category.
+
+    #. 
 
     #. Return to the Windows 11 client and open a web browser Chrome or Firefox. Click on the Chatgpt bookmark in the Favorites Bar.
 
