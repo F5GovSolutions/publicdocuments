@@ -15,15 +15,15 @@ Task 1. Accessing the Block Page Customization Settings
             :align: center
             :alt: Customizations
 
-        You will see a list of BIG-IP objects that can be customized, including Per Request Policies, Access Profiles, and more. For this lab, we will focus on customizing the block page for URL filtering, which falls under the Per Request Policy customization.
+        You will see a list of BIG-IP objects that can be customized, including *Per Request Policies*, Access Profiles, and more. For this lab, we will focus on customizing the block page for URL filtering, which falls under the Per Request Policy customization.
 
-    #. Click on the **Per Request Policy** to expand it, then click the Per Request Policy we created previously; in this example **swg-poc**. Under the policy click on the **Common** folder which contain the customizeable objects.
+    #. Click on the **Per Request Policy** folder to expand it, then click the Per Request Policy we are working with; in this example **swg-poc**. Under the policy click on the **Common** folder which contain the customizeable objects.
 
         .. image:: ./images/l7-apm-custom-prp.png
             :align: center
             :alt: Per Request Policy Customization
 
-    #. In the configuration area, there is a left navigation pane as well as another pane for the making the customization edits.
+    #. Notice in the left navigation pane there is a Branding tab and a Text tab.
 
         Let's review the block page we've been receiving.
 
@@ -32,7 +32,7 @@ Task 1. Accessing the Block Page Customization Settings
             :alt: block page elements
 
         The logo is in the header of the page. Logos are can be changed through the **Branding** configuration tab. The text elements; those in the body and the footer are customized in the **Text** configuration tab.
-
+        
     #. In the left nav pane let's select **Branding** tab first. 
 
     #. Navigate down the directory tree to **Per Request Policy > Common/swg_poc**. There will be another **Common** folder with elements that can be customized. 
