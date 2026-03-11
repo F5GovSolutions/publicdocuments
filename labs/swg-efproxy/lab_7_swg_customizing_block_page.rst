@@ -19,12 +19,6 @@ Task 1. Accessing the Block Page Customization Settings
 
     #. Click on the **Per Request Policy** folder to expand it, then click the Per Request Policy we are working with; in this example **swg-poc**. Under the policy click on the **Common** folder which contain the customizeable objects.
 
-        .. image:: ./images/l7-apm-custom-prp.png
-            :align: center
-            :alt: Per Request Policy Customization
-
-    #. Notice in the left navigation pane there is a Branding tab and a Text tab.
-
         Let's review the block page we've been receiving.
 
         .. image:: ./images/l7-apm-custom-elemnts.png
@@ -32,12 +26,10 @@ Task 1. Accessing the Block Page Customization Settings
             :alt: block page elements
 
         The logo is in the header of the page. Logos are can be changed through the **Branding** configuration tab. The text elements; those in the body and the footer are customized in the **Text** configuration tab.
-        
-    #. In the left nav pane let's select **Branding** tab first. 
 
-    #. Navigate down the directory tree to **Per Request Policy > Common/swg_poc**. There will be another **Common** folder with elements that can be customized. 
+    #. Notice in the left navigation pane there is a **Branding** tab and a **Text** tab. Select **Branding** tab first. .
 
-    #. Select **Header, Fotter, Title** in the list. This reveals the Header Image For Desktop and Mobile. 
+    #. Then in the **Per Request Policy > Common/swg_poc > Common** folder select **Header, Footer, Title** in the list. This reveals the Header Image For Desktop and Mobile. 
 
         .. image:: ./images/l7-apm-custom-logo.png
             :align: center
@@ -61,7 +53,7 @@ Task 1. Accessing the Block Page Customization Settings
 
             delete ltm profile ramcache all
 
-            This will clear the RAM cache profile, which is used to cache block pages. By clearing the cache, we can ensure that any changes we make to the block page will be reflected immediately when we test it.
+        This will clear the RAM cache profile, which is used to cache block pages. By clearing the cache, we can ensure that any changes we make to the block page will be reflected immediately when we test it.
 
     #. Return to the Windows 11 client and open a web browser and attempt to access a blocked URL.
 
