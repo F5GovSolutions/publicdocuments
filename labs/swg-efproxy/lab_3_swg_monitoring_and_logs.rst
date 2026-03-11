@@ -52,7 +52,7 @@ This will be an overview of the SWG Reports dashboard and the various metrics an
 Task 2. Viewing SWG Event Logs
 ------------------------------
 
-    #. Using the top navigation bar, navigate to **Event Logs > URL Request Logs**
+    #. In to the BIG-IP TMUI, navigate to **Access > Overview > SWG Reports > URL Request Logs**
  
         .. image:: ./images/l3-access-event-logs.png
             :align: center
@@ -60,31 +60,45 @@ Task 2. Viewing SWG Event Logs
 
         Here you can see a list of Destination URLs that were accessed through the SWG. 
     
-    #. Review the column headers; Time, Session ID, User Name, Client IP, Destination URL, URL Category, and Action. These columns provide detailed information about each request that was processed by the SWG. By default the logs will only show blocked requests.
+    #. Review the column headers; **Time, Session ID, User Name, Client IP, Destination URL, URL Category, and Action**. These columns provide detailed information about each request that was processed by the SWG. By default the logs will only show blocked requests.
 
         By default, the SWG is configured to log **blocked** requests, but not **allowed** requests. This is to conserve log storage and focus on the traffic that is being blocked by the SWG. However, you can enable logging for allowed requests as well if you want to have more visibility into all the traffic that is going through the SWG.
 
     #. Using the top navigation bar, navigate to **Event Logs > Settings**.
 
-        .. image:: ./images/l3-access-event-logs-settings.png
+        .. image:: ./images/l3-access-logs-setting.png
             :align: center
             :alt: event logs settings
 
-    #. In the Go to the Log configuration and select default log, and enable Allow Logs.
+    #. In the main panel, select **default-log-setting** and click **Edit** at the bottom of the page.
 
-        .. image:: ./images/l3-access-logs-setting.png
+        .. image:: ./images/l3-access-logs-setting-edit.png
+             :align: center
+             :alt: edit log setting
+
+    #. In the **Edit APM Log Setting** dialog, in the left hand pane, select **URL Request Logs**. Then check the box next to Log **Allowed Events**. Then click OK to save the change.
+
+        .. image:: ./images/l3-access-logs-setting-allow.png
+             :align: center
+             :alt: enable allow logs setting
+    
+    #. Return to the **URL Request Logs** under Event Logs in the top navigation bar.
+
+    #. Then go to the Windows 11 client and open a Chrome browser and access the Claude AI website.  Then open a new tab and access the Draftkings site.
+
+    #. Return to the **URL Request Logs** and click the Search button to refresh the logs. You should now see all the allowed events for the Anthropic sites and a single block event for Draftkings near the top of the logs.
+
+        .. image:: ./images/l3-access-event-logs-allow-2.png
              :align: center
              :alt: allow logs
-
-    #. Close the browsers and kill the sessions again to generate logs for the allowed traffic.
 
     **TIP:** In production you will want to leave the Allow logs turned off, as it will generate many more logs, which will fill up the log storage more quickly. You can enable Allow logs temporarily when you need to generate logs for allowed traffic for troubleshooting or monitoring purposes.
 
 More Information:
++++++++++++++++++
 
 https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-secure-web-gateway/secure-web-gateway-statistics.html
 https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-secure-web-gateway/logging-and-reporting.html
-
 
 `Next Lab 4 - SWG Configuration <./lab_4_swg_configuration.rst>`__
 
