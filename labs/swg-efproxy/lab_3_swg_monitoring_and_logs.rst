@@ -1,18 +1,22 @@
 Lab 3 - SWG Dashboard and Event Logs
 =======================================
 
-In this lab you will learn about the Dashboard and Event Logs for the Secure Web Gateway.  Monitoring and logging are essential for understanding how the SWG is performing, identifying potential issues, and ensuring that policies are being enforced correctly.
+In this lab you will learn about the SWG Reports and Event Logs for the Secure Web Gateway.  
 
-Task 1. Viewing SWG Dashboard
------------------------------
+**Reference:** https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-secure-web-gateway/secure-web-gateway-statistics.html
 
-    #. In to the BIG-IP TMUI, navigate to **Access > Overview > SWG Reports > Dashboard**
+Task 1. Viewing SWG Reports
+---------------------------
 
-        .. image:: ./images/l3-access-swg-dashboard.png
-            :align: center
-            :alt: swg dashboard
+This will be an overview of the SWG Reports dashboard and the various metrics and charts available to monitor the SWG activity. Customization of the dashboard and the individual widgets are outside the scope of this lab.
 
-        The SWG Dashboard provides an overview of the SWG activity, including metrics such as:
+    #. In to the BIG-IP TMUI, navigate to **Access > Overview > SWG Reports > Overview**
+
+        .. image:: ./images/l3-access-swg-overview.png
+            :align: center  
+            :alt: swg overview
+
+        Scroll down in the panel and review all the metrics and charts available in the dashboard. The default metrics include:
         
             - Top Host Names by Request Count
             - Top Security Categories by Blocked Request Count
@@ -21,32 +25,54 @@ Task 1. Viewing SWG Dashboard
             - Top Users by Request Count
             - Top Users by Blocked Request Count
   
-        These metrics are provide by default, but you can also customize the dashboard to include other metrics that are relevant to your environment. The dashboard is a great place to get a quick overview of the SWG activity and identify any potential issues or trends in the traffic. 
+        These are provided by default, but you can also customize the dashboard to include other metrics that are relevant to your environment. The dashboard is made up of individual panes called **widgets**.
 
-        The 
+        The widget has settings that can be adjusted. 
+
+            - Chart Type:
+            - Time Range:
+            - Modify Settings (Gear Symbol)
+
+        .. image:: ./images/l3-access-swg-widget-settings.png
+            :align: center
+            :alt: swg dashboard
+
+    #. Additional widgets are added with the **Add Widget** button at the bottom of the dashboard. Adding widgets will not be covered in this lab.
+    
+    #. Using the top navigation bar, select **SWG Reports > All Requests** and review the information provided in this dashboard as well.
+
+        .. image:: ./images/l3-access-swg-all-requests.png
+            :align: center
+            :alt: swg all requests
+
+    #. Using the top navigation bar, select **SWG Reports > Blocked Requests** and review the information provided in this dashboard as well.
+
+        .. image:: ./images/l3-access-swg-blocked-requests.png
+            :align: center
+            :alt: swg blocked requests
 
 Task 2. Viewing SWG Event Logs
 ------------------------
 
-    #. In the BIG-IP TMUI, navigate to **Access > Overview > SWG Reports**
+    #. In the BIG-IP TMUI, navigate to **Access > Overview > Event Logs > URL Request Logs**
  
         .. image:: ./images/l3-access-event-logs.png
             :align: center
             :alt: event logs
 
-        Here you can see a list of access events that have occurred on the system, including those related to the SWG. You can filter the logs by various criteria, such as date, user, or event type, to find specific entries related to SWG activity.    
-
-    #. When making changes to URL Filters or Categories, remember to kill sessions so that the new policies are applied to the user traffic. As we did in Lab 2.
+        Here you can see a list of Destination URLs that were accessed through the SWG. 
+    
+    #. Review the column headers; Time, Session ID, User Name, Client IP, Destination URL, URL Category, and Action. These columns provide detailed information about each request that was processed by the SWG. By default the logs will only show blocked requests.
 
     #. Go to the Log configuration and select default log, and enable Allow Logs.
 
-        .. image:: ./images/l3-access-logs-allow.png
+        .. image:: ./images/l3-access-logs-setting.png
              :align: center
              :alt: allow logs
 
     #. Close the browsers and kill the sessions again to generate logs for the allowed traffic.
 
-    **TIP:** In production you will want to leave the Allow logs turned off,as it will generate many more logs, which will fill up the log storage more quickly. You can enable Allow logs temporarily when you need to generate logs for allowed traffic for troubleshooting or monitoring purposes.
+    **TIP:** In production you will want to leave the Allow logs turned off, as it will generate many more logs, which will fill up the log storage more quickly. You can enable Allow logs temporarily when you need to generate logs for allowed traffic for troubleshooting or monitoring purposes.
 
 More Information:
 
