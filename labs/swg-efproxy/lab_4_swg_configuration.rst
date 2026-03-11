@@ -15,6 +15,10 @@ SSLO SWG Deployment
 Task 1 - Create a Custom URL Filter
 -----------------------------------
 
+    #. Log into the **TMUI** of **BIG-IP SSLO-2**.
+
+        Ensure you are on BIG-IP SSLO-2; the Hostname at the top should read **sslo2.local**.
+
     #. Navigate to **Access > Secure Web Gateway > URL Filters**.
 
         .. image:: ./images/l-swg-conf-urlfilter-create.png    
@@ -35,7 +39,7 @@ Task 1 - Create a Custom URL Filter
             :align: center
             :alt: Modify URL Filter 
 
-        **OPTIONAL:** Feel free to select other categories and block or allow them as you see fit. You can then test with those categories from the Windows 11 client later in the lab.
+        **OPTIONAL:** Feel free to select other categories and block or allow them as you see fit. You can then test with those categories from the Windows 11 client later.
 
     #. Click the **Update** button in the **General Properties** section to save the changes to our custom URL filter.
 
@@ -90,13 +94,13 @@ Task 2 - Per Request Policy Configuration
             :align: center
             :alt: VPE url filter Assign
 
-    #. Click the **URL Filter** dropdown to select the URL filter we created earlier to this SWG Category Lookup macro. Click the **Save** button to save the changes.
+    #. Click the **URL Filter** dropdown to select the URL filter we created earlier to add to this SWG Category Lookup macro. Click the **Save** button to save the changes.
 
         .. image:: ./images/l-swg-prp-vpe-urlf-select.png
             :align: center
             :alt: VPE url filter select
 
-    #. Back on the Per Request Policy main page, between the Start and Allow boxes, click the **(+)** to add a policy item; this will link the SWG Category Lookup macro to the main policy. In the page that opens click the **Macros** tab. Select the SWG Category Lookup radio button, and then click the **Add Item** button to add it to the policy.
+    #. Back on the Per Request Policy main page, between the Green Start and Allow boxes, click the **(+)** to add a policy item. In the page that opens click the **Macros** tab. Select the SWG Category Lookup radio button, and then click the **Add Item** button to add it to the policy. This will link the SWG Category Lookup macro to the main policy.
 
         .. image:: ./images/l-swg-prp-vpe-policy-macro-add.png
             :align: center
@@ -123,7 +127,7 @@ Task 3 - SSLO / SWG Configuration
 
     #. Scroll down to the bottom of the page and click **Next**.
 
-        **NOTE** The SSLO Configuration page may complain about "SSL Orchestrator is not initialized."  Wait about 30 seconds and click **SSL Orchestrator > Configuration** again to refresh the page, go to the bottom click **Next**
+        **NOTE:** The SSLO Configuration page may complain about "SSL Orchestrator is not initialized."  Wait about 30 seconds and click **SSL Orchestrator > Configuration** again to refresh the page, go to the bottom click **Next** again.
 
     #. On the **Topology Properties** page, give the topology a name; for example, **"swg_poc"**. In the SSL Orchestrator Topology section, select **L3 Explicit Proxy** and then scroll down and click **Save & Next**.
 
