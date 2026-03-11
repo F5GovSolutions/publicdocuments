@@ -1,23 +1,35 @@
-Lab 3 - SWG Viewing Monitoring and Logs
+Lab 3 - SWG Dashboard and Event Logs
 =======================================
 
+In this lab you will learn about the Dashboard and Event Logs for the Secure Web Gateway.  Monitoring and logging are essential for understanding how the SWG is performing, identifying potential issues, and ensuring that policies are being enforced correctly.
 
-Task 1. Viewing SWG Dashboard and Statistics
---------------------------------------------
+Task 1. Viewing SWG Dashboard
+-----------------------------
 
-    #. Log in to the BIG-IP TMUI, navigate to **Access > Overview > SWG Reports > Dashboard**
+    #. In to the BIG-IP TMUI, navigate to **Access > Overview > SWG Reports > Dashboard**
 
         .. image:: ./images/l3-access-swg-dashboard.png
             :align: center
             :alt: swg dashboard
 
-        The SWG Dashboard provides an overview of the system's performance and activity, including metrics such as total requests, blocked requests, and top users and categories. This information can help you understand how the SWG is being used and identify any potential issues or areas for improvement.
+        The SWG Dashboard provides an overview of the SWG activity, including metrics such as:
+        
+            - Top Host Names by Request Count
+            - Top Security Categories by Blocked Request Count
+            - Top Categories by Request Count
+            - Top Categories by Blocked Request Count
+            - Top Users by Request Count
+            - Top Users by Blocked Request Count
+  
+        These metrics are provide by default, but you can also customize the dashboard to include other metrics that are relevant to your environment. The dashboard is a great place to get a quick overview of the SWG activity and identify any potential issues or trends in the traffic. 
+
+        The 
 
 Task 2. Viewing SWG Event Logs
 ------------------------
 
     #. In the BIG-IP TMUI, navigate to **Access > Overview > SWG Reports**
-
+ 
         .. image:: ./images/l3-access-event-logs.png
             :align: center
             :alt: event logs
