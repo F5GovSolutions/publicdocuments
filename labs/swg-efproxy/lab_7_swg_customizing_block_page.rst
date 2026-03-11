@@ -60,5 +60,13 @@ Task 1. Accessing the Block Page Customization Settings
 
         You should see the default block page with the default text and new logo.
 
+        .. image:: ./images/l7-apm-custom-updated.png
+            :align: center
+            :alt: logo updated
+
+Task 2. Customizing the Block Page Text
+---------------------------------------
+
+    #. Content yet to be written. Please check back later.
 
 # This is the End of the Lab.
