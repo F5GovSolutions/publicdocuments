@@ -30,14 +30,14 @@ In this lab, you will be working directly with the BIG-IP system using both **TM
 
 **IMPORTANT:** **Be Careful with Commands**
 
-When working in **either TMSH or Bash contexts**, it is essential to be mindful of the commands you issue. Incorrect or careless actions can negatively impact system operations, disrupt services, or even cause outages. Always double-check commands and ensure that they align with the intended task before executing them.
+When working in either **TMSH or Bash contexts**, it is essential to be mindful of the commands you issue. Always double-check commands and ensure that they align with the intended task before executing them.
 
 Task 1. Listing URL Categories 
 ------------------------------
 
     In this task, you will use the TMSH CLI.
 
-    #. Access the BIG-IP SSLO-1 instance using the WebShell. A new browser tab will open with the BIG-IP Shell with Root logged in.
+    #. Access the **BIG-IP SSLO-1** instance using the **WebShell**. A new browser tab will open with the BIG-IP Shell with Root logged in.
 
     #. Issue the CLI command to list one of the URL categories.
 
@@ -105,8 +105,6 @@ Task 1. Listing URL Categories
         Notice the various properties of the category including the **is-custom true** which indicates that this is a custom category. The URLs listed under the category include the two glob match patterns for any subdomains of chatgpt.com and claude.com, as well as an exact match for https://example.com/.
 
         Try listing the other custom category; `custom-block-category`.
-
-    #. next
 
 Task 2. Creating new Custom Categories
 --------------------------------------
