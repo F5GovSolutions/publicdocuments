@@ -11,7 +11,7 @@ Task 1. Accessing the Block Page Customization Settings
 
     #. Log in to the BIG-IP Configuration Utility and navigate to **Access > Profiles / Policies > Customization > General**.
 
-        .. image:: ./images/l6-apm-custom-general.png
+        .. image:: ./images/l7-apm-custom-general.png
             :align: center
             :alt: Customizations
 
@@ -19,7 +19,7 @@ Task 1. Accessing the Block Page Customization Settings
 
     #. Click on the **Per Request Policy** to expand it, then click the Per Request Policy we created previously; in this example **swg-poc**. Under the policy click on the **Common** folder which contain the customizeable objects.
 
-        .. image:: ./images/l6-apm-custom-prp.png
+        .. image:: ./images/l7-apm-custom-prp.png
             :align: center
             :alt: Per Request Policy Customization
 
@@ -27,7 +27,7 @@ Task 1. Accessing the Block Page Customization Settings
 
         Let's review the block page we've been receiving.
 
-        .. image:: ./images/l6-apm-custom-elemnts.png
+        .. image:: ./images/l7-apm-custom-elemnts.png
             :align: center
             :alt: block page elements
 
@@ -39,13 +39,13 @@ Task 1. Accessing the Block Page Customization Settings
 
     #. Select **Header, Fotter, Title** in the list. This reveals the Header Image For Desktop and Mobile. 
 
-        .. image:: ./images/l6-apm-custom-logo.png
+        .. image:: ./images/l7-apm-custom-logo.png
             :align: center
-            :alt: logo change    
+            :alt: logo value    
 
     #. Click the entry in the Value column for the Header Image for Desktop. This will open a dialog box showing the current logo. Click the Replace button to open the Choose an Image where you can select an image that was previously uploaded to the BIG-IP. 
 
-        .. image:: ./images/l6-apm-custom-choose.png
+        .. image:: ./images/l7-apm-custom-choose.png
             :align: center
             :alt: logo choose  
 
@@ -53,7 +53,7 @@ Task 1. Accessing the Block Page Customization Settings
 
     #. Up near the top navigation bar, click the **Save** icon button to save the changes to the customization.
 
-                .. image:: ./images/l6-apm-custom-save.png
+                .. image:: ./images/l7-apm-custom-save.png
             :align: center
             :alt: customization save  
 
