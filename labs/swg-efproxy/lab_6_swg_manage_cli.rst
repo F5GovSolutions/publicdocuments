@@ -1,5 +1,7 @@
-Lab 6 - Manage Custom Categories and Filters using the CLI
-==========================================================
+Lab 6 - Manage Custom URL Categories using the CLI
+==================================================
+
+**NOTE:** Although possible, managing URL Filters through the CLI is not recommended due to the complexity of the configuration and the potential for errors that could impact system behavior. It is best to manage URL Filters through the TMUI. Since there is a single URL Filter with multiple URL categories, managing allowed and blocked URLs are primarily done by adding and removing URLs in those categories. Therefore, in this lab we will focus on managing URL Categories through the CLI.
 
 Task 0. TMSH and bash Contexts
 ------------------------------
@@ -28,14 +30,12 @@ In this lab, you will be working directly with the BIG-IP system using both **TM
 
 **IMPORTANT:** **Be Careful with Commands**
 
-When working in **either TMSH or Bash contexts**, it’s essential to be mindful of the commands you issue. Incorrect or careless actions can negatively impact system operations, disrupt services, or even cause outages. Always double-check commands and ensure that they align with the intended task before executing them.
-
-Understanding when and how to use these contexts correctly will give you greater control over the system while ensuring its stability and operational integrity.
+When working in **either TMSH or Bash contexts**, it is essential to be mindful of the commands you issue. Incorrect or careless actions can negatively impact system operations, disrupt services, or even cause outages. Always double-check commands and ensure that they align with the intended task before executing them.
 
 Task 1. Listing URL Categories 
 ------------------------------
 
-    In this task, you will use the TMSH CLI. This will help you understand the current categorization of URLs and how they are organized within the system.
+    In this task, you will use the TMSH CLI.
 
     #. Access the BIG-IP SSLO-1 instance using the WebShell. A new browser tab will open with the BIG-IP Shell with Root logged in.
 

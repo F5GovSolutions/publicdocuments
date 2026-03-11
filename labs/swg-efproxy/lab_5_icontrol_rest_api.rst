@@ -5,21 +5,16 @@ In this lab, you will become familiar with the iControl REST API to manage custo
 
 You can use a tool like Postman or curl to send REST API requests to the BIG-IP. You will need to authenticate using the credentials provided in the Details page of the BIG-IP instance.
 
+**NOTE:** As with the CLI section, we only cover the use of the API for managing URL Categories.
 
 Task 0. Using Token Authentication
 ----------------------------------
 
-        curl command::
-
-
-
-        This command uses basic authentication with the username and password to send a GET request to the endpoint for the `custom-block-category` URL category. 
-        
-        **NOTE:** The response is then piped to `jq` for formatting.
-
-    #. Retrieve an authentication token using the following command. Replace `username` and `password` with the appropriate credentials for your BIG-IP instance.
+    Before you can send API requests, you need to authenticate and obtain an authentication token. 
     
-        This command will return an authentication token that you can use in subsequent API requests. Copy the token value from the output, as you will need it for the next steps.
+    #. Retrieve the authentication token using the following command. Replace `username` and `password` with the appropriate credentials for your BIG-IP instance.
+    
+        This command will return an authentication token that you can use in subsequent API requests.
 
         curl commands:: 
             curl -sk https://10.1.1.6/mgmt/shared/authn/login \
@@ -34,7 +29,7 @@ Task 0. Using Token Authentication
         OUTPUT::
         "<AUTH-TOKEN-VALUE-OUTPUT>"
 
-    #. Copy this token value and use it in the Authorization header for subsequent API requests.
+    #. Copy this token value off to a text editor and use it in the Authorization header for subsequent API requests.
 
 Task 1. iControl REST API
 -------------------------
