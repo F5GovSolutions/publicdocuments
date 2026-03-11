@@ -1,8 +1,9 @@
 Lab 7 - Customizing the URL Filtering Block Page
 ================================================
 
-In this lab, you will customize the URL filtering block page that is displayed to users when they attempt to access a URL that has been blocked by the SWG. This will allow you to provide a more informative and branded experience for users who encounter blocked content.
+In this lab, you will customize the Access Policy block page that is displayed to users when they attempt to access a URL that has been blocked by the SWG. This will allow you to provide a more informative and branded experience for users who encounter blocked content.
 
+**REFERENCE:**
 https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-customization-12-0-0/2.html#unique_771735672
 
 
