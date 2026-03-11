@@ -37,7 +37,7 @@ Task 1. Listing URL Categories
 
     In this task, you will use the TMSH CLI.
 
-    #. Access the **BIG-IP SSLO-1** instance using the **WebShell**. A new browser tab will open with the BIG-IP Shell with Root logged in.
+    #. Access the **BIG-IP SSLO-1** instance using the **Web Shell**. A new browser tab will open with the BIG-IP Shell with Root logged in.
 
     #. Issue the CLI command to list one of the URL categories.
 

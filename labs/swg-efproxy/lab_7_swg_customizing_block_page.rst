@@ -33,8 +33,39 @@ Task 1. Accessing the Block Page Customization Settings
 
         The logo is in the header of the page. Logos are can be changed through the **Branding** configuration tab. The text elements; those in the body and the footer are customized in the **Text** configuration tab.
 
-    #. In the left nav pane let's select **Text** first. 
+    #. In the left nav pane let's select **Branding** tab first. 
 
-    #. On the WebShell of BIG-IP SSLO-1 issue the command:: 
+    #. Navigate down the directory tree to **Per Request Policy > Common/swg_poc**. There will be another **Common** folder with elements that can be customized. 
+
+    #. Select **Header, Fotter, Title** in the list. This reveals the Header Image For Desktop and Mobile. 
+
+        .. image:: ./images/l6-apm-custom-logo.png
+            :align: center
+            :alt: logo change    
+
+    #. Click the entry in the Value column for the Header Image for Desktop. This will open a dialog box showing the current logo. Click the Replace button to open the Choose an Image where you can select an image that was previously uploaded to the BIG-IP. 
+
+        .. image:: ./images/l6-apm-custom-choose.png
+            :align: center
+            :alt: logo choose  
+
+    #. Click on one of the images, it will reveal the full name of the image. Select the image that has 60px in the name. The logo was created to be 60 pixels in height to fit well in the header of the block page. After selecting the image, click the **Change** button to save.
+
+    #. Up near the top navigation bar, click the **Save** icon button to save the changes to the customization.
+
+                .. image:: ./images/l6-apm-custom-save.png
+            :align: center
+            :alt: customization save  
+
+    #. Open the **Web Shell** of **BIG-IP SSLO-1**; in the TMSH context, issue the command:: 
+
+            delete ltm profile ramcache all
+
+            This will clear the RAM cache profile, which is used to cache block pages. By clearing the cache, we can ensure that any changes we make to the block page will be reflected immediately when we test it.
+
+    #. Return to the Windows 11 client and open a web browser and attempt to access a blocked URL.
+
+        You should see the default block page with the default text and new logo.
+
 
 # This is the End of the Lab.
