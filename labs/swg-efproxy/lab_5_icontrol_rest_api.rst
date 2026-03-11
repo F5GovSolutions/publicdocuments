@@ -5,7 +5,7 @@ In this lab, you will become familiar with the iControl REST API to manage custo
 
 You can use a tool like Postman or curl to send REST API requests to the BIG-IP. You will need to authenticate using the credentials provided in the Details page of the BIG-IP instance.
 
-**NOTE:** As with the CLI section, we only cover the use of the API for managing URL Categories.
+**NOTE:** Although possible, managing URL Filters through the iControl REST API is not recommended due to the complexity of the configuration and the potential for errors that could impact system behavior. It is recommended to manage URL Filters through the TMUI. Since the APM Policy only contains a single URL Filter with multiple URL categories, managing allowed and blocked URLs are primarily done by adding and removing URLs in those categories. Therefore, in this lab we will focus on managing URL Categories through the iControl REST API.
 
 Task 0. Using Token Authentication
 ----------------------------------
@@ -50,7 +50,7 @@ Task 1. iControl REST API
 
             https://10.1.1.6/mgmt/tm/sys/url-db/url-category
 
-        This will return a list of all URL categories configured on the BIG-IP, including both custom and default categories.
+        This will return a full list of the URL categories configured on the BIG-IP, including both custom and default categories.
 
     #. Creating Custom Categories using the API
 

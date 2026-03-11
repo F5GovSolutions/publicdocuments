@@ -1,7 +1,7 @@
 Lab 6 - Manage Custom URL Categories using the CLI
 ==================================================
 
-**NOTE:** Although possible, managing URL Filters through the CLI is not recommended due to the complexity of the configuration and the potential for errors that could impact system behavior. It is best to manage URL Filters through the TMUI. Since there is a single URL Filter with multiple URL categories, managing allowed and blocked URLs are primarily done by adding and removing URLs in those categories. Therefore, in this lab we will focus on managing URL Categories through the CLI.
+**NOTE:** Although possible, managing URL Filters through the CLI is not recommended due to the complexity of the configuration and the potential for errors that could impact system behavior. It is recommended to manage URL Filters through the TMUI. Therefore, in this lab we will focus on managing URL Categories through the CLI.
 
 Task 0. TMSH and bash Contexts
 ------------------------------
