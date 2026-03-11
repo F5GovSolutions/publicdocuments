@@ -45,13 +45,13 @@ Task 1. Accessing the Block Page Customization Settings
 
     #. Up near the top navigation bar, click the **Save** icon button to save the changes to the customization.
 
-                .. image:: ./images/l7-apm-custom-save.png
+        .. image:: ./images/l7-apm-custom-save.png
             :align: center
             :alt: customization save  
 
     #. Open the **Web Shell** of **BIG-IP SSLO-1**; in the TMSH context, issue the command; 
 
-        .. code-block:: tmsh
+        tmsh:: 
             delete ltm profile ramcache all
 
         This will clear the RAM cache profile, which is used to cache block pages. By clearing the cache, we can ensure that any changes we make to the block page will be reflected immediately when we test it.
