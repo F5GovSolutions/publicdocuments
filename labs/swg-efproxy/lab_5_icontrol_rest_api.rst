@@ -31,9 +31,8 @@ Task 0. Using Token Authentication
                "loginProviderName": "tmos"
             }' | jq .token.token
      
-     
         OUTPUT::
-        "<AUTH-TOKEN-VALUE-HERE>"
+        "<AUTH-TOKEN-VALUE-OUTPUT>"
 
     #. Copy this token value and use it in the Authorization header for subsequent API requests.
 
@@ -48,9 +47,15 @@ Task 1. iControl REST API
 
             curl -sk -H "X-F5-Auth-Token: <AUTH-TOKEN-VALUE-HERE>" \
                 -H 'Content-Type: application/json' \
-                -X GET 'https://10.1.1.6/mgmt/tm/sys/url-db/url-category/custom-block-category' | jq
+                -X GET "https://10.1.1.6/mgmt/tm/sys/url-db/url-category/custom-block-category" | jq
 
         This command retrieves the details of the `custom-block-category` URL category. The response will include information about the category, such as its name, display name, default action, and associated URLs.
+
+        You can also list all URL categories by sending a GET request to the endpoint without specifying a category name. The path would be:
+
+            https://10.1.1.6/mgmt/tm/sys/url-db/url-category
+
+        This will return a list of all URL categories configured on the BIG-IP, including both custom and default categories.
 
     #. Creating Custom Categories using the API
 
@@ -70,6 +75,8 @@ Task 1. iControl REST API
                 "description": "API created category"
                 }' | jq
 
+    #. Verify that the category was created by listing it using the GET command. Also you can go to the TMUI and navigate URL Categories.
+
     #. Modifying Custom Categories using the API
 
         curl command::
@@ -86,6 +93,8 @@ Task 1. iControl REST API
 
         **WARNING:** This command will replace the existing list of URLs in the `my-custom-block-list` category with the new list provided in the data. Be sure to include all URLs you want to be associated with the category in this command, as it will overwrite the previous list.
 
+    #. Verify that the category was modified by listing it using the GET command. Also you can go to the TMUI and navigate URL Categories.
+
     #. Deleting Custom Categories using the API
 
         curl command::
@@ -95,7 +104,9 @@ Task 1. iControl REST API
             -H "Content-Type: application/json" \
             "https://10.1.1.6/mgmt/tm/sys/url-db/url-category/my-custom-block-list"
 
-        **NOTE:** This command does not return a response body, but you can verify that the category was deleted by attempting to retrieve it again or by listing all categories to confirm its absence.
+        **NOTE:** This command does not return a response body.
+    
+    #. Verify that the category was deleted by listing it using the GET command. Also you can go to the TMUI and navigate URL Categories.
 
 References:
 +++++++++++
@@ -129,7 +140,6 @@ Task 2. [Optional] urlupdater Script
             ./urlupdater.sh -h
     
     The script output provides the explanation for how to use it for managing URL categories, such as adding or removing URLs, creating new categories, and more. You can use these options to perform the desired operations on your BIG-IP instance.
-
 
 `Next Lab 6 - Manage Custom Categories using the CLI <./lab_6_swg_manage_cli.rst>`__
 
