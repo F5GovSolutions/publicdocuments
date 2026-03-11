@@ -3,8 +3,6 @@ Lab 3 - SWG Dashboard and Event Logs
 
 In this lab you will learn about the SWG Reports and Event Logs for the Secure Web Gateway.  
 
-**Reference:** https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-secure-web-gateway/secure-web-gateway-statistics.html
-
 Task 1. Viewing SWG Reports
 ---------------------------
 
@@ -52,9 +50,9 @@ This will be an overview of the SWG Reports dashboard and the various metrics an
             :alt: swg blocked requests
 
 Task 2. Viewing SWG Event Logs
-------------------------
+------------------------------
 
-    #. In the BIG-IP TMUI, navigate to **Access > Overview > Event Logs > URL Request Logs**
+    #. Using the top navigation bar, navigate to **Event Logs > URL Request Logs**
  
         .. image:: ./images/l3-access-event-logs.png
             :align: center
@@ -64,7 +62,15 @@ Task 2. Viewing SWG Event Logs
     
     #. Review the column headers; Time, Session ID, User Name, Client IP, Destination URL, URL Category, and Action. These columns provide detailed information about each request that was processed by the SWG. By default the logs will only show blocked requests.
 
-    #. Go to the Log configuration and select default log, and enable Allow Logs.
+        By default, the SWG is configured to log **blocked** requests, but not **allowed** requests. This is to conserve log storage and focus on the traffic that is being blocked by the SWG. However, you can enable logging for allowed requests as well if you want to have more visibility into all the traffic that is going through the SWG.
+
+    #. Using the top navigation bar, navigate to **Event Logs > Settings**.
+
+        .. image:: ./images/l3-access-event-logs-settings.png
+            :align: center
+            :alt: event logs settings
+
+    #. In the Go to the Log configuration and select default log, and enable Allow Logs.
 
         .. image:: ./images/l3-access-logs-setting.png
              :align: center
