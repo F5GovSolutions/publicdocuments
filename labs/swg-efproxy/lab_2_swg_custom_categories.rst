@@ -112,7 +112,7 @@ Task 2. Working with SWG URL Filters
 
     Next, we will take a closer look at **URL Filters**, where the actual allow or block rules are applied. This is where you will define how traffic should be treated based on the categories.
 
-    #. Return to the TMUI and in the left hand navigation pane select **Access > Secure Web Gateway > URL Filters**.
+    #. Return to the **BIG-IP SSLO-1 TMUI** and in the left hand navigation pane select **Access > Secure Web Gateway > URL Filters**.
 
         .. image:: ./images/l2-bigip-swg-urlfilters.png
             :align: center
