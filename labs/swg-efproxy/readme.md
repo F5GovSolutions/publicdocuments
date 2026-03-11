@@ -18,8 +18,10 @@
 
 [Lab 6 - Use the CLI to Manage Custom Categories and Filters](./lab_6_swg_manage_cli.rst)
 
-[Lab 7 - Customizing the URL Filtering Block Pages](lab_7_customizing_block_page.rst)
+[Lab 7 - Customizing the URL Filtering Block Pages](lab_7_swg_customizing_block_page.rst)
 
 **NOTE:**
 **TIP:**
 **OPTIONAL:**
+**IMPORTANT:**
+**WARNING:**
