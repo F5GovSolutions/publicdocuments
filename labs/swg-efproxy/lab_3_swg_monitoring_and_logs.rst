@@ -39,17 +39,7 @@ This will be an overview of the SWG Reports dashboard and the various metrics an
     
     #. Using the top navigation bar, select **SWG Reports > All Requests** and review the information provided in this dashboard as well.
 
-..        .. image:: ./images/l3-access-swg-all-requests.png
-            :align: center
-            :alt: swg all requests 
-.
-
     #. Using the top navigation bar, select **SWG Reports > Blocked Requests** and review the information provided in this dashboard as well.
-
-..        .. image:: ./images/l3-access-swg-blocked-requests.png
-            :align: center
-            :alt: swg blocked requests 
-.
 
 Task 2. Viewing SWG Event Logs
 ------------------------------
