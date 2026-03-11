@@ -84,7 +84,7 @@ Task 2. Viewing SWG Event Logs
     
     #. Return to the **URL Request Logs** under Event Logs in the top navigation bar.
 
-    #. Then go to the Windows 11 client and open a Chrome browser and access the Claude AI website.  Then open a new tab and access the Draftkings site.
+    #. Then go to the Windows 11 client and open a Chrome browser and access the Claude AI website.  Then open a new tab and access the Draftkings site, which should still be blocked.
 
     #. Return to the **URL Request Logs** and click the Search button to refresh the logs. You should now see all the allowed events for the Anthropic sites and a single block event for Draftkings near the top of the logs.
 

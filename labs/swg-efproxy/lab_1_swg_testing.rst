@@ -166,6 +166,8 @@ Task 3 - Test SSH client through the Explicit Proxy
 
         We can see that Virtual Server, vs_ssh_sftp_forward-2 matches the IP and port used by the clients. This means that the traffic from the SFTP and SSH clients are being sent through the SOCKS Proxy on the BIG-IP.
 
+        **NOTE:** The IP and Port used by the SFTP and SSH clients is different than the one used by the web browser. The BIG-IP has the flexibility to handle multiple proxy services on the same IP but different ports. 
+
 In this Lab we looked at how to test the SWG Explicit Forward Proxy configuration using a Windows 11 client. We tested web browsing through the proxy, as well as SFTP and SSH connections using FileZilla and PuTTY, respectively. The next lab will focus on the BIG-IP configuration, specifically working with SWG URL Categories and URL Filters to enforce policies and manage web traffic more effectively.
 
 `Next Lab 2 - SWG URL Categories and Filters <./lab_2_swg_custom_categories.rst>`__
