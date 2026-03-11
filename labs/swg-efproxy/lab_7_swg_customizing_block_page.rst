@@ -51,8 +51,9 @@ Task 1. Accessing the Block Page Customization Settings
 
     #. Open the **Web Shell** of **BIG-IP SSLO-1**; in the TMSH context, issue the command:: 
 
-            delete ltm profile ramcache all
+        delete ltm profile ramcache all
 
+        
         This will clear the RAM cache profile, which is used to cache block pages. By clearing the cache, we can ensure that any changes we make to the block page will be reflected immediately when we test it.
 
     #. Return to the Windows 11 client and open a web browser and attempt to access a blocked URL.
