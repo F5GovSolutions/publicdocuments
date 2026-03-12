@@ -197,7 +197,7 @@ Task 3 - SSLO / SWG Configuration
 
     #. When the deployment is complete, you will see a message that says **Deployment was successfully completed**.
 
-        .. image:: ./images/l-sslo-deploy.png
+        .. image:: ./images/l-deploy-success.png
             :align: center
             :alt: SSLO Deploy
 
