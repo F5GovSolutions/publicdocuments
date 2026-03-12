@@ -50,7 +50,7 @@ Task 1. Accessing the Block Page Customization Settings
             :align: center
             :alt: customization save  
 
-    #. Open the **Web Shell** of **BIG-IP SSLO-1**; in the TMSH context, issue the command; 
+    #. Open the **Web Shell** of **BIG-IP SSLO-1** and in the TMSH context issue the command; 
 
         tmsh:: 
             delete ltm profile ramcache all
@@ -83,7 +83,7 @@ Task 2. Customizing the Block Page Text
 
     #. Make changes to the text elements as desired. 
     
-        - Remember to click the Save icon near the top navigation bar to save any changes.
+        - Remember to click the **Save** icon near the top navigation bar to save any changes.
         - Remember to issue the TMSH command to clear the RAMCACHE.
 
     #. Test the block page again by accessing a blocked URL from the Windows client and review the changes you made.
