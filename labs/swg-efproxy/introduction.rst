@@ -32,6 +32,6 @@ The **Secure Web Gateway (SWG)** is a service component of the BIG-IP platform t
 
 The Lab underscores the SWG's versatility, showing how it combines secure web traffic filtering with robust traffic management and user authentication capabilities.
 
-`Next Lab Environment <./lab_environment.rst>`__
+`Next - Lab Environment <./lab_environment.rst>`__
 
 `Main Page <./readme.md>`__
