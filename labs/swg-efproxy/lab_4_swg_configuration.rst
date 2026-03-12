@@ -163,7 +163,7 @@ Task 3 - SSLO / SWG Configuration
             :align: center
             :alt: SSLO Add Service F5 SWG
 
-    #. In the **F5 Secure Web Gateway Service properties** page, for **Named Scope** type **"none"**. For the Per Request Policy, select the policy we created earlier; **"swg_poc"**. Then click the **Save** button to save the settings for this service.
+    #. In the **F5 Secure Web Gateway Service properties** page, for **Named Scope** type the word **"scope"** in the field. For the Per Request Policy, click the down arrow and select the policy we created earlier; **"swg_poc"**. Then click the **Save** button to save the settings for this service.
 
         .. image:: ./images/l-sslo-service-add-f5-prp.png
             :align: center
@@ -179,13 +179,13 @@ Task 3 - SSLO / SWG Configuration
 
     #. In the **Security Policy** page, click the **Save & Next** button to continue.
 
-    #. In the **Interception Rule** page, specify the IPV4 address, we will use 10.1.10.30 for this lab. Select **f5-aws-dns** the DNS Resolver. Then under VLANs, select Client-vlan and the out-vlan, and click the **>** button to move them into the **Selected** list. Leave everything else default and scroll down and click the **Save & Next** button to continue.
+    #. In the **Interception Rule** page, specify the **Proxy Server Settings** IPV4 address as **10.1.10.30** for this lab. Select **f5-aws-dns** the DNS Resolver. Then under VLANs, select **client-vlan** and the **out-vlan**, and click the **>** button to move them into the **Selected** list. Leave everything else default and scroll down and click the **Save & Next** button to continue.
 
         .. image:: ./images/l-sslo-interception-rule.png
             :align: center
             :alt: SSLO Interception Rule
 
-    #. In the **Egress Settings** page, select **Auto Map** for Manage SNAT Settings.  Then click the **Save & Next** button to continue.
+    #. In the **Egress Settings** page, select **Auto Map** for **Manage SNAT** Settings.  Then click the **Save & Next** button to continue.
 
     #. In the **Log Settings** page, accept the defaults and click the **Save & Next** button to continue.
 
@@ -206,15 +206,15 @@ Task 4 - Configure the Win 11 Client to use the Explicit Proxy on the BIG-IP SSL
 
     #. On the Windows 11 client, open the **Proxy Settings** again by searching for it in the Start Menu.
 
-    #. In the Proxy Settings, turn on the **Use a proxy server** setting. For the Address, enter the IP address specified in the Interception Rule of the SSLO configuration; in this case, 10.1.10.30. Ensure that the Port is **3128**, Then click **Save** to save the proxy settings.
+    #. In the Proxy Settings, turn on the **Use a proxy server** setting. For the Address, enter the IP address specified in the Interception Rule of the SSLO configuration; in this case, **10.1.10.30**. Ensure that the Port is **3128**, Then click **Save** to save the proxy settings.
 
-        .. image:: ./images/l-sslo-proxy-settings.png
+        .. image:: ./images/l-sslo-win-proxy-settings.png
             :align: center
             :alt: Proxy Settings
 
-    #. Now open Chrome or Firefox and try to browse to the website that is categorized under the Sports category, such as **espn.com**. You should see that the website is blocked by the SWG with the default block page since we configured the URL filter to block the Sports category and applied that URL filter in our Per Request Policy which is being used by the SWG service in our SSLO configuration.
+    #. Now open Chrome or Firefox and try to browse to the website that is categorized under the Sports category, such as **espn.com**. You should see that the website is blocked by the SWG with the default block page since we configured the URL filter to block the **Sports** category and applied that URL filter in our Per Request Policy which is being used by the SWG service in our SSLO configuration.
 
-        .. image:: ./images/l-sslo-proxy-block.png
+        .. image:: ./images/l-sslo-win-block.png
             :align: center
             :alt: Proxy Block
 
