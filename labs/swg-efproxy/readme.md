@@ -20,8 +20,17 @@
 
 [Lab 7 - Customizing the URL Filtering Block Pages](lab_7_swg_customizing_block_page.rst)
 
+Markings
+++++++++
+
+Pay special attention to these markings throughout this document.
+
 **NOTE:**
+
 **TIP:**
+
 **OPTIONAL:**
+
 **IMPORTANT:**
+
 **WARNING:**

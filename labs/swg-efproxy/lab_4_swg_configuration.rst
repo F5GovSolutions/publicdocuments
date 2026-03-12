@@ -3,11 +3,9 @@ Lab 4 - SWG Configuration
 
 The SWG service is built on the SSL Orchestrator (SSLO) platform, which provides the necessary components and framework to deliver the SWG functionality. In this lab, we will configure each of the components needed for the SWG service; a custom URL Filter and a Per Request Policy, and then we will apply those components in the SSLO configuration that will deliver the SWG service.
 
-**NOTE:** There are components that have already been configured such as networking, DNS, NTP, and Licensing, which are necessary for the SSLO deployment.
+**NOTE:** There are components that have already been configured such as networking, DNS, NTP, and Licensing, which are necessary for the SSLO deployment. As well, SSL Certificates; Root Certificates and subordinate certificates and corresponding keys, which allow the BIG-IP to re-create certificates to establish the connections were also created for the lab. These instructions assume that the students are familiar with these concepts.
 
-SSL Certificates; Root Certificates and subordinate certificates and corresponding keys, which allow the BIG-IP to re-create certificates to establish the connections were also created for the lab. These instructions assume that the student has requisite understanding of PKI certificate and key management.
-
-**NOTE:** Kerberos Authentication was configured for BIG-IP SSLO-1 to show that authentication identified users in the logs, however we will not configure Kerberos authentication for BIG-IP SSLO-2 as a part of this lab.
+**NOTE:** Kerberos Authentication was configured for BIG-IP SSLO-1 to show that authentication identified users in the logs, however in this lab we will not configure Kerberos authentication for BIG-IP SSLO-2.
 
 SSLO SWG Deployment
 +++++++++++++++++++
@@ -226,10 +224,6 @@ Task 4 - Configure the Win 11 Client to use the Explicit Proxy on the BIG-IP SSL
 
     #. **IMPORTANT:** When finished with this lab, reconfigure the Proxy Settings on the Windows 11 client to use BIG-IP SSLO-1 Explicit Proxy; the fqdn - **proxy.f5labs.local**. This will ensure when we perform the customizations of the block page in Lab 7, the traffic goes through the correct proxy.
 
-        .. image:: ./images/l-sslo-proxy-settings2.png
-            :align: center
-            :alt: Proxy Settings
-
-`Next Lab 5 - Manage Custom Categories using the iControl Rest API <./lab_5_icontrol_rest_api.rst>`__
+`Next - Lab 5 - Manage Custom Categories using the iControl Rest API <./lab_5_icontrol_rest_api.rst>`__
 
 `Main Page <./readme.md>`__
