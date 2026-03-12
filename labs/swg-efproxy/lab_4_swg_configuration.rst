@@ -141,7 +141,7 @@ Task 3 - SSLO / SWG Configuration
             :align: center
             :alt: SSLO SSL Config
 
-    #. In the **CA Certificate Key Chain** section, click the pencil icon to edit the settings. Select the **F5Labs_SubCA_ForwardProxy** certificate and key. This is the subordinate CA certificate that is used to sign the re-created certificates for the HTTPS sites visited by the client.
+    #. In the **CA Certificate Key Chain** section, click the **pencil** icon to edit the settings. Select the **F5Labs_SubCA_ForwardProxy** certificate and key. This is the subordinate CA certificate that is used to sign the re-created certificates for the HTTPS sites visited by the client.
 
         .. image:: ./images/l-sslo-ssl-conf-2.png
             :align: center
