@@ -91,3 +91,5 @@ Task 2. Customizing the Block Page Text
     **TIP:** Use the Chrome shortcut on the Desktop as it is configured to use Incognito mode, which will clear any locally cached content in the session. Close the browser before making further changes.
 
 # This is the End of the Lab.
+
+`Main Page <./readme.md>`__
