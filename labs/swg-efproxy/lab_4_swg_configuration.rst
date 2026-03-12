@@ -195,7 +195,7 @@ Task 3 - SSLO / SWG Configuration
             :align: center
             :alt: SSLO Summary
 
-    #. When the deployment is complete, you will see a message that says **Deployment was successfully completed**.
+    #. When the deployment is complete, you will see a message that says **Deployment was successfully completed**. Press the **OK** button to close the message.
 
         .. image:: ./images/l-deploy-success.png
             :align: center
