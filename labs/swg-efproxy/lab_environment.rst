@@ -177,6 +177,6 @@ Logging into the BIG-IP WebShell:
 
 Now you are ready to start working through the labs. The next section will cover testing the SWG Explicit Forward Proxy configuration from the Windows 11 client.
 
-`Next Lab 1 - Testing the SWG Explict Forward Proxy <./lab_1_swg_testing.rst>`__
+`Next - Lab 1 - Testing the SWG Explict Forward Proxy <./lab_1_swg_testing.rst>`__
 
 `Main Page <./readme.md>`__
