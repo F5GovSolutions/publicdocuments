@@ -94,6 +94,6 @@ More Information:
 https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-secure-web-gateway/secure-web-gateway-statistics.html
 https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-secure-web-gateway/logging-and-reporting.html
 
-`Next Lab 4 - SWG Configuration <./lab_4_swg_configuration.rst>`__
+`Next - Lab 4 - SWG Configuration <./lab_4_swg_configuration.rst>`__
 
 `Main Page <./readme.md>`__

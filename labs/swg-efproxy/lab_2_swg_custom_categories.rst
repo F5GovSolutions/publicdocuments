@@ -132,6 +132,6 @@ Task 2. Working with SWG URL Filters
 
 The next lab will focus on the monitoring and logging of SWG activity.
 
-`Next Lab 3 - SWG Monitoring and Logs <./lab_3_swg_monitoring_and_logs.rst>`__
+`Next - Lab 3 - SWG Monitoring and Logs <./lab_3_swg_monitoring_and_logs.rst>`__
 
 `Main Page <./readme.md>`__

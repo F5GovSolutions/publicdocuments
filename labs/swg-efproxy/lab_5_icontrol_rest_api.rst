@@ -136,6 +136,6 @@ Task 2. [Optional] urlupdater Script
     
     The script output provides the explanation for how to use it for managing URL categories, such as adding or removing URLs, creating new categories, and more. You can use these options to perform the desired operations on your BIG-IP instance.
 
-`Next Lab 6 - Manage Custom Categories using the CLI <./lab_6_swg_manage_cli.rst>`__
+`Next - Lab 6 - Manage Custom Categories using the CLI <./lab_6_swg_manage_cli.rst>`__
 
 `Main Page <./readme.md>`__

@@ -182,6 +182,6 @@ Task 4. Deleting Custom Categories
 
         This command deletes the custom category named **my-category**. You can verify that the category was deleted by trying to list it again, which should result in an error indicating that the category does not exist.
 
-`Next Lab 7 - SWG Customizing Block Page <./lab_7_swg_customizing_block_page.rst>`__
+`Next - Lab 7 - SWG Customizing Block Page <./lab_7_swg_customizing_block_page.rst>`__
 
 `Main Page <./readme.md>`__
