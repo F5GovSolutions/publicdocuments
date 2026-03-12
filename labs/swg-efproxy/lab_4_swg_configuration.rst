@@ -212,7 +212,7 @@ Task 4 - Configure the Win 11 Client to use the Explicit Proxy on the BIG-IP SSL
             :align: center
             :alt: Proxy Settings
 
-    #. Now open Chrome or Firefox and try to browse to the website that is categorized under the Sports category, such as **espn.com**. You should see that the website is blocked by the SWG with the default block page since we configured the URL filter to block the **Sports** category and applied that URL filter in our Per Request Policy which is being used by the SWG service in our SSLO configuration.
+    #. Now open Chrome or Firefox and try to browse to the website that is categorized under the Sports category, such as **espn.com**. You should see that the website is blocked by the SWG with the default block page since we configured the URL filter to block the **Sports** category and applied that URL filter in our Per Request Policy which is being used by the SWG service in our SSLO configuration. Take note of the sessin reference number on the block page.
 
         .. image:: ./images/l-sslo-win-block.png
             :align: center
