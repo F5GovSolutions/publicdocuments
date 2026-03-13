@@ -127,7 +127,7 @@ Logging into the Windows 11 Client using the SuperJump Host method:
             :align: center
             :alt: guacamole-login
 
-    #. Once logged in, under **All Connections** select the **Win11 Domain Joined..._RDP** link.
+    #. Once logged in, under **All Connections** find and **Double-Click** the **Win11 Domain Joined..._RDP** link.
     
         .. image:: ./images/udf-sjh-connections.png
             :align: center

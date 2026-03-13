@@ -61,7 +61,7 @@ Task 1. Working with SWG URL Categories
 
     #. Return to the list of URL Categories and select **custom-allow-category** again.
 
-        **WARNING:** For this next step there are 2 Delete buttons on this configuration page. Press the one under the Associated URLs list box to delete the chosen URL.
+        **WARNING:** For this next step there are 2 **Delete** buttons on this configuration page. Press the one inside the box next to the Associated URLs list to delete the chosen URL.
 
     #. Select the **chatgpt** entry and click the **Delete** button. Then press the **Update** button to save the change.
 
