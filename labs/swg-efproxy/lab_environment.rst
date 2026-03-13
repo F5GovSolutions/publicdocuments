@@ -44,13 +44,13 @@ Starting up the Lab in the Course:
 
         **NOTE:** There are 2 links in the e-mail. One will take you to the general course landing page and the other will take you directly to the course.
 
-        **Important** Select "Invited Users" at the UDF portal landing page.
-        
+        **IMPORTANT:** Select **Invited Users** at the UDF portal landing page.
+
+    #. Once on the course page, click the **Join** button to access the lab environment.
+
         .. image:: ./images/udf-coursepage.png
             :align: center
             :alt: udf-coursepage
-
-    #. Once on the course page, click the "Join" button to access the lab environment.
 
     #. In the Lab environment you see a **Documentation** tab and a **Deployment** tab.
 
@@ -113,7 +113,7 @@ Logging into the Windows 11 Client using the RDP method:
 Logging into the Windows 11 Client using the SuperJump Host method:
 -------------------------------------------------------------------
 
-    Some corporate or government provided laptops per security policies may not allow the use of RDP or have the RDP client installed. In this case, you can access the Windows 11 client through the SuperJump Host. 
+    Some corporate or government provided laptops per security policies may not allow the use of RDP or have the RDP client installed. In this case, you can access the Windows 11 client through the **SuperJump Host**. 
 
     #. From the **Access** menu of the SuperJump Host, select **Guacamole**. This will open a new browser tab with the Guacamole login page.
 
