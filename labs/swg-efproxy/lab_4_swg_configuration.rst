@@ -175,7 +175,11 @@ Task 3 - SSLO / SWG Configuration
             :align: center
             :alt: SSLO Service Chain
 
-    #. In the **Security Policy** page, click the **Save & Next** button to continue.
+    #. In the **Security Policy** page, click the pencil icon to edit the **All** policy. In the policy editor, click the **Service Chain** dropdown and select the service chain we just created, **ssloSC_swg_poc** to link the service chain to the policy. Click the **OK** button to save the policy, then click the **Save & Next** button to continue.
+
+        .. image:: ./images/l-sslo-security-policy.png
+            :align: center
+            :alt: SSLO Security Policy
 
     #. In the **Interception Rule** page, specify the **Proxy Server Settings** IPV4 address as **10.1.10.30** for this lab. Select **f5-aws-dns** the DNS Resolver. Then under VLANs, select **client-vlan** and the **out-vlan**, and click the **>** button to move them into the **Selected** list. Leave everything else default and scroll down and click the **Save & Next** button to continue.
 
