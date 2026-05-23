@@ -97,6 +97,8 @@ Task 3. Verify SWG URL Request Logging
 
                 ^(?<timestamp>\S+)\s+(?<host>\S+)\s+(?<source>\S+)\s+(?<event_type>\S+)\s+(?<url>\S+)\s+(?<user>\S+)\s+(?<action>\S+)$
 
+        Alternatively, you can use the following regular expression to extract key-value pairs from the logs:
+
             .. code-block:: key value pair
 
                 (?<_KEY_1>[a-zA-Z0-9_\-]+)\s*=\s*"(?<_VAL_1>[^"]+)"

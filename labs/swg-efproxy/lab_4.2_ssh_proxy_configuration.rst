@@ -1,29 +1,35 @@
 Lab 4 - SWG Configuration
 =========================
 
-The SWG service is built on the SSL Orchestrator (SSLO) platform, which provides the necessary components and framework to deliver the SWG functionality. In this lab, we will configure each of the components needed for the SWG service; a custom URL Filter and a Per Request Policy, and then we will apply those components in the SSLO configuration that will deliver the SWG service.
+We will use the SSL Orchestrator (SSLO) to build the SSH and SFTP forward proxy.
 
-**NOTE:** There are components that have already been configured such as networking, DNS, NTP, and Licensing, which are necessary for the SSLO deployment. As well, SSL Certificates; Root Certificates and subordinate certificates and corresponding keys, which allow the BIG-IP to re-create certificates to establish the connections were also created for the lab. These instructions assume that the students are familiar with these concepts.
 
-**NOTE:** Kerberos Authentication was configured for BIG-IP SSLO-1 to show that authentication identified users in the logs, however in this lab we will not configure Kerberos authentication for BIG-IP SSLO-2.
+SSH SFTP Forward Proxy Deployment
++++++++++++++++++++++++++++++++++
 
-SSLO SWG Deployment
-+++++++++++++++++++
+Task 1 - Create an L3 Outbound Explicit Proxy Topology in the SSLO
+------------------------------------------------------------------
 
-Task 1 - Create a Custom URL Filter
------------------------------------
+    #. Navigate to **SSL Orchestrator > Configuration** to launch the Guided Configuration utility. 
 
-    #. Log into the **TMUI** of **BIG-IP SSLO-2**.
-
-        Ensure you are on BIG-IP SSLO-2; the Hostname at the top should read **sslo2.local**.
-
-    #. Navigate to **Access > Secure Web Gateway > URL Filters**.
-
-        .. image:: ./images/l-swg-conf-urlfilter-create.png    
+        .. image:: ./images/l4.2-sslo-gc.png
             :align: center
-            :alt: URL Filters
+            :alt: SSLO Configuration
 
-    #. Click the **Create** button to create a new URL Filter.
+        At this point, the swg_poc topology should already be deployed from the previous lab. Click the **Add** button to add a new topology configuration. The Guided Configuration page will open with information about the different topology templates available. At the bottom of the page click the **Next** button to continue.
+
+    #. On the Topology Properties page, select the **L3 Outbound Explicit Proxy** template and click **Save & Next**.
+
+        .. image:: ./images/l4.2-sslo-topo.png
+            :align: center
+            :alt: SSLO Topology
+
+    #. On the SSL Configurations page, under **Client-side SSL**, click the pencil icon to edit the **CA Certificate Key Chain**. Select the certificate and key to use.  Click the **Done** button to save the settings. Click **Save & Next**.
+
+        .. image:: ./images/l4.2-sslo-ssl-config.png
+            :align: center
+            :alt: SSLO SSL Config
+
 
     #. On the **General Properties** page give a name to the URL    Filter; for example **"swg_poc_custom"**. Then click **Finished** to create the URL Filter and display the **Properties** page, which shows that the filter has inherited the default filter settings which we will modify in the next steps.
 
