@@ -20,6 +20,8 @@
 
 [Lab 7 - Customizing the URL Filtering Block Pages](lab_7_swg_customizing_block_page.rst)
 
+[Lab 8 - SWG URL Request Logging with Splunk](./lab_8_url_request_log_splunk.rst)
+
 #### Markings
 
 
