@@ -103,7 +103,6 @@ Task 3. Verify SWG URL Request Logging
 
                 (?<_KEY_1>[a-zA-Z0-9_\-]+)\s*=\s*"(?<_VAL_1>[^"]+)"
 
-
     #. Navigate to the Search & Reporting app. Use the search bar to search for logs related to the URL requests made from the Windows 11 client. You can use filters and keywords to narrow down the search results. For instance you can put this in the search bar to find all blocked URL requests:
 
         .. code-block:: search
