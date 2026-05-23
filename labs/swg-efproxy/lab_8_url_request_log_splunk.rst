@@ -99,7 +99,7 @@ Task 3. Verify SWG URL Request Logging
 
         Alternatively, you can use the following regular expression to extract key-value pairs from the logs:
 
-            .. code-block:: key value pair
+            .. code-block:: regex
                 
                 (?<_KEY_1>[a-zA-Z0-9_\-]+)\s*=\s*"(?<_VAL_1>[^"]+)"
 
