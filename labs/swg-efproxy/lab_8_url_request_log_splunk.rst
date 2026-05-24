@@ -25,12 +25,11 @@ Task 0. Run a Splunk Instance on Ubuntu Server
 
             docker ps -a
 
-    #. After logging in, you will be presented with the Splunk home page. You can use this interface to search and analyze the logs that are sent from the BIG-IP SSLO-1.
-
+    #. After logging in, you will be presented with the Splunk home page.
 
     #. Configure Data Inputs to add TCP port 1514 to receive logs from the BIG-IP SSLO-1. You can do this by navigating to Settings > Data Inputs > TCP and adding a new TCP input on port 1514.
 
-    #. TCP add new, enter port #.
+    #. TCP add new, enter port 1514.
 
     #. Select Source Type: syslog, and click Next.
 
@@ -39,7 +38,7 @@ Task 0. Run a Splunk Instance on Ubuntu Server
 Task 1. Configure System Logging Settings
 -----------------------------------------
 
-    #. Navigate to the BIG-IP SSLO-1 web interface and log in with your credentials.
+    #. Navigate to the BIG-IP SSLO-1 TMUI interface and log in with your credentials.
 
     #. Create Pool and Pool member with Splunk Server IP Address and Port 1514.
 
@@ -112,3 +111,9 @@ Task 3. Verify SWG URL Request Logging
         .. image:: ./images/l11-splunk-search.png
             :align: center
             :alt: Customizations
+
+References
+
+F5 BIG-IP Secure Web Gateway (SWG) documentation:
+
+`SWG Logging and Reporting v.17 <https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-secure-web-gateway/logging-and-reporting.html>`_
