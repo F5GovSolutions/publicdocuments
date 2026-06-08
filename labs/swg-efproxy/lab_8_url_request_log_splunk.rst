@@ -115,7 +115,7 @@ Task 3. Verify SWG URL Request Logging
 CLI Commands
 ------------
 
-Here are the TMSH commands to create the necessary objects for logging URL requests to Splunk:
+    Here are the TMSH commands to create the necessary objects for logging URL requests to Splunk.
 
     .. code-block:: bash
         # 1. Create the pool with the ICMP monitor and the member
