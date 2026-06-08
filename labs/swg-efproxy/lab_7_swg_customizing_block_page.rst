@@ -92,4 +92,6 @@ Task 2. Customizing the Block Page Text
 
 # This is the End of the Lab.
 
+`Next - Lab 8 - URL Request Logging to Splunk <./lab_8_swg_url_request_log_splunk.rst>`__
+
 `Main Page <./readme.md>`__

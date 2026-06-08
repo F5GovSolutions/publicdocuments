@@ -117,3 +117,5 @@ References
 F5 BIG-IP Secure Web Gateway (SWG) documentation:
 
 `SWG Logging and Reporting v.17 <https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-secure-web-gateway/logging-and-reporting.html>`_
+
+`Main Page <./readme.md>`__
