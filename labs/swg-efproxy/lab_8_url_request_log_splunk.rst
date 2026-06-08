@@ -113,7 +113,7 @@ Task 3. Verify SWG URL Request Logging
             :alt: Customizations
 
 CLI Commands
-============
+------------
 
 Here are the TMSH commands to create the necessary objects for logging URL requests to Splunk:
 
