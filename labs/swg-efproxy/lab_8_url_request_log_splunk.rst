@@ -112,6 +112,25 @@ Task 3. Verify SWG URL Request Logging
             :align: center
             :alt: Customizations
 
+CLI Commands
+============
+
+    Here are the TMSH commands to create the necessary objects for logging URL requests to Splunk:
+
+        .. code-block:: bash
+            # 1. Create the pool with the ICMP monitor and the member
+            create ltm pool splunk-collector monitor gateway_icmp members add { 10.1.1.5:1514 }
+
+            # 2. Create the remote High-Speed Log destination linked to the pool
+            create sys log-config destination remote-high-speed-log splunk-destination-remotehsl description "splunk-dest hsl" distribution adaptive pool-name splunk-collector protocol tcp
+
+            # 3. Create the Splunk-formatted destination linked to the HSL destination
+            create sys log-config destination splunk splunk-destination-hsl-formatted description none forward-to splunk-destination-remotehsl
+
+            # 4. Create the log publisher to make the logs usable by the system
+            create sys log-config publisher splunk-log-publisher destinations add { splunk-destination-hsl-formatted }
+
+
 References
 
 F5 BIG-IP Secure Web Gateway (SWG) documentation:
