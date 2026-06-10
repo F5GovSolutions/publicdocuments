@@ -38,7 +38,7 @@ Task 0. Run a Splunk Instance on Ubuntu Server
 Task 1. Configure System Logging Settings
 -----------------------------------------
 
-    #. Navigate to the BIG-IP SSLO-1 TMUI interface and log in with your credentials.
+    #. Navigate to the BIG-IP SSLO-1 TMUI and log in with your credentials.
 
     #. Create Pool and Pool member with Splunk Server IP Address and Port 1514.
 
@@ -118,6 +118,7 @@ CLI Commands
     Here are the TMSH commands to create the necessary objects for logging URL requests to Splunk.
 
     .. code-block:: bash
+        
         # 1. Create the pool with the ICMP monitor and the member
         create ltm pool splunk-collector monitor gateway_icmp members add { 10.1.1.5:1514 }
 
@@ -129,6 +130,9 @@ CLI Commands
 
         # 4. Create the log publisher to make the logs usable by the system
         create sys log-config publisher splunk-log-publisher destinations add { splunk-destination-hsl-formatted }
+
+
+create apm log-setting Splunk_SWG_URL_Request_Settings description Logs-Splunk_SWG_URL_Requests access add { Splunk_SWG_URL_Request_Settings_access { enabled false publisher sys-db-access-publisher } } url-filters add { Splunk_SWG_URL_Request_Settings_swg { filter { log-allowed-url true } publisher splunk-log-publisher } }
 
 
 References
