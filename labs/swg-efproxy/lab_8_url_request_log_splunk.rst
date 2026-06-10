@@ -118,21 +118,21 @@ CLI Commands
     Here are the TMSH commands to create the necessary objects for logging URL requests to Splunk.
 
     .. code-block:: bash
-        
-        # 1. Create the pool with the ICMP monitor and the member
+
+        # 1. Create the pool with the ICMP monitor and the member. This specifies the Splunk server where the logs will be sent. 
         create ltm pool splunk-collector monitor gateway_icmp members add { 10.1.1.5:1514 }
 
-        # 2. Create the remote High-Speed Log destination linked to the pool
+        # 2. Create the remote High-Speed Log destination. This specifies that the logs be High-Speed Logs and sent to the pool created in the previous step.
         create sys log-config destination remote-high-speed-log splunk-destination-remotehsl description "splunk-dest hsl" distribution adaptive pool-name splunk-collector protocol tcp
 
-        # 3. Create the Splunk-formatted destination linked to the HSL destination
+        # 3. Create the Splunk-formatted destination linked to the HSL destination. This specifies that the logs be formatted for Splunk before being sent to the HSL destination.
         create sys log-config destination splunk splunk-destination-hsl-formatted description none forward-to splunk-destination-remotehsl
 
-        # 4. Create the log publisher to make the logs usable by the system
+        # 4. Create the log publisher. This specifies which publisher will send logs to the Splunk-formatted destination.
         create sys log-config publisher splunk-log-publisher destinations add { splunk-destination-hsl-formatted }
 
-
-create apm log-setting Splunk_SWG_URL_Request_Settings description Logs-Splunk_SWG_URL_Requests access add { Splunk_SWG_URL_Request_Settings_access { enabled false publisher sys-db-access-publisher } } url-filters add { Splunk_SWG_URL_Request_Settings_swg { filter { log-allowed-url true } publisher splunk-log-publisher } }
+        # 5. Create the APM log settings to specify which URL Events to log and to send them to the Splunk log publisher.
+        create apm log-setting Splunk_SWG_URL_Request_Settings description Logs-Splunk_SWG_URL_Requests access add { Splunk_SWG_URL_Request_Settings_access { enabled false publisher sys-db-access-publisher } } url-filters add { Splunk_SWG_URL_Request_Settings_swg { filter { log-allowed-url true } publisher splunk-log-publisher } }
 
 
 References
